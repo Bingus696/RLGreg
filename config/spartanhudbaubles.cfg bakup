@@ -1,0 +1,25 @@
+# Configuration file
+
+~CONFIG_VERSION: 1
+
+client {
+    # Alignment of the Baubles HUD Element [default: BOTTOM_RIGHT]
+    S:alignment=BOTTOM_RIGHT
+
+    # Set to true to disable the Baubles HUD Element (which essentially disables the entire mod) [default: false]
+    B:disable_hud=false
+
+    # Set to true to display only items in the Baubles HUD Element, without the hotbar-style skin and Baubles icon [default: false]
+    B:no_skin_mode=true
+
+    # X offset of the Baubles HUD Element. Can be used to adjust the X position [range: -1000 ~ 1000, default: 0]
+    I:offset_x=0
+
+    # Y offset of the Baubles HUD Element. Can be used to adjust the Y position [range: -1000 ~ 1000, default: 0]
+    I:offset_y=0
+
+    # Set to true to rotate the Baubles HUD Element vertically or false for horizontally [default: false]
+    B:rotate_vertical=false
+}
+
+

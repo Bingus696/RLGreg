@@ -1,0 +1,1826 @@
+# Configuration file
+
+##########################################################################################################
+# general
+#--------------------------------------------------------------------------------------------------------#
+# General configuration 
+# Version:1.8.2
+##########################################################################################################
+
+general {
+    # Global armor multiplier for all the mobs. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Global Armor Multiplier"=4.0
+
+    # Global damage multiplier for all the mobs. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Global Damage Multiplier"=4.0
+
+    # Global health multiplier for all the mobs. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Global Health Multiplier"=4.0
+
+    # Each second the killcount will go up by this amount (only if difficulty is set to hard or hardcore. [range: 0.01 ~ 100.0, default: 0.0]
+    S:"Killcount Plus"=0.1
+
+    # How many kills Primitive mobs need for the Adapted stage. [range: 0.0 ~ 100.0, default: 10.0]
+    S:"Kills for Adapted Stage"=10.0
+
+    # How many kills Infected mobs need for the Primitive stage. [range: 0.0 ~ 100.0, default: 5.0]
+    S:"Kills for Primitive Stage"=5.0
+
+    # Set to true for adapted versions to despawn. [default: true]
+    B:"Mob Adapted Despawn"=false
+
+    # Set to true for ancient mobs to despawn. [default: false]
+    B:"Mob Ancient Despawn"=false
+
+    # Set to false if you want the parasites to only target the player. [default: true]
+    B:"Mob Attacking"=true
+
+    # Fire damage multiplier for the mobs. [range: 1.0 ~ 100.0, default: 2.0]
+    S:"Mob Fire Damage Multiplier"=2.0
+
+    # Set to true for infected versions to despawn. [default: true]
+    B:"Mob Infected Despawn"=false
+
+    # Set to true for primitive versions to despawn. [default: true]
+    B:"Mob Primitive Despawn"=false
+
+    # Parasites can't spawn in these dimensions
+    I:"Mobs Blacklisted Dimensions" <
+        -1
+        0
+        1
+     >
+
+    # Set to false if you want to disable mobs. [default: true]
+    B:"Mobs Enabled"=true
+
+    # Set to true to allow mobs to ignore sunlight when naturally spawning. [default: false]
+    B:"Mobs Ignore Sun"=true
+
+    # Number of days required for the mobs to spawn. [range: 1 ~ 100, default: 0]
+    I:"Mobs days required"=0
+
+    # List of block that can't be broken by the griefing task [default: [minecraft:stonebrick]]
+    S:"Mobs with griefing blocks black list" <
+     >
+
+    # Mobs that will avoid the parasites. Ex: "minecraft:zombie" [default: [minecraft:villager]]
+    S:"Mobs with new avoid task" <
+        minecraft:villager
+     >
+
+    # Mobs that will break block in the way when chasing its target. Ex. "srparasites:ashyco;1;3" Where: 
+    #  "srparasites:ashyco" is the entity (note: this only works with mobs of this mod), 
+    #  "1" is the maximum hardness of the block it can break, 
+    #  "3" is the cooldown in seconds. 
+    #  [default: [srparasites:shycoadapted;1;3], [srparasites:noglaadapted;1;3], [srparasites:canraadapted;1;6], [srparasites:zetmoadapted;1.5;2], [srparasites:ganro;2;2], [srparasites:oronco;3;1], [srparasites:terla;3;1]]
+    S:"Mobs with new griefing task" <
+        srparasites:shycoadapted;1;3
+        srparasites:noglaadapted;1;3
+        srparasites:canraadapted;1;6
+        srparasites:zetmoadapted;1.5;2
+        srparasites:ganro;2;2
+        srparasites:oronco;3;1
+        srparasites:terla;3;1
+     >
+
+    # Mobs that will target the parasites. Ex: "minecraft:zombie" [default: [minecraft:villager_golem]]
+    S:"Mobs with new target task" <
+        minecraft:villager_golem
+     >
+
+    # Set to true if you want to active the vanilla spawn eggs for the mobs. [default: false]
+    B:"Vanilla Mob Eggs"=false
+
+    # Minimum number of hits required to kill Adapted versions. [range: 1 ~ 100, default: 3]
+    I:"Version Adapted Damage Cap"=3
+
+    # Minimum number of hits required to kill Ancient versions. [range: 1 ~ 100, default: 5]
+    I:"Version Ancient Damage Cap"=5
+
+    # Minimum number of hits required to kill Infected versions. [range: 1 ~ 100, default: 1]
+    I:"Version Infected Damage Cap"=1
+
+    # Minimum number of hits required to kill Primitive versions. [range: 1 ~ 100, default: 2]
+    I:"Version Primitive Damage Cap"=2
+}
+
+
+##########################################################################################################
+# merge_system
+#--------------------------------------------------------------------------------------------------------#
+# Merge System 
+#  The infected have the ability to learn from their battles and if the conditions are met, they will 
+#  start to melt until they're some Moving Flesh 
+#  If 2 of these things meet, they will fuse together and grow, if they get big enough they will spawn 
+#  a mob from the Mob List.
+#  
+#  Conditions for the infected to turn into Moving Flesh: 
+#  
+#  -The first condition: the infected needs to reach the primitive killcount. 
+#  -The second condition: it needs to be next to 3 more infected, regardless of their killcount/specie 
+#  OR it needs to be next to a Moving Flesh. 
+#  If the infected with the killcount is next to atleast 3 more infected, the four of them will start 
+#  to melt BUT if it is next to a Moving flesh, only it will start to melt. 
+# 
+##########################################################################################################
+
+merge_system {
+    # Infected mob list with their values used in the merge system to spawn mobs. Ex. "srparasites:infhuman;22"  Where: 
+    #  "srparasites:infhuman" is for the entity (only works for infected versions minus Dorpa, Alafha), 
+    #  "22" is for the value the Moving Flesh will have (value must be an integer). 
+    #  [default: [srparasites:infhuman;1], [srparasites:infcow;1], [srparasites:infsheep;1], [srparasites:infwolf;1], [srparasites:infpig;1], [srparasites:infvillager;1]]
+    S:"Merge System Infected Values" <
+        srparasites:infhuman;1
+        srparasites:infcow;1
+        srparasites:infsheep;1
+        srparasites:infwolf;1
+        srparasites:infpig;1
+        srparasites:infvillager;1
+     >
+
+    # Amount of health (1 = 100%) the mob spawns with. [range: 0.0 ~ 1.0, default: 0.5]
+    S:"Merge System Mob Health"=0.5
+
+    # Mob list used in the merge system to spawn mobs. Ex. "minecraft:zombie;11"  Where: 
+    #  "minecraft:zombie" is for the entity, 
+    #  "11" is for the value the entity has (value must be an integer). 
+    #  Each infected has a value, the value then passes to the Moving Flesh and when 2 Moving Flesh merge together both values will add up
+    #  If the value matches one in the list, the corresponding entity will spawn, else it will be a random one. 
+    #  [default: [srparasites:canra;0], [srparasites:shyco;0], [srparasites:nogla;0], [srparasites:hull;0], [srparasites:bano;0], [srparasites:emana;0]]
+    S:"Merge System Mob List" <
+        srparasites:canra;0
+        srparasites:shyco;0
+        srparasites:nogla;0
+        srparasites:hull;0
+        srparasites:bano;0
+        srparasites:emana;0
+     >
+
+    # Set to false if you don't want to spawn random mobs from the Mob List (values will be used). [default: true]
+    B:"Merge System Random"=true
+}
+
+
+##########################################################################################################
+# mob_anged
+#--------------------------------------------------------------------------------------------------------#
+# Anged (aka Vigilante) 
+#  Base Health: 35.0 
+#  Base Damage: 10.0 
+#  Base Range Damage: 15.0 
+#  Base Armor: 5.0 
+#  Base KD Resistance: 1.0
+##########################################################################################################
+
+mob_anged {
+    # Armor multiplier for Anged. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Anged Armor Multiplier"=1.0
+
+    # Damage multiplier for Anged. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Anged Damage Multiplier"=1.0
+
+    # Set to false if you want to disable Anged. [default: true]
+    B:"Anged Enabled"=true
+
+    # Health multiplier for Anged. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Anged Health Multiplier"=1.0
+
+    # KD Resistance multiplier for Anged. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Anged KD Resistance Multiplier"=1.0
+
+    # Items you want the Anged to drop. Ex. "minecraft:nether_star;100;5;true" Where: 
+    #  "minecraft:nether_star" is the item, 
+    #  "100" is the chance to drop, 
+    #  "5" is the max number of items, 
+    #  "true" is for the item to always roll, if false the item will be unique and only 1 will be choosen. 
+    #  [default: ]
+    S:"Anged Loot Table" <
+     >
+
+    # Range damage multiplier for Anged. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Anged Range Damage Multiplier"=1.0
+
+    # Spawn rate for Anged. [range: 0 ~ 100, default: 0]
+    I:"Anged SpawnRate"=10
+}
+
+
+##########################################################################################################
+# mob_buthol
+#--------------------------------------------------------------------------------------------------------#
+# Buthol (aka Flying Carrier) 
+#  Base Health: 20.0 
+#  Base Armor: 2.5 
+#  Base KD Resistance: 0.15
+##########################################################################################################
+
+mob_buthol {
+    # Armor multiplier for Buthol. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Buthol Armor Multiplier"=1.0
+
+    # Set to false if you want to disable Buthol. [default: true]
+    B:"Buthol Enabled"=true
+
+    # Number of blocks it can fly above the ground for Buthol. [range: 0 ~ 256, default: 256]
+    I:"Buthol Flight Height Limit"=256
+
+    # Set to true if you want the Buthol to destroy blocks on explosion. [default: false]
+    B:"Buthol Griefing"=true
+
+    # Health multiplier for Buthol. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Buthol Health Multiplier"=1.0
+
+    # KD Resistance multiplier for Buthol. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Buthol KD Resistance Multiplier"=1.0
+
+    # Items you want the Buthol to drop. Ex. "minecraft:nether_star;100;5;true" Where: 
+    #  "minecraft:nether_star" is the item, 
+    #  "100" is the chance to drop, 
+    #  "5" is the max number of items, 
+    #  "true" is for the item to always roll, if false the item will be unique and only 1 will be choosen. 
+    #  [default: ]
+    S:"Buthol Loot Table" <
+     >
+
+    # Mob list for buthol. Ex. "minecraft:zombie;4;2" Where: 
+    #  "minecraft:zombie" is the entity, 
+    #  "4" is the maximum number of entities, 
+    #  "2" is the minimum number of entities. 
+    #  [default: [srparasites:mudo;4;3], [srparasites:lodo;3;2]]
+    S:"Buthol Mob Table" <
+        srparasites:mudo;4;3
+        srparasites:lodo;3;2
+     >
+
+    # Spawn rate for Buthol. [range: 0 ~ 100, default: 25]
+    I:"Buthol SpawnRate"=50
+}
+
+
+##########################################################################################################
+# mob_canra
+#--------------------------------------------------------------------------------------------------------#
+# Canra (aka Summoner) 
+#  Base Health: 35.0 
+#  Base Damage: 10.0 
+#  Base Armor: 4.0 
+#  Base KD Resistance: 0.5
+##########################################################################################################
+
+mob_canra {
+    # Armor multiplier for Canra. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Canra Armor Multiplier"=1.0
+
+    # Damage multiplier for Canra. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Canra Damage Multiplier"=1.0
+
+    # Set to false if you want to disable Canra. [default: true]
+    B:"Canra Enabled"=true
+
+    # Health multiplier for Canra. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Canra Health Multiplier"=1.0
+
+    # KD Resistance multiplier for Canra. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Canra KD Resistance Multiplier"=1.0
+
+    # Number of attacks before its cooldown for Canra. [range: 0 ~ 10000, default: 2]
+    I:"Canra Limit"=2
+
+    # Items you want the Canra to drop. Ex. "minecraft:nether_star;100;5;true" Where: 
+    #  "minecraft:nether_star" is the item, 
+    #  "100" is the chance to drop, 
+    #  "5" is the max number of items, 
+    #  "true" is for the item to always roll, if false the item will be unique and only 1 will be choosen. 
+    #  [default: ]
+    S:"Canra Loot Table" <
+     >
+
+    # Mob list for Canra. Ex. "minecraft:zombie;0.1;1"  Where: 
+    #  "minecraft:zombie" is for the entity, 
+    #  "0.1" is for the chance to spawn, 
+    #  "1" is for the cost the entity has. 
+    #  [default: [srparasites:mudo;1;1]]
+    S:"Canra Mob List" <
+        srparasites:mudo;1;1
+     >
+
+    # Spawn rate for Canra. [range: 0 ~ 100, default: 5]
+    I:"Canra SpawnRate"=10
+
+    # Number of total points used in mob spawning for Canra [range: 0 ~ 100, default: 4]
+    I:"Canra Total Active Mobs"=4
+
+    # Summoning cooldown in seconds. [range: 0 ~ 100, default: 10]
+    I:"Canra summoning Cooldown"=10
+
+    # Additional armor for Adapted Canra. [range: 0.01 ~ 100.0, default: 10.0]
+    S:"Stage Adapted additional Armor"=10.0
+
+    # Additional damage for Adapted Canra. [range: 0.01 ~ 100.0, default: 15.0]
+    S:"Stage Adapted additional Damage"=15.0
+
+    # Additional health for Adapted Canra. [range: 0.01 ~ 100.0, default: 60.0]
+    S:"Stage Adapted additional Health"=60.0
+
+    # Additional KD Resistance for Adapted Canra. [range: 0.01 ~ 100.0, default: 0.5]
+    S:"Stage Adapted additional KD Resistance"=0.5
+
+    # Number of attacks before its cooldown for Adapted Canra. [range: 0 ~ 10000, default: 1]
+    I:"Stage Adapted limit"=1
+
+    # Items you want the Adapted Canra to drop. Ex. "minecraft:nether_star;100;5;true" Where: 
+    #  "minecraft:nether_star" is the item, 
+    #  "100" is the chance to drop, 
+    #  "5" is the max number of items, 
+    #  "true" is for the item to always roll, if false the item will be unique and only 1 will be choosen. 
+    #  [default: [srparasites:acanra_drop;60;1;false]]
+    S:"Stage Adapted loot Table" <
+        srparasites:acanra_drop;60;1;false
+     >
+
+    # Mob list for Adapted Canra. Ex. "minecraft:zombie;0.1;1"  Where: 
+    #  "minecraft:zombie" is for the entity, 
+    #  "0.1" is for the chance to spawn, 
+    #  "1" is for the cost the entity has. 
+    #  [default: [srparasites:mudo;0.1;1], [srparasites:infhuman;0.3;2], [srparasites:infcow;0.3;2], [srparasites:infwolf;0.3;2]]
+    S:"Stage Adapted mob List" <
+        srparasites:mudo;0.1;1
+        srparasites:infhuman;0.3;2
+        srparasites:infcow;0.3;2
+        srparasites:infwolf;0.3;2
+     >
+
+    # Spawn rate for AdaptedCanra. [range: 0 ~ 100, default: 0]
+    I:"Stage Adapted spawnrate"=10
+
+    # Summoning cooldown in seconds. [range: 0 ~ 100, default: 8]
+    I:"Stage Adapted summoning Cooldown"=8
+
+    # Number of total points used in mob spawning for Adapted Canra. [range: 0 ~ 100, default: 6]
+    I:"Stage Adapted total active mobs"=6
+}
+
+
+##########################################################################################################
+# mob_dorpa
+#--------------------------------------------------------------------------------------------------------#
+# Dorpa 
+#  Base Health: 22.0 
+#  Base Damage: 9.0 
+#  Base Armor: 3.0 
+#  Base KD Resistance: 0.5 
+#  Base Ranged Damage: 4.0
+##########################################################################################################
+
+mob_dorpa {
+    # Armor multiplier for Dorpa. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Dorpa Armor Multiplier"=1.0
+
+    # Damage multiplier for Dorpa. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Dorpa Damage Multiplier"=1.0
+
+    # Set to false if you want to disable Dorpa. [default: true]
+    B:"Dorpa Enabled"=true
+
+    # Health multiplier for Dorpa. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Dorpa Health Multiplier"=1.0
+
+    # KD Resistance multiplier for Dorpa. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Dorpa KD Resistance Multiplier"=1.0
+
+    # Items you want the Dorpa to drop. Ex. "minecraft:nether_star;100;5;true" Where: 
+    #  "minecraft:nether_star" is the item, 
+    #  "100" is the chance to drop, 
+    #  "5" is the max number of items, 
+    #  "true" is for the item to always roll, if false the item will be unique and only 1 will be choosen. 
+    #  [default: ]
+    S:"Dorpa Loot Table" <
+     >
+
+    # Mob the Dorpa spawns when killed. Ex. "minecraft:zombie;4;2" Where: 
+    #  "minecraft:zombie" is the entity, 
+    #  "4" is the maximum number of entities, 
+    #  "2" is the minimum number of entities. 
+    #  [default: srparasites:lodo;5;5]
+    S:"Dorpa Mobs Inside"=srparasites:lodo;5;5
+
+    # Damage multiplier for Dorpa projectile attack (only if WebAttack is false). [range: 0.0 ~ 100.0, default: 1.0]
+    S:"Dorpa Ranged Damage Multiplier"=1.0
+
+    # Spawn rate for Dorpa. [range: 0 ~ 100, default: 10]
+    I:"Dorpa SpawnRate"=20
+
+    # Set to false if you want to disable Dorpa web attack blocks. [default: true]
+    B:"Dorpa WebAttack"=true
+}
+
+
+##########################################################################################################
+# mob_emana
+#--------------------------------------------------------------------------------------------------------#
+# Emana (aka Yelloweye) 
+#  Base Health: 15.0 
+#  Base Damage: 4.0 
+#  Base Armor: 3.5 
+#  Base KD Resistance: 0.2 
+#  Poison Duration in seconds: 3 
+#  Poison Amplifier: 1
+##########################################################################################################
+
+mob_emana {
+    # Armor multiplier for Emana. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Emana Armor Multiplier"=1.0
+
+    # Damage multiplier for Emana. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Emana Damage Multiplier"=1.0
+
+    # Set to false if you want to disable Emana. [default: true]
+    B:"Emana Enabled"=true
+
+    # Number of blocks it can fly above the ground for Emana (and Adapted version). [range: 0 ~ 256, default: 256]
+    I:"Emana Flight Height Limit"=256
+
+    # How much a shot will degrade your gear (1=100%). [range: 0.0 ~ 1.0, default: 0.04]
+    S:"Emana Gear degrade"=0.05
+
+    # Health multiplier for Emana. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Emana Health Multiplier"=1.0
+
+    # KD Resistance multiplier for Emana. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Emana KD Resistance Multiplier"=1.0
+
+    # Items you want the Emana to drop. Ex. "minecraft:nether_star;100;5;true" Where: 
+    #  "minecraft:nether_star" is the item, 
+    #  "100" is the chance to drop, 
+    #  "5" is the max number of items, 
+    #  "true" is for the item to always roll, if false the item will be unique and only 1 will be choosen. 
+    #  [default: ]
+    S:"Emana Loot Table" <
+     >
+
+    # Poison amplifier for its projectile. [range: 1 ~ 100, default: 1]
+    I:"Emana Poison Amplifier"=2
+
+    # Poison duration in seconds for its projectile. [range: 0 ~ 100, default: 3]
+    I:"Emana Poison Duration"=6
+
+    # Spawn rate for Emana. [range: 0 ~ 100, default: 10]
+    I:"Emana SpawnRate"=20
+
+    # Additional armor for Adapted Emana. [range: 0.01 ~ 100.0, default: 10.0]
+    S:"Stage Adapted additional Armor"=10.0
+
+    # Additional damage for Adapted Emana. [range: 0.01 ~ 100.0, default: 5.0]
+    S:"Stage Adapted additional Damage"=5.0
+
+    # Additional health for Adapted Emana. [range: 0.01 ~ 100.0, default: 25.0]
+    S:"Stage Adapted additional Health"=25.0
+
+    # Additional KD Resistance for Adapted Emana. [range: 0.01 ~ 100.0, default: 0.4]
+    S:"Stage Adapted additional KD Resistance"=0.4
+
+    # How much a shot will degrade your gear (1=100%). [range: 0.0 ~ 1.0, default: 0.07]
+    S:"Stage Adapted gear degrade"=0.1
+
+    # Items you want the Adapted Emana to drop. Ex. "minecraft:nether_star;100;5;true" Where: 
+    #  "minecraft:nether_star" is the item, 
+    #  "100" is the chance to drop, 
+    #  "5" is the max number of items, 
+    #  "true" is for the item to always roll, if false the item will be unique and only 1 will be choosen. 
+    #  [default: [srparasites:aemana_drop;70;1;true]]
+    S:"Stage Adapted loot Table" <
+        srparasites:aemana_drop;70;1;true
+     >
+
+    # Damage it will do from melee for Stage Adapted. [range: 0.0 ~ 1.0, default: 30.0]
+    S:"Stage Adapted melee"=30.0
+
+    # Spawn rate for Adapted Emana. [range: 0 ~ 100, default: 0]
+    I:"Stage Adapted spawnrate"=10
+}
+
+
+##########################################################################################################
+# mob_ganro
+#--------------------------------------------------------------------------------------------------------#
+# Ganro (aka Warden) 
+#  Base Health: 75.0 
+#  Base Damage: 25.0 
+#  Base Armor: 15.0 
+#  Base KD Resistance: 1.0
+##########################################################################################################
+
+mob_ganro {
+    # Armor multiplier for Ganro. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Ganro Armor Multiplier"=1.0
+
+    # Damage multiplier for Ganro. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Ganro Damage Multiplier"=1.0
+
+    # Set to false if you want to disable Ganro. [default: true]
+    B:"Ganro Enabled"=true
+
+    # Health multiplier for Ganro. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Ganro Health Multiplier"=1.0
+
+    # KD Resistance multiplier for Ganro. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Ganro KD Resistance Multiplier"=1.0
+
+    # Items you want the Ganro to drop. Ex. "minecraft:nether_star;100;5;true" Where: 
+    #  "minecraft:nether_star" is the item, 
+    #  "100" is the chance to drop, 
+    #  "5" is the max number of items, 
+    #  "true" is for the item to always roll, if false the item will be unique and only 1 will be choosen. 
+    #  [default: ]
+    S:"Ganro Loot Table" <
+     >
+
+    # Spawn rate for Ganro. [range: 0 ~ 100, default: 0]
+    I:"Ganro SpawnRate"=10
+}
+
+
+##########################################################################################################
+# mob_hull
+#--------------------------------------------------------------------------------------------------------#
+# Hull (aka Manducater) 
+#  Base Health: 18.0 
+#  Base Damage: 8.0 
+#  Base Armor: 4.0 
+#  Base KD Resistance: 0.5
+##########################################################################################################
+
+mob_hull {
+    # Armor multiplier for Hull. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Hull Armor Multiplier"=1.0
+
+    # Damage multiplier for Hull. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Hull Damage Multiplier"=1.0
+
+    # Set to false if you want to disable Hull. [default: true]
+    B:"Hull Enabled"=true
+
+    # Health multiplier for Hull. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Hull Health Multiplier"=1.0
+
+    # KD Resistance multiplier for Hull. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Hull KD Resistance Multiplier"=1.0
+
+    # Items you want the Hull to drop. Ex. "minecraft:nether_star;100;5;true" Where: 
+    #  "minecraft:nether_star" is the item, 
+    #  "100" is the chance to drop, 
+    #  "5" is the max number of items, 
+    #  "true" is for the item to always roll, if false the item will be unique and only 1 will be choosen. 
+    #  [default: ]
+    S:"Hull Loot Table" <
+     >
+
+    # Health (1 = 100%) they need to go invisible. [range: 0.0 ~ 1.0, default: 0.7]
+    S:"Hull Needed Health"=0.7
+
+    # Time (seconds) they need to go invisible. [range: 1.0 ~ 100.0, default: 35.0]
+    S:"Hull Needed Time"=35.0
+
+    # Spawn rate for Hull. [range: 0 ~ 100, default: 40]
+    I:"Hull SpawnRate"=80
+
+    # Damage multiplier for Hull when invisible. [range: 0.01 ~ 100.0, default: 2.0]
+    S:"Hull Stealth Damage Multiplier"=2.0
+
+    # Additional armor for Adapted Hull. [range: 0.01 ~ 100.0, default: 6.0]
+    S:"Stage Adapted additional Armor"=6.0
+
+    # Additional damage for Adapted Hull. [range: 0.01 ~ 100.0, default: 12.0]
+    S:"Stage Adapted additional Damage"=12.0
+
+    # Additional health for Adapted Hull. [range: 0.01 ~ 100.0, default: 15.0]
+    S:"Stage Adapted additional Health"=15.0
+
+    # Additional KD Resistance for Adapted Hull. [range: 0.01 ~ 100.0, default: 0.5]
+    S:"Stage Adapted additional KD Resistance"=0.5
+
+    # Additional damage for Adapted Hull when invisible. [range: 0.01 ~ 100.0, default: 3.0]
+    S:"Stage Adapted additional Stealth Damage"=3.0
+
+    # Items you want the Adapted Hull to drop. Ex. "minecraft:nether_star;100;5;true" Where: 
+    #  "minecraft:nether_star" is the item, 
+    #  "100" is the chance to drop, 
+    #  "5" is the max number of items, 
+    #  "true" is for the item to always roll, if false the item will be unique and only 1 will be choosen. 
+    #  [default: [srparasites:ahull_drop;10;1;false]]
+    S:"Stage Adapted loot Table" <
+        srparasites:ahull_drop;10;1;false
+     >
+
+    # Health (1 = 100%) they need to go invisible. [range: 0.0 ~ 1.0, default: 0.4]
+    S:"Stage Adapted needed Health"=0.4
+
+    # Time (seconds) they need to go invisible. [range: 1.0 ~ 100.0, default: 15.0]
+    S:"Stage Adapted needed Time"=15.0
+
+    # Spawn rate for Adapted Hull. [range: 0 ~ 100, default: 0]
+    I:"Stage Adapted spawnrate"=10
+}
+
+
+##########################################################################################################
+# mob_infected_alafha
+#--------------------------------------------------------------------------------------------------------#
+# Alafha 
+#  Base Health: 18.0 
+#  Base Damage: 7.0 
+#  Base Armor: 3.0 
+#  Base KD Resistance: 0.4
+##########################################################################################################
+
+mob_infected_alafha {
+    # Armor multiplier for Alafha. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Alafha Armor Multiplier"=1.0
+
+    # Damage multiplier for Alafha. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Alafha Damage Multiplier"=1.0
+
+    # Set to false if you want to disable Alafha. [default: true]
+    B:"Alafha Enabled"=true
+
+    # Number of blocks it can fly above the ground for Alafha. [range: 0 ~ 256, default: 256]
+    I:"Alafha Flight Height Limit"=256
+
+    # Set to true if you want its projectiles to destroy blocks. [default: false]
+    B:"Alafha Griefing"=false
+
+    # Health multiplier for Alafha. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Alafha Health Multiplier"=1.0
+
+    # KD Resistance multiplier for Alafha. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Alafha KD Resistance Multiplier"=1.0
+
+    # Items you want the Alafha to drop. Ex. "minecraft:nether_star;100;5;true" Where: 
+    #  "minecraft:nether_star" is the item, 
+    #  "100" is the chance to drop, 
+    #  "5" is the max number of items, 
+    #  "true" is for the item to always roll, if false the item will be unique and only 1 will be choosen. 
+    #  [default: [srparasites:infected_flesh;80;3;true]]
+    S:"Alafha Loot Table" <
+        srparasites:infected_flesh;80;3;true
+     >
+
+    # Spawn rate for Alafha. [range: 0 ~ 100, default: 5]
+    I:"Alafha SpawnRate"=10
+}
+
+
+##########################################################################################################
+# mob_infected_cow
+#--------------------------------------------------------------------------------------------------------#
+# Infected Human 
+#  Base Health: 18.0 
+#  Base Damage: 7.0 
+#  Base Armor: 5.0 
+#  Base KD Resistance: 0.4
+##########################################################################################################
+
+mob_infected_cow {
+    # Armor multiplier for Infected Cow. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Infected Cow Armor Multiplier"=1.0
+
+    # Damage multiplier for Infected Cow. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Infected Cow Damage Multiplier"=1.0
+
+    # Set to false if you want to disable Infected Cow. [default: true]
+    B:"Infected Cow Enabled"=true
+
+    # Chance (1 = 100%) to spawn a walking head when killed. [range: 0.0 ~ 1.0, default: 0.1]
+    S:"Infected Cow Head Chance"=0.1
+
+    # Percentage of damage it will have fron the host. [range: 0.01 ~ 100.0, default: 0.3]
+    S:"Infected Cow Head Damage"=0.3
+
+    # Percentage of health it will have fron the host. [range: 0.01 ~ 100.0, default: 0.3]
+    S:"Infected Cow Head Health"=0.3
+
+    # Health multiplier for Infected Cow. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Infected Cow Health Multiplier"=1.0
+
+    # KD Resistance multiplier for Infected Cow. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Infected Cow KD Resistance Multiplier"=1.0
+
+    # Items you want the Infected Cow to drop. Ex. "minecraft:nether_star;100;5;true" Where: 
+    #  "minecraft:nether_star" is the item, 
+    #  "100" is the chance to drop, 
+    #  "5" is the max number of items, 
+    #  "true" is for the item to always roll, if false the item will be unique and only 1 will be choosen. 
+    #  [default: [srparasites:infected_flesh;50;1;true]]
+    S:"Infected Cow Loot Table" <
+        srparasites:infected_flesh;50;1;true
+     >
+
+    # Mob the infected Cow spawns when killed. Ex. "minecraft:zombie;4;2" Where: 
+    #  "minecraft:zombie" is the entity, 
+    #  "4" is the maximum number of entities, 
+    #  "2" is the minimum number of entities. 
+    #  [default: srparasites:lodo;4;3]
+    S:"Infected Cow Mobs Inside"=srparasites:lodo;4;3
+
+    # Spawn rate for Infected Cow. [range: 0 ~ 100, default: 0]
+    I:"Infected Cow SpawnRate"=10
+}
+
+
+##########################################################################################################
+# mob_infected_human
+#--------------------------------------------------------------------------------------------------------#
+# Infected Human 
+#  Base Health: 15.0 
+#  Base Damage: 9.0 
+#  Base Armor: 5.0 
+#  Base KD Resistance: 0.1
+##########################################################################################################
+
+mob_infected_human {
+    # Armor multiplier for Infected Human. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Infected Human Armor Multiplier"=1.0
+
+    # Damage multiplier for Infected Human. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Infected Human Damage Multiplier"=1.0
+
+    # Set to false if you want to disable Infected Human. [default: true]
+    B:"Infected Human Enabled"=true
+
+    # Health multiplier for Infected Human. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Infected Human Health Multiplier"=1.0
+
+    # KD Resistance multiplier for Infected Human. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Infected Human KD Resistance Multiplier"=1.0
+
+    # Items you want the Infected Human to drop. Ex. "minecraft:nether_star;100;5;true" Where: 
+    #  "minecraft:nether_star" is the item, 
+    #  "100" is the chance to drop, 
+    #  "5" is the max number of items, 
+    #  "true" is for the item to always roll, if false the item will be unique and only 1 will be choosen. 
+    #  [default: [srparasites:infected_flesh;40;1;true]]
+    S:"Infected Human Loot Table" <
+        srparasites:infected_flesh;40;1;true
+     >
+
+    # Spawn rate for Infected Human. [range: 0 ~ 100, default: 30]
+    I:"Infected Human SpawnRate"=100
+}
+
+
+##########################################################################################################
+# mob_infected_pig
+#--------------------------------------------------------------------------------------------------------#
+# Infected Pig 
+#  Base Health: 9.0 
+#  Base Damage: 3.5 
+#  Base Armor: 0.1 
+#  Base KD Resistance: 0.1
+##########################################################################################################
+
+mob_infected_pig {
+    # Armor multiplier for Infected Pig. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Infected Pig Armor Multiplier"=1.0
+
+    # Damage multiplier for Infected Pig. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Infected Pig Damage Multiplier"=1.0
+
+    # Set to false if you want to disable Infected Pig. [default: true]
+    B:"Infected Pig Enabled"=true
+
+    # Chance (1 = 100%) to spawn a walking head when killed. [range: 0.0 ~ 1.0, default: 0.1]
+    S:"Infected Pig Head Chance"=0.1
+
+    # Percentage of damage it will have fron the host. [range: 0.01 ~ 100.0, default: 0.3]
+    S:"Infected Pig Head Damage"=0.3
+
+    # Percentage of health it will have fron the host. [range: 0.01 ~ 100.0, default: 0.3]
+    S:"Infected Pig Head Health"=0.3
+
+    # Health multiplier for Infected Pig. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Infected Pig Health Multiplier"=1.0
+
+    # KD Resistance multiplier for Infected Pig. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Infected Pig KD Resistance Multiplier"=1.0
+
+    # Items you want the Infected Pig to drop. Ex. "minecraft:nether_star;100;5;true" Where: 
+    #  "minecraft:nether_star" is the item, 
+    #  "100" is the chance to drop, 
+    #  "5" is the max number of items, 
+    #  "true" is for the item to always roll, if false the item will be unique and only 1 will be choosen. 
+    #  [default: [srparasites:infected_flesh;10;1;true]]
+    S:"Infected Pig Loot Table" <
+        srparasites:infected_flesh;10;1;true
+     >
+
+    # Mob the infected Pig spawns when killed. Ex. "minecraft:zombie;4;2" Where: 
+    #  "minecraft:zombie" is the entity, 
+    #  "4" is the maximum number of entities, 
+    #  "2" is the minimum number of entities. 
+    #  [default: srparasites:lodo;2;2]
+    S:"Infected Pig Mobs Inside"=srparasites:lodo;2;2
+
+    # Spawn rate for Infected Pig. [range: 0 ~ 100, default: 0]
+    I:"Infected Pig SpawnRate"=10
+}
+
+
+##########################################################################################################
+# mob_infected_sheep
+#--------------------------------------------------------------------------------------------------------#
+# Infected Sheep 
+#  Base Health: 13.0 
+#  Base Damage: 6.0 
+#  Base Armor: 1.3 
+#  Base KD Resistance: 0.3
+##########################################################################################################
+
+mob_infected_sheep {
+    # Armor multiplier for Infected Sheep. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Infected Sheep Armor Multiplier"=1.0
+
+    # Damage multiplier for Infected Sheep. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Infected Sheep Damage Multiplier"=1.0
+
+    # Set to false if you want to disable Infected Sheep. [default: true]
+    B:"Infected Sheep Enabled"=true
+
+    # Chance (1 = 100%) to spawn a walking head when killed. [range: 0.0 ~ 1.0, default: 0.1]
+    S:"Infected Sheep Head Chance"=0.1
+
+    # Percentage of damage it will have fron the host. [range: 0.01 ~ 100.0, default: 0.3]
+    S:"Infected Sheep Head Damage"=0.3
+
+    # Percentage of health it will have fron the host. [range: 0.01 ~ 100.0, default: 0.3]
+    S:"Infected Sheep Head Health"=0.3
+
+    # Health multiplier for Infected Sheep. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Infected Sheep Health Multiplier"=1.0
+
+    # KD Resistance multiplier for Infected Sheep. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Infected Sheep KD Resistance Multiplier"=1.0
+
+    # Items you want the Infected Sheep to drop. Ex. "minecraft:nether_star;100;5;true" Where: 
+    #  "minecraft:nether_star" is the item, 
+    #  "100" is the chance to drop, 
+    #  "5" is the max number of items, 
+    #  "true" is for the item to always roll, if false the item will be unique and only 1 will be choosen. 
+    #  [default: [srparasites:infected_flesh;20;1;true]]
+    S:"Infected Sheep Loot Table" <
+        srparasites:infected_flesh;20;1;true
+     >
+
+    # Mob the infected Sheep spawns when killed. Ex. "minecraft:zombie;4;2" Where: 
+    #  "minecraft:zombie" is the entity, 
+    #  "4" is the maximum number of entities, 
+    #  "2" is the minimum number of entities. 
+    #  [default: srparasites:lodo;3;3]
+    S:"Infected Sheep Mobs Inside"=srparasites:lodo;3;3
+
+    # Spawn rate for Infected Sheep. [range: 0 ~ 100, default: 0]
+    I:"Infected Sheep SpawnRate"=10
+}
+
+
+##########################################################################################################
+# mob_infected_villager
+#--------------------------------------------------------------------------------------------------------#
+# Infected Villager 
+#  Base Health: 16.0 
+#  Base Damage: 10.0 
+#  Base Armor: 5.0 
+#  Base KD Resistance: 0.2
+##########################################################################################################
+
+mob_infected_villager {
+    # Armor multiplier for Infected Villager. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Infected Villager Armor Multiplier"=1.0
+
+    # Damage multiplier for Infected Villager. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Infected Villager Damage Multiplier"=1.0
+
+    # Set to false if you want to disable Infected Villager. [default: true]
+    B:"Infected Villager Enabled"=true
+
+    # Chance (1 = 100%) to spawn a walking head when killed. [range: 0.0 ~ 1.0, default: 0.1]
+    S:"Infected Villager Head Chance"=0.1
+
+    # Percentage of damage it will have fron the host. [range: 0.01 ~ 100.0, default: 0.3]
+    S:"Infected Villager Head Damage"=0.3
+
+    # Percentage of health it will have fron the host. [range: 0.01 ~ 100.0, default: 0.3]
+    S:"Infected Villager Head Health"=0.3
+
+    # Health multiplier for Infected Villager. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Infected Villager Health Multiplier"=1.0
+
+    # KD Resistance multiplier for Infected Villager. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Infected Villager KD Resistance Multiplier"=1.0
+
+    # Items you want the Infected Villager to drop. Ex. "minecraft:nether_star;100;5;true" Where: 
+    #  "minecraft:nether_star" is the item, 
+    #  "100" is the chance to drop, 
+    #  "5" is the max number of items, 
+    #  "true" is for the item to always roll, if false the item will be unique and only 1 will be choosen. 
+    #  [default: [srparasites:infected_flesh;10;1;true]]
+    S:"Infected Villager Loot Table" <
+        srparasites:infected_flesh;10;1;true
+     >
+
+    # Mob the infected Villager spawns when killed. Ex. "minecraft:zombie;4;2" Where: 
+    #  "minecraft:zombie" is the entity, 
+    #  "4" is the maximum number of entities, 
+    #  "2" is the minimum number of entities. 
+    #  [default: srparasites:lodo;2;2]
+    S:"Infected Villager Mobs Inside"=srparasites:lodo;2;2
+
+    # Spawn rate for Infected Villager. [range: 0 ~ 100, default: 0]
+    I:"Infected Villager SpawnRate"=10
+}
+
+
+##########################################################################################################
+# mob_infected_wolf
+#--------------------------------------------------------------------------------------------------------#
+# Infected Wolf 
+#  Base Health: 10.0 
+#  Base Damage: 10.5 
+#  Base Armor: 0.5 
+#  Base KD Resistance: 0.2
+##########################################################################################################
+
+mob_infected_wolf {
+    # Armor multiplier for Infected Wolf. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Infected Wolf Armor Multiplier"=1.0
+
+    # Damage multiplier for Infected Wolf. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Infected Wolf Damage Multiplier"=1.0
+
+    # Set to false if you want to disable Infected Wolf. [default: true]
+    B:"Infected Wolf Enabled"=true
+
+    # Chance (1 = 100%) to spawn a walking head when killed. [range: 0.0 ~ 1.0, default: 0.1]
+    S:"Infected Wolf Head Chance"=0.1
+
+    # Percentage of damage it will have fron the host. [range: 0.01 ~ 100.0, default: 0.3]
+    S:"Infected Wolf Head Damage"=0.3
+
+    # Percentage of health it will have fron the host. [range: 0.01 ~ 100.0, default: 0.3]
+    S:"Infected Wolf Head Health"=0.3
+
+    # Health multiplier for Infected Wolf. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Infected Wolf Health Multiplier"=1.0
+
+    # KD Resistance multiplier for Infected Wolf. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Infected Wolf KD Resistance Multiplier"=1.0
+
+    # Items you want the Infected Wolf to drop. Ex. "minecraft:nether_star;100;5;true" Where: 
+    #  "minecraft:nether_star" is the item, 
+    #  "100" is the chance to drop, 
+    #  "5" is the max number of items, 
+    #  "true" is for the item to always roll, if false the item will be unique and only 1 will be choosen. 
+    #  [default: [srparasites:infected_flesh;10;1;true]]
+    S:"Infected Wolf Loot Table" <
+        srparasites:infected_flesh;10;1;true
+     >
+
+    # Mob the infected Wolf spawns when killed. Ex. "minecraft:zombie;4;2" Where: 
+    #  "minecraft:zombie" is the entity, 
+    #  "4" is the maximum number of entities, 
+    #  "2" is the minimum number of entities. 
+    #  [default: srparasites:lodo;2;2]
+    S:"Infected Wolf Mobs Inside"=srparasites:lodo;2;2
+
+    # Spawn rate for Infected Wolf. [range: 0 ~ 100, default: 0]
+    I:"Infected Wolf SpawnRate"=10
+}
+
+
+##########################################################################################################
+# mob_lodo
+#--------------------------------------------------------------------------------------------------------#
+# Lodo (aka Buglin) 
+#  Base Health: 7.0 
+#  Base Damage: 3.0 
+#  Base Armor: 1.5 
+#  Base KD Resistance: 0.05
+##########################################################################################################
+
+mob_lodo {
+    # Armor multiplier for Lodo. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Lodo Armor Multiplier"=1.0
+
+    # Damage multiplier for Lodo. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Lodo Damage Multiplier"=1.0
+
+    # Set to false if you want to disable Lodo. [default: true]
+    B:"Lodo Enabled"=true
+
+    # Health multiplier for Lodo. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Lodo Health Multiplier"=1.0
+
+    # KD Resistance multiplier for Lodo. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Lodo KD Resistance Multiplier"=1.0
+
+    # Items you want the Lodo to drop. Ex. "minecraft:nether_star;100;5;true" Where: 
+    #  "minecraft:nether_star" is the item, 
+    #  "100" is the chance to drop, 
+    #  "5" is the max number of items, 
+    #  "true" is for the item to always roll, if false the item will be unique and only 1 will be choosen. 
+    #  [default: ]
+    S:"Lodo Loot Table" <
+     >
+
+    # Spawn rate for Lodo. [range: 0 ~ 100, default: 0]
+    I:"Lodo SpawnRate"=10
+}
+
+
+##########################################################################################################
+# mob_mudo
+#--------------------------------------------------------------------------------------------------------#
+# Mudo (aka Rupter) 
+#  Base Health: 10.0 
+#  Base Damage: 5.0 
+#  Base Armor: 5.0 
+#  Base KD Resistance: 0.2
+##########################################################################################################
+
+mob_mudo {
+    # Armor multiplier for Mudo. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Mudo Armor Multiplier"=1.0
+
+    # Damage multiplier for Mudo. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Mudo Damage Multiplier"=1.0
+
+    # Set to false if you want to disable Mudo. [default: true]
+    B:"Mudo Enabled"=true
+
+    # Health multiplier for Mudo. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Mudo Health Multiplier"=1.0
+
+    # KD Resistance multiplier for Mudo. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Mudo KD Resistance Multiplier"=1.0
+
+    # Items you want the Mudo to drop. Ex. "minecraft:nether_star;100;5;true" Where: 
+    #  "minecraft:nether_star" is the item, 
+    #  "100" is the chance to drop, 
+    #  "5" is the max number of items, 
+    #  "true" is for the item to always roll, if false the item will be unique and only 1 will be choosen. 
+    #  [default: ]
+    S:"Mudo Loot Table" <
+     >
+
+    # Set to false if you don't want the Mudo to attack passive mobs. [default: true]
+    B:"Mudo Passive Mob Attacking"=true
+
+    # Spawn rate for Mudo. [range: 0 ~ 100, default: 30]
+    I:"Mudo SpawnRate"=100
+}
+
+
+##########################################################################################################
+# mob_nogla
+#--------------------------------------------------------------------------------------------------------#
+# Nogla (aka Reeker) 
+#  Base Health: 20.0 
+#  Base Damage: 10.0 
+#  Base Armor: 12.0 
+#  Base KD Resistance: 0.6
+##########################################################################################################
+
+mob_nogla {
+    # Armor multiplier for Nogla. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Nogla Armor Multiplier"=1.0
+
+    # Damage multiplier for Nogla. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Nogla Damage Multiplier"=1.0
+
+    # Set to false if you want to disable Nogla. [default: true]
+    B:"Nogla Enabled"=true
+
+    # Health multiplier for Nogla. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Nogla Health Multiplier"=1.0
+
+    # KD Resistance multiplier for Nogla. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Nogla KD Resistance Multiplier"=1.0
+
+    # Items you want the Nogla to drop. Ex. "minecraft:nether_star;100;5;true" Where: 
+    #  "minecraft:nether_star" is the item, 
+    #  "100" is the chance to drop, 
+    #  "5" is the max number of items, 
+    #  "true" is for the item to always roll, if false the item will be unique and only 1 will be choosen. 
+    #  [default: ]
+    S:"Nogla Loot Table" <
+     >
+
+    # Spawn rate for Nogla. [range: 0 ~ 100, default: 20]
+    I:"Nogla SpawnRate"=40
+
+    # Additional armor for Adapted Nogla. [range: 0.01 ~ 100.0, default: 15.0]
+    S:"Stage Adapted additional Armor"=15.0
+
+    # Additional damage for Adapted Nogla. [range: 0.01 ~ 100.0, default: 18.0]
+    S:"Stage Adapted additional Damage"=18.0
+
+    # Additional health for Adapted Nogla. [range: 0.01 ~ 100.0, default: 35.0]
+    S:"Stage Adapted additional Health"=35.0
+
+    # Additional KD Resistance for Adapted Nogla. [range: 0.01 ~ 100.0, default: 0.4]
+    S:"Stage Adapted additional KD Resistance"=0.4
+
+    # Items you want the Adapted Nogla to drop. Ex. "minecraft:nether_star;100;5;true" Where: 
+    #  "minecraft:nether_star" is the item, 
+    #  "100" is the chance to drop, 
+    #  "5" is the max number of items, 
+    #  "true" is for the item to always roll, if false the item will be unique and only 1 will be choosen. 
+    #  [default: [srparasites:anogla_drop;50;1;false]]
+    S:"Stage Adapted loot Table" <
+        srparasites:anogla_drop;50;1;false
+     >
+
+    # Spawn rate for Adapted Nogla. [range: 0 ~ 100, default: 0]
+    I:"Stage Adapted spawnrate"=10
+}
+
+
+##########################################################################################################
+# mob_oronco
+#--------------------------------------------------------------------------------------------------------#
+# Oronco (aka Ancient Dreadnaut) 
+#  Base Health: 200.0 
+#  Base Damage: 15.0 
+#  Base Armor: 15.0
+##########################################################################################################
+
+mob_oronco {
+    # Mob list for the Oronco. Ex. "minecraft:zombie;0.1;1"  Where: 
+    #  "minecraft:zombie" is for the entity, 
+    #  "0.1" is for the chance to spawn. 
+    #  [default: [srparasites:mudo;0.7]]
+    S:"Canra Mob List" <
+        srparasites:mudo;0.7
+     >
+
+    # Armor multiplier for Oronco. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Oronco Armor Multiplier"=1.0
+
+    # Damage multiplier for Oronco. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Oronco Damage Multiplier"=1.0
+
+    # Set to false if you want to disable Oronco. [default: true]
+    B:"Oronco Enabled"=true
+
+    # Number of blocks it can fly above the ground for Oronco. [range: 0 ~ 256, default: 256]
+    I:"Oronco Flight Height Limit"=256
+
+    # Health multiplier for Oronco. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Oronco Health Multiplier"=1.0
+
+    # KD Resistance multiplier for Oronco. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Oronco KD Resistance Multiplier"=1.0
+
+    # Items you want the Oronco to drop. Ex. "minecraft:nether_star;100;5;true" Where: 
+    #  "minecraft:nether_star" is the item, 
+    #  "100" is the chance to drop, 
+    #  "5" is the max number of items, 
+    #  "true" is for the item to always roll, if false the item will be unique and only 1 will be choosen. 
+    #  [default: ]
+    S:"Oronco Loot Table" <
+     >
+
+    # Number of blocks it needs to fly above the ground for Oronco. [range: 0 ~ 256, default: 7]
+    I:"Oronco Minimum Flight Height"=7
+
+    # Cooldown (in seconds) for the drop pod attack [range: 1 ~ 256, default: 12]
+    I:"Oronco Pod Cooldown"=12
+
+    # Set to false if you want to disable drop pods from breaking blocks on explotion. [default: true]
+    B:"Oronco Pod Grief"=true
+
+    # Number of drop pods spawned in an attack [range: 1 ~ 256, default: 5]
+    I:"Oronco Pod Max Enemies"=5
+
+    # Number of mobs inside a drop pod [range: 1 ~ 256, default: 1]
+    I:"Oronco Pod Max Pods"=1
+
+    # Spawn rate for Oronco. [range: 0 ~ 100, default: 0]
+    I:"Oronco SpawnRate"=1
+}
+
+
+##########################################################################################################
+# mob_rathol
+#--------------------------------------------------------------------------------------------------------#
+# Rathol (aka Heavy Carrier) 
+#  Base Health: 30.0 
+#  Base Armor: 5.0 
+#  Base KD Resistance: 0.95
+##########################################################################################################
+
+mob_rathol {
+    # Armor multiplier for Rathol. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Rathol Armor Multiplier"=1.0
+
+    # Set to false if you want to disable Rathol. [default: true]
+    B:"Rathol Enabled"=true
+
+    # Set to true if you want the Rathol to destroy blocks on explosion. [default: false]
+    B:"Rathol Griefing"=false
+
+    # Health multiplier for Rathol. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Rathol Health Multiplier"=1.0
+
+    # KD Resistance multiplier for Rathol. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Rathol KD Resistance Multiplier"=1.0
+
+    # Items you want the Rathol to drop. Ex. "minecraft:nether_star;100;5;true" Where: 
+    #  "minecraft:nether_star" is the item, 
+    #  "100" is the chance to drop, 
+    #  "5" is the max number of items, 
+    #  "true" is for the item to always roll, if false the item will be unique and only 1 will be choosen. 
+    #  [default: ]
+    S:"Rathol Loot Table" <
+     >
+
+    # Mob list for Rathol. Ex. "minecraft:zombie;4;2" Where: 
+    #  "minecraft:zombie" is the entity, 
+    #  "4" is the maximum number of entities, 
+    #  "2" is the minimum number of entities. 
+    #  [default: [srparasites:mudo;4;4], [srparasites:lodo;5;3], [srparasites:emana;3;3]]
+    S:"Rathol Mob Table" <
+        srparasites:mudo;4;4
+        srparasites:lodo;5;3
+        srparasites:emana;3;3
+     >
+
+    # Spawn rate for Rathol. [range: 0 ~ 100, default: 20]
+    I:"Rathol SpawnRate"=40
+}
+
+
+##########################################################################################################
+# mob_shyco
+#--------------------------------------------------------------------------------------------------------#
+# Shyco (aka Longarms) 
+#  Base Health: 70.0 
+#  Base Damage: 15.0 
+#  Base Armor: 9.0 
+#  Base KD Resistance: 0.7
+##########################################################################################################
+
+mob_shyco {
+    # Armor multiplier for Shyco. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Shyco Armor Multiplier"=1.0
+
+    # Damage multiplier for Shyco. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Shyco Damage Multiplier"=1.0
+
+    # Set to false if you want to disable Shyco. [default: true]
+    B:"Shyco Enabled"=true
+
+    # Health multiplier for Shyco. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Shyco Health Multiplier"=1.0
+
+    # KD Resistance multiplier for Shyco. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Shyco KD Resistance Multiplier"=1.0
+
+    # Items you want the Shyco to drop. Ex. "minecraft:nether_star;100;5;true" Where: 
+    #  "minecraft:nether_star" is the item, 
+    #  "100" is the chance to drop, 
+    #  "5" is the max number of items, 
+    #  "true" is for the item to always roll, if false the item will be unique and only 1 will be choosen. 
+    #  [default: ]
+    S:"Shyco Loot Table" <
+     >
+
+    # Spawn rate for Shyco. [range: 0 ~ 100, default: 15]
+    I:"Shyco SpawnRate"=30
+
+    # For every 1% HP lost its damage will increase by this amount of its total damage (1 = 100%) for Shyco. [range: 0.0 ~ 1.0, default: 0.5]
+    S:"Shyco damage Increase"=0.5
+
+    # Additional armor for Adapted Shyco. [range: 0.01 ~ 100.0, default: 7.0]
+    S:"Stage Adapted additional Armor"=7.0
+
+    # Additional damage for Adapted Shyco. [range: 0.01 ~ 100.0, default: 12.0]
+    S:"Stage Adapted additional Damage"=12.0
+
+    # Additional health for Adapted Shyco. [range: 0.01 ~ 100.0, default: 50.0]
+    S:"Stage Adapted additional Health"=50.0
+
+    # Additional KD Resistance for Adapted Shyco. [range: 0.01 ~ 100.0, default: 0.3]
+    S:"Stage Adapted additional KD Resistance"=0.3
+
+    # For every 1% HP lost its damage will increase by this amount of its total damage (1 = 100%) for Adapted Shyco. [range: 0.0 ~ 1.0, default: 1.0]
+    S:"Stage Adapted damage Increase"=1.0
+
+    # Items you want the Adapted Shyco to drop. Ex. "minecraft:nether_star;100;5;true" Where: 
+    #  "minecraft:nether_star" is the item, 
+    #  "100" is the chance to drop, 
+    #  "5" is the max number of items, 
+    #  "true" is for the item to always roll, if false the item will be unique and only 1 will be choosen. 
+    #  [default: [srparasites:ashyco_drop;90;2;true]]
+    S:"Stage Adapted loot Table" <
+        srparasites:ashyco_drop;90;2;true
+     >
+
+    # Spawn rate for Adapted Shyco. [range: 0 ~ 100, default: 0]
+    I:"Stage Adapted spawnrate"=10
+}
+
+
+##########################################################################################################
+# mob_terla
+#--------------------------------------------------------------------------------------------------------#
+# Terla (aka Ancient Overlord) 
+#  Base Health: 250.0 
+#  Base Damage: 20.0 
+#  Base Armor: 15.0
+##########################################################################################################
+
+mob_terla {
+    # Armor multiplier for Terla. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Terla Armor Multiplier"=1.0
+
+    # Damage multiplier for Terla. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Terla Damage Multiplier"=1.0
+
+    # Set to false if you want to disable Terla. [default: true]
+    B:"Terla Enabled"=true
+
+    # Health multiplier for Terla. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Terla Health Multiplier"=1.0
+
+    # KD Resistance multiplier for Terla. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Terla KD Resistance Multiplier"=1.0
+
+    # Items you want the Terla to drop. Ex. "minecraft:nether_star;100;5;true" Where: 
+    #  "minecraft:nether_star" is the item, 
+    #  "100" is the chance to drop, 
+    #  "5" is the max number of items, 
+    #  "true" is for the item to always roll, if false the item will be unique and only 1 will be choosen. 
+    #  [default: ]
+    S:"Terla Loot Table" <
+     >
+
+    # Spawn rate for Terla. [range: 0 ~ 100, default: 0]
+    I:"Terla SpawnRate"=1
+}
+
+
+##########################################################################################################
+# mob_tonro
+#--------------------------------------------------------------------------------------------------------#
+# Unvo (aka Kyphosis) 
+#  Base Health: 50.0 
+#  Base Damage: 15.0 
+#  Base Swing Damage: 35.0 
+#  Base Armor: 15.0 
+#  
+##########################################################################################################
+
+mob_tonro {
+    # Armor multiplier for Tonro. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Tonro Armor Multiplier"=1.0
+
+    # Damage multiplier for Tonro. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Tonro Damage Multiplier"=1.0
+
+    # Set to false if you want to disable Tonro. [default: true]
+    B:"Tonro Enabled"=true
+
+    # Health multiplier for Tonro. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Tonro Health Multiplier"=1.0
+
+    # Items you want the Tonro to drop. Ex. "minecraft:nether_star;100;5;true" Where: 
+    #  "minecraft:nether_star" is the item, 
+    #  "100" is the chance to drop, 
+    #  "5" is the max number of items, 
+    #  "true" is for the item to always roll, if false the item will be unique and only 1 will be choosen. 
+    #  [default: ]
+    S:"Tonro Loot Table" <
+     >
+
+    # Swing damage multiplier for Tonro. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Tonro Swing Damage Multiplier"=1.0
+}
+
+
+##########################################################################################################
+# mob_unvo
+#--------------------------------------------------------------------------------------------------------#
+# Unvo (aka Sentry) 
+#  Base Health: 30.0 
+#  Base Damage: 5.0 
+#  Base Range Damage: 25.0 
+#  Base Armor: 10.0 
+#  
+##########################################################################################################
+
+mob_unvo {
+    # Armor multiplier for Unvo. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Unvo Armor Multiplier"=1.0
+
+    # Damage multiplier for Unvo. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Unvo Damage Multiplier"=1.0
+
+    # Set to false if you want to disable Unvo. [default: true]
+    B:"Unvo Enabled"=true
+
+    # How much a shot will degrade your gear (1=100%). [range: 0.0 ~ 1.0, default: 0.7]
+    S:"Unvo Gear degrade"=0.7
+
+    # Health multiplier for Unvo. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Unvo Health Multiplier"=1.0
+
+    # Items you want the Unvo to drop. Ex. "minecraft:nether_star;100;5;true" Where: 
+    #  "minecraft:nether_star" is the item, 
+    #  "100" is the chance to drop, 
+    #  "5" is the max number of items, 
+    #  "true" is for the item to always roll, if false the item will be unique and only 1 will be choosen. 
+    #  [default: ]
+    S:"Unvo Loot Table" <
+     >
+
+    # Poison amplifier for its projectile. [range: 1 ~ 100, default: 1]
+    I:"Unvo Poison Amplifier"=1
+
+    # Poison duration in seconds for its projectile. [range: 0 ~ 100, default: 7]
+    I:"Unvo Poison Duration"=7
+
+    # Range damage multiplier for Unvo. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Unvo Range Damage Multiplier"=1.0
+}
+
+
+##########################################################################################################
+# mob_zetmo
+#--------------------------------------------------------------------------------------------------------#
+# Zetmo (aka Bolster) 
+#  Base Health: 35.0 
+#  Base Damage: 6.0 
+#  Base Armor: 4.0 
+#  Base KD Resistance: 0.35
+##########################################################################################################
+
+mob_zetmo {
+    # Additional armor for Adapted Zetmo. [range: 0.01 ~ 100.0, default: 15.0]
+    S:"Stage Adapted additional Armor"=15.0
+
+    # Additional damage for Adapted Zetmo. [range: 0.01 ~ 100.0, default: 30.0]
+    S:"Stage Adapted additional Damage"=30.0
+
+    # Additional health for Adapted Zetmo. [range: 0.01 ~ 100.0, default: 70.0]
+    S:"Stage Adapted additional Health"=70.0
+
+    # Additional KD Resistance for Adapted Zetmo. [range: 0.01 ~ 100.0, default: 0.65]
+    S:"Stage Adapted additional KD Resistance"=0.65
+
+    # Buffs amplifier for Adapted Zetmo. [range: 0 ~ 100, default: 2]
+    I:"Stage Adapted buffs amplifier"=2
+
+    # Cooldown (in seconds) to buff parasites for Adapted Zetmo. [range: 0 ~ 100, default: 60]
+    I:"Stage Adapted buffs cooldown"=60
+
+    # Buffs durations for Adapted Zetmo. [range: 0 ~ 1000, default: 60]
+    I:"Stage Adapted buffs duration"=60
+
+    # Range to buff parasites for Adapted Zetmo. [range: 0 ~ 100, default: 24]
+    I:"Stage Adapted buffs range"=24
+
+    # Items you want the Adapted Zetmo to drop. Ex. "minecraft:nether_star;100;5;true" Where: 
+    #  "minecraft:nether_star" is the item, 
+    #  "100" is the chance to drop, 
+    #  "5" is the max number of items, 
+    #  "true" is for the item to always roll, if false the item will be unique and only 1 will be choosen. 
+    #  [default: ]
+    S:"Stage Adapted loot Table" <
+     >
+
+    # Spawn rate for Adapted Zetmo. [range: 0 ~ 100, default: 0]
+    I:"Stage Adapted spawnrate"=10
+
+    # Armor multiplier for Zetmo. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Zetmo Armor Multiplier"=1.0
+
+    # Buffs amplifier for Zetmo. [range: 0 ~ 100, default: 1]
+    I:"Zetmo Buffs Amplifier"=1
+
+    # Cooldown (in seconds) to buff parasites for Zetmo. [range: 0 ~ 100, default: 30]
+    I:"Zetmo Buffs Cooldown"=30
+
+    # Buffs durations for Zetmo. [range: 0 ~ 1000, default: 30]
+    I:"Zetmo Buffs Duration"=30
+
+    # Range to buff parasites for Zetmo. [range: 0 ~ 100, default: 16]
+    I:"Zetmo Buffs Range"=16
+
+    # Damage multiplier for Zetmo. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Zetmo Damage Multiplier"=1.0
+
+    # Set to false if you want to disable Zetmo. [default: true]
+    B:"Zetmo Enabled"=true
+
+    # Health multiplier for Zetmo. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Zetmo Health Multiplier"=1.0
+
+    # KD Resistance multiplier for Zetmo. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Zetmo KD Resistance Multiplier"=1.0
+
+    # Items you want the Zetmo to drop. Ex. "minecraft:nether_star;100;5;true" Where: 
+    #  "minecraft:nether_star" is the item, 
+    #  "100" is the chance to drop, 
+    #  "5" is the max number of items, 
+    #  "true" is for the item to always roll, if false the item will be unique and only 1 will be choosen. 
+    #  [default: ]
+    S:"Zetmo Loot Table" <
+     >
+
+    # Spawn rate for Zetmo. [range: 0 ~ 100, default: 11]
+    I:"Zetmo SpawnRate"=22
+}
+
+
+##########################################################################################################
+# reinforcement_system
+#--------------------------------------------------------------------------------------------------------#
+# Reinforcement System 
+#  When a parasite is killed, there is a chance for it to call reinforcements, this means that
+#  a Venkrol (aka Beckon) will spawn nearby and will help in the fight.
+#  
+#  The Venkrol has different stages and that will tell how many and which parasites it will spawn:
+#  Venkrol Stage I: 
+#  Venkrol Stage II: 
+#  Venkrol Stage III: 
+##########################################################################################################
+
+reinforcement_system {
+    # Light level the block needs to spread (if higher, it will not spread). [range: 0 ~ 15, default: 15]
+    I:"Reinforcement System Block Light Level"=15
+
+    # One in X to spawn a Venkrol on the Infested Block Residue (random tick). [range: 0 ~ 2147483640, default: 100000]
+    I:"Reinforcement System Block Residue Chance"=100000
+
+    # List of block that can't be infested [default: [minecraft:gravel], [minecraft:sand]]
+    S:"Reinforcement System Blocks BlackList" <
+        minecraft:gravel
+        minecraft:sand
+     >
+
+    # Chance (100 = 100%) to spawn a Venkrol. [range: 0.0 ~ 100.0, default: 4.05]
+    S:"Reinforcement System Chance"=5
+
+    # Cooldown (in seconds) for the Reinforcement System spawning Venkrols. [range: 1 ~ 2147483640, default: 5]
+    I:"Reinforcement System Cooldown"=1
+
+    # Set to true for Venkrol to despawn. [default: false]
+    B:"Reinforcement System Despawn"=false
+
+    # Set to false if you want to disable the Reinforcement System. [default: true]
+    B:"Reinforcement System Enabled"=true
+
+    # Equipment that can protect you from the blocks from doing damage. Ex. "head;minecraft:iron_helmet;0.1"  Where: 
+    #  "head" is for the slot (head, chest, legs, feet), 
+    #  "minecraft:iron_helmet" is for the item, 
+    #  "0.1" is for the chance to ignore block damage (1 = 100%). 
+    #  [default: [head;minecraft:leather_helmet;0.5], [head;minecraft:iron_helmet;0.3], [head;minecraft:diamond_helmet;0.3]]
+    S:"Reinforcement System Equipment" <
+        head;minecraft:leather_helmet;0.5
+        head;minecraft:iron_helmet;0.3
+        head;minecraft:diamond_helmet;0.3
+     >
+
+    # Max Hardness of the block it can infest. [range: 0.01 ~ 100.0, default: 0.6]
+    S:"Reinforcement System Hardness"=0.6
+
+    # Set to false if you want to disable the Reinforcement System Block Infestation. [default: true]
+    B:"Reinforcement System Infestation"=true
+
+    # Maximum number of Venkrols that can spawn from the RS (per dimension). [range: 1 ~ 2147483640, default: 100]
+    I:"Reinforcement System Maximum Venkrols"=100
+
+    # Chance (1 = 100%) to spawn fog particle in an infested block ((if available, every tick). [range: 0.0 ~ 1.0, default: 0.05]
+    S:"Reinforcement System Particle Fog Chance"=0.05
+
+    # Chance (1 = 100%) to spawn spore particle in an infested block (if available, every tick). [range: 0.0 ~ 1.0, default: 0.05]
+    S:"Reinforcement System Particle Spore Chance"=0.05
+
+    # Set to true if you want the Reinforcement System to only be activated by the Players. [default: false]
+    B:"Reinforcement System Player Only"=false
+
+    # What the infested block turns into when the Venkrols die [default: minecraft:dirt]
+    S:"Reinforcement System Revert Block"=minecraft:dirt
+
+    # Set to false if you want to disable the Reinforcement System Sounds 
+    #  (A bell sound is played when a Venkrol is summoned or when it grew up to the next stage). [default: true]
+    B:"Reinforcement System Sounds"=true
+
+    # Armor multiplier for Venkrol Stage I. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Venkrol Stage I Armor Multiplier"=1.0
+
+    # Minimum time required (in seconds) to infest nearby block for Venkrol Stage I. [range: 4 ~ 10000, default: 60]
+    I:"Venkrol Stage I Block Infestation Cooldown"=60
+
+    # Damage when walking on the blocks infested by  Venkrol Stage I. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Venkrol Stage I Block Infestation Damage"=1.0
+
+    # Chance to damage when walking on the blocks infested by  Venkrol Stage I. [range: 0.0 ~ 1.0, default: 0.01]
+    S:"Venkrol Stage I Block Infestation Damage Chance"=0.01
+
+    # Block infestation radius for Venkrol Stage I. [range: 0 ~ 100, default: 4]
+    I:"Venkrol Stage I Block Infestation Range"=4
+
+    # Value of each Venkrol Stage I to spawn extra mobs (the mobs will not add up to the total points) for Venkrol Stage I. [range: 0.0 ~ 100.0, default: 0.5]
+    S:"Venkrol Stage I CA mobs"=0.5
+
+    # Number  for Venkrol Stage I required to do a Collective Attack (only one will attack) for Venkrol Stage I. [range: 0 ~ 10000, default: 4]
+    I:"Venkrol Stage I CA number"=4
+
+    # Summoning cooldown (in seconds) for Venkrol Stage I. [range: 0 ~ 10000, default: 10]
+    I:"Venkrol Stage I Cooldown"=10
+
+    # Damage multiplier for Venkrol Stage I. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Venkrol Stage I Damage Multiplier"=1.0
+
+    # Health multiplier for Venkrol Stage I. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Venkrol Stage I Health Multiplier"=1.0
+
+    # Number of attacks before its cooldown for Venkrol Stage I. [range: 0 ~ 10000, default: 4]
+    I:"Venkrol Stage I Limit"=4
+
+    # Maximum Growtime (in seconds) from Venkrol Stage I to Venkrol Stage II (max must be greater than min). [range: 240 ~ 10000, default: 300]
+    I:"Venkrol Stage I Max GrowTime"=300
+
+    # Minimum Growtime (in seconds) from Venkrol Stage I to Venkrol Stage II. [range: 1 ~ 10000, default: 240]
+    I:"Venkrol Stage I Min GrowTime"=240
+
+    # Mob list for Venkrol Stage I. Ex. "ground;minecraft:zombie;0.1;1"  Where: 
+    #  "ground" is for the entity type (ground, air) (air type spawning is triggered when the target y's value is higher than the host plus 3), 
+    #  "minecraft:zombie" is for the entity, 
+    #  "0.1" is for the chance to spawn, 
+    #  "1" is for the cost the entity has. 
+    # Stage I cannot trigger the air condition. 
+    #  [default: [ground;srparasites:mudo;1;1]]
+    S:"Venkrol Stage I Mob List" <
+        ground;srparasites:mudo;1;1
+     >
+
+    # Spwan rate for Venkrol Stage I (NOTE: They will spawn like vanilla passive creatures). [range: 0 ~ 100, default: 0]
+    I:"Venkrol Stage I SpawnRate"=10
+
+    # Number of total points used in mob spawning for Venkrol Stage I. [range: 0 ~ 100, default: 4]
+    I:"Venkrol Stage I Total Active Mobs"=4
+
+    # Armor multiplier for Venkrol Stage II. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Venkrol Stage II Armor Multiplier"=1.0
+
+    # Minimum time required (in seconds) to infest nearby block for Venkrol Stage II. [range: 4 ~ 10000, default: 55]
+    I:"Venkrol Stage II Block Infestation Cooldown"=55
+
+    # Damage when walking on the blocks infested by  Venkrol Stage II. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Venkrol Stage II Block Infestation Damage"=1.0
+
+    # Chance to damage when walking on the blocks infested by  Venkrol Stage II. [range: 0.0 ~ 1.0, default: 0.05]
+    S:"Venkrol Stage II Block Infestation Damage Chance"=0.05
+
+    # Block infestation radius for Venkrol Stage II. [range: 0 ~ 100, default: 8]
+    I:"Venkrol Stage II Block Infestation Range"=8
+
+    # Value of each Venkrol Stage II to spawn extra mobs (the mobs will not add up to the total points) for Venkrol Stage II. [range: 0.0 ~ 100.0, default: 0.5]
+    S:"Venkrol Stage II CA mobs"=0.5
+
+    # Number  for Venkrol Stage II required to do a Collective Attack (only one will attack) for Venkrol Stage II. [range: 0 ~ 10000, default: 4]
+    I:"Venkrol Stage II CA number"=4
+
+    # Summoning cooldown (in seconds) for Venkrol Stage II. [range: 0 ~ 10000, default: 12]
+    I:"Venkrol Stage II Cooldown"=12
+
+    # Damage multiplier for Venkrol Stage II. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Venkrol Stage II Damage Multiplier"=1.0
+
+    # Health multiplier for Venkrol Stage II. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Venkrol Stage II Health Multiplier"=1.0
+
+    # Number of attacks before its cooldown for Venkrol Stage II. [range: 0 ~ 10000, default: 3]
+    I:"Venkrol Stage II Limit"=3
+
+    # Maximum Growtime (in seconds) from Venkrol Stage II to Venkrol Stage III (max must be greater than min). [range: 300 ~ 10000, default: 360]
+    I:"Venkrol Stage II Max GrowTime"=360
+
+    # Minimum Growtime (in seconds) from Venkrol Stage II to Venkrol Stage III. [range: 1 ~ 10000, default: 300]
+    I:"Venkrol Stage II Min GrowTime"=300
+
+    # Mob list for Venkrol Stage II. Ex. "ground;minecraft:zombie;0.1;1"  Where: 
+    #  "ground" is for the entity type (ground, air) (air type spawning is triggered when the target y's value is higher than the host plus 3), 
+    #  "minecraft:zombie" is for the entity, 
+    #  "0.1" is for the chance to spawn, 
+    #  "1" is for the cost the entity has. 
+    #  [default: [ground;srparasites:infhuman;0.2;3], [ground;srparasites:infcow;0.2;3], [ground;srparasites:infsheep;0.2;3], [ground;srparasites:infwolf;0.2;3], [ground;srparasites:dorpa;0.2;3], [ground;srparasites:mudo;0.1;1], [air;srparasites:buthol;0.3;3]]
+    S:"Venkrol Stage II Mob List" <
+        ground;srparasites:infhuman;0.2;3
+        ground;srparasites:infcow;0.2;3
+        ground;srparasites:infsheep;0.2;3
+        ground;srparasites:infwolf;0.2;3
+        ground;srparasites:dorpa;0.2;3
+        ground;srparasites:mudo;0.1;1
+        air;srparasites:buthol;0.3;3
+     >
+
+    # Number of total points used in mob spawning for Venkrol Stage II. [range: 0 ~ 100, default: 9]
+    I:"Venkrol Stage II Total Active Mobs"=9
+
+    # Chance to spawn an Ancient when killed for  Venkrol Stage III. [range: 0.0 ~ 1.0, default: 0.1]
+    S:"Venkrol Stage III Ancient Chance"=0.1
+
+    # Armor multiplier for Venkrol Stage III. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Venkrol Stage III Armor Multiplier"=1.0
+
+    # Minimum time required (in seconds) to infest nearby block for Venkrol Stage III. [range: 4 ~ 10000, default: 50]
+    I:"Venkrol Stage III Block Infestation Cooldown"=50
+
+    # Damage when walking on the blocks infested by  Venkrol Stage III. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Venkrol Stage III Block Infestation Damage"=1.0
+
+    # Chance to damage when walking on the blocks infested by  Venkrol Stage III. [range: 0.0 ~ 1.0, default: 0.1]
+    S:"Venkrol Stage III Block Infestation Damage Chance"=0.1
+
+    # Block infestation radius for Venkrol Stage III. [range: 0 ~ 100, default: 16]
+    I:"Venkrol Stage III Block Infestation Range"=16
+
+    # Value of each Venkrol Stage III to spawn extra mobs (the mobs will not add up to the total points) for Venkrol Stage III. [range: 0.0 ~ 100.0, default: 0.35]
+    S:"Venkrol Stage III CA mobs"=0.35
+
+    # Number  for Venkrol Stage III required to do a Collective Attack (only one will attack) for Venkrol Stage III. [range: 0 ~ 10000, default: 4]
+    I:"Venkrol Stage III CA number"=4
+
+    # Summoning cooldown (in seconds) for Venkrol Stage III. [range: 0 ~ 10000, default: 14]
+    I:"Venkrol Stage III Cooldown"=14
+
+    # Damage multiplier for Venkrol Stage III. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Venkrol Stage III Damage Multiplier"=1.0
+
+    # Health multiplier for Venkrol Stage III. [range: 0.01 ~ 100.0, default: 1.0]
+    S:"Venkrol Stage III Health Multiplier"=1.0
+
+    # Number attacks before its cooldown for Venkrol Stage III. [range: 0 ~ 10000, default: 2]
+    I:"Venkrol Stage III Limit"=2
+
+    # Mob list for Venkrol Stage III. Ex. "ground;minecraft:zombie;0.1;1"  Where: 
+    #  "ground" is for the entity type (ground, air) (air type spawning is triggered when the target y's value is higher than the host plus 3), 
+    #  "minecraft:zombie" is for the entity, 
+    #  "0.1" is for the chance to spawn, 
+    #  "1" is for the cost the entity has. 
+    #  [default: [ground;srparasites:canra;0.2;6], [ground;srparasites:hull;0.4;6], [ground;srparasites:bano;0.1;6], [ground;srparasites:nogla;0.4;6], [ground;srparasites:shyco;0.4;6], [ground;srparasites:infhuman;0.2;3], [ground;srparasites:infcow;0.2;3], [ground;srparasites:infsheep;0.2;3], [ground;srparasites:infwolf;0.2;3], [ground;srparasites:dorpa;0.2;3], [ground;srparasites:rathol;0.2;6], [ground;srparasites:mudo;0.1;1], [ground;srparasites:anged;0.2;6], [ground;srparasites:ganro;0.2;6], [air;srparasites:buthol;0.5;3], [air;srparasites:emana;0.5;6]]
+    S:"Venkrol Stage III Mob List" <
+        ground;srparasites:canra;0.2;6
+        ground;srparasites:hull;0.4;6
+        ground;srparasites:bano;0.1;6
+        ground;srparasites:nogla;0.4;6
+        ground;srparasites:shyco;0.4;6
+        ground;srparasites:infhuman;0.2;3
+        ground;srparasites:infcow;0.2;3
+        ground;srparasites:infsheep;0.2;3
+        ground;srparasites:infwolf;0.2;3
+        ground;srparasites:dorpa;0.2;3
+        ground;srparasites:rathol;0.2;6
+        ground;srparasites:mudo;0.1;1
+        ground;srparasites:anged;0.2;6
+        ground;srparasites:ganro;0.2;6
+        air;srparasites:buthol;0.5;3
+        air;srparasites:emana;0.5;6
+     >
+
+    # Number of total points used in mob spawning for Venkrol Stage III. [range: 0 ~ 100, default: 12]
+    I:"Venkrol Stage III Total Active Mobs"=12
+}
+
+
+##########################################################################################################
+# tools
+#--------------------------------------------------------------------------------------------------------#
+# Tools
+##########################################################################################################
+
+tools {
+    # Damage multiplier per second (holding) for the Living Greatbow. [range: 0 ~ 1024, default: 1]
+    I:"Greatbow Bonus"=1
+
+    # Damage for the Greatbow. [range: 0 ~ 1024, default: 1]
+    I:"Greatbow Damage"=1
+
+    # Damage multiplier cap for the Living Greatbow. [range: 0 ~ 1024, default: 2]
+    I:"Greatbow Damage Cap"=2
+
+    # Durability for the Living Greatbow. [range: 0 ~ 10000, default: 700]
+    I:"Greatbow Durability"=700
+
+    # Damage for the Living Scythe. [range: 0 ~ 1024, default: 17]
+    I:"Scythe Damage"=17
+
+    # Durability for the Living Scythe. [range: 0 ~ 10000, default: 1000]
+    I:"Scythe Durability"=1000
+}
+
+

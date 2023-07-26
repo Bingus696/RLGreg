@@ -1,0 +1,65 @@
+# Configuration file
+
+general {
+
+    ##########################################################################################################
+    # server
+    #--------------------------------------------------------------------------------------------------------#
+    # Server Config
+    ##########################################################################################################
+
+    server {
+        # How many blocks to reduce fall damage by per tick in water. (Negative disabled this)
+        # Min: -1.0
+        # Max: 100.0
+        D:"Fall Distance Reduction in Water"=-1.0
+
+        # Percentage of Flame particles to ignore for Fire Dragon explosions
+        # Min: 0.0
+        # Max: 1.0
+        D:"Fire Dragon Explosion Flame Percent"=0.9
+
+        # Percentage of Smoke particles to ignore for Fire Dragon explosions
+        # Min: 0.0
+        # Max: 1.0
+        D:"Fire Dragon Explosion Smoke Percent"=0.95
+
+        # Item Blacklist for the Hungry Farmer trait.
+        S:"Hungry Farmer Blacklist" <
+            
+         >
+
+        # Percentage of Smoke particles to ignore for Ice Dragon explosions
+        # Min: 0.0
+        # Max: 1.0
+        D:"Ice Dragon Explosion Smoke Percent"=0.95
+
+        # Percentage of Snow particles to ignore for Ice Dragon explosions
+        # Min: 0.0
+        # Max: 1.0
+        D:"Ice Dragon Explosion Snow Percent"=0.8
+    }
+
+    ##########################################################################################################
+    # client
+    #--------------------------------------------------------------------------------------------------------#
+    # Client Config
+    ##########################################################################################################
+
+    client {
+        # Grow X/Z
+        D:"Grow X/Z"=0.0
+
+        # Grow Y
+        D:"Grow Y"=0.0
+
+        # Offset Y
+        D:"Offset Y"=0.0
+
+        # Currently targetted entity
+        S:"Target Entity"=
+    }
+
+}
+
+

@@ -1,0 +1,67 @@
+# Configuration file
+
+general {
+
+    common {
+        # Chance to generate a random lock on every new chest during world generation. Set to 0 to disable
+        # Min: 0.0
+        # Max: 1.0
+        D:"Generation Chance"=0.5
+
+        # The maximum amount of pins on every generated lock (exclusive)
+        # Min: 1
+        # Max: 30
+        I:"Max Generated Lock Length"=7
+
+        # The minimum amount of pins on every generated lock (inclusive)
+        # Min: 1
+        # Max: 30
+        I:"Min Generated Lock Length"=3
+    }
+
+    server {
+        # Open locks can be removed with an empty hand while sneaking
+        B:"Allow Removing Locks"=true
+
+        # All lock items, which don't have a length nbt value will have this value set as their length. The length of a lock can still be changed by editing its nbt
+        # Min: 1
+        # Max: 30
+        I:"Default Lock Length"=7
+
+        # All lock pick items which don't have a strength nbt value will have this value set as their strength. The strength of a lock pick can still be changed by edition its nbt
+        # Min: 0.0
+        # Max: 1.0
+        D:"Default Lock Pick Strength"=0.35
+        B:"Easy Lock"=true
+
+        # Blocks that can be locked. Syntax is the mod domain followed by the block's registry name. Can include regular expressions
+        S:"Lockable Blocks" <
+            minecraft:.*chest
+            minecraft:dispenser
+            minecraft:dropper
+            minecraft:hopper
+            minecraft:.*door
+            minecraft:.*trapdoor
+            minecraft:.*fence_gate
+            minecraft:.*shulker_box
+            variedcommodities:.*barrel
+            variedcommodities:.*crate
+            defiledlands:.*tenebra_door
+            traverse:.*fir_door
+         >
+
+        # Maximum amount of blocks that can be locked at once
+        I:"Max Lockable Volume"=6
+
+        # Locked blocks cannot be destroyed in survival mode
+        B:"Protect Lockables"=true
+    }
+
+    client {
+        # Display visual feedback when trying to use a locked block for certain hearing impaired individuals
+        B:"Deaf Mode"=false
+    }
+
+}
+
+

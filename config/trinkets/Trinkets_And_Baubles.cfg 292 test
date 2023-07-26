@@ -1,0 +1,3695 @@
+# Configuration file
+
+general {
+
+    "client settings" {
+        B:"EntityRenderer Fog"=true
+
+        # Adjusts players eye height when transformed
+        B:"POV Adjustments"=true
+        B:"POV Height Adjustments"=true
+
+        # Main Render Control for all Trinkets
+        B:"Render Trinkets"=true
+        B:"Replace EntityRenderer"=false
+
+        "gui settings" {
+            S:"01. Gui Texture"=xat:textures/gui/gui_inventory.png
+            I:"02. Gui Size"=256
+            I:"03. Gui Location X"=-14
+            I:"04. Gui Location Y"=7
+            B:"05. Potion Icons"=true
+            I:"06. Gui Z Level"=1
+            S:"07. Texture Color Overlay"=#FFFFFF:1
+
+            "slot settings" {
+                B:"01. Gui Show Slot ID"=false
+            }
+
+            "gui button" {
+                I:"01. Button ID"=67
+                I:"02. Button Location X"=-24
+                I:"03. Button Location Y"=-24
+                I:"04. X Offset"=0
+                I:"05. Y Offset"=0
+                I:"06. Button Height"=10
+                I:"07. Button Width"=10
+
+                open {
+                    I:"Button Height"=10
+                    I:"Button Width"=10
+                    S:Texture=xat:textures/gui/gui_inventory.png
+                    I:"Texture Color"=16777215
+                    I:"Texture Height"=16
+                    I:"Texture Size Height"=256
+                    I:"Texture Size Width"=256
+                    I:"Texture Width"=16
+                    I:"Texture X"=224
+                    I:"Texture Y"=0
+                }
+
+                close {
+                    I:"Button Height"=10
+                    I:"Button Width"=10
+                    S:Texture=xat:textures/gui/gui_inventory.png
+                    I:"Texture Color"=16777215
+                    I:"Texture Height"=16
+                    I:"Texture Size Height"=256
+                    I:"Texture Size Width"=256
+                    I:"Texture Width"=16
+                    I:"Texture X"=208
+                    I:"Texture Y"=0
+                }
+
+            }
+
+        }
+
+        "mana bar settings" {
+            B:"01. Show Mana"=true
+            B:"02. Show when Full"=false
+            B:"03. Mana Bar Horizontal"=true
+            B:"04. Hide Text"=false
+            D:"05. Location X"=0.00936768149882904
+            D:"06. Location Y"=0.9208333333333333
+            I:"09. Width"=56
+            I:"10. Height"=16
+        }
+
+        "race properties gui" {
+            # Race Properties Gui Button Enabled?
+            B:"01. Race Properties Button"=true
+
+            ##########################################################################################################
+            # gui button
+            #--------------------------------------------------------------------------------------------------------#
+            # Gui Button Configs
+            ##########################################################################################################
+
+            "gui button" {
+                # The Clickable Height of the Button. Default: 11
+                I:"Button Height"=10
+
+                # The Button ID for the Trinkets API. Default: 67
+                I:"Button ID"=69
+
+                # Trinkets API Button X Potion. Default 2
+                I:"Button Location X"=28
+
+                # Trinkets API Button Y Potion. Default 37
+                I:"Button Location Y"=66
+
+                # The Clickable Width of the Button. Default: 4
+                I:"Button Width"=10
+
+                texture {
+                    I:"Button Height"=10
+                    I:"Button Width"=10
+                    S:Texture=xat:textures/gui/mana_button.png
+                    I:"Texture Color"=16777215
+                    I:"Texture Height"=32
+                    I:"Texture Size Height"=64
+                    I:"Texture Size Width"=32
+                    I:"Texture Width"=32
+                    I:"Texture X"=0
+                    I:"Texture Y"=0
+                }
+
+            }
+
+        }
+
+        items {
+
+            "dragon's eye settings" {
+                B:"Dragon's growl"=true
+                S:"Dragon's growl Sneak"=STAND
+                I:"Dragon's growl Volume"=50
+                I:"Refresh Rate"=79
+            }
+
+            "fairy ring settings" {
+                B:"Render Trinket on Player"=true
+            }
+
+            "shield of honor settings" {
+                B:"Render Trinket on Player"=true
+                D:effectVolume=0.2
+            }
+
+            "ender queen's crown settings" {
+                B:"Render Trinket on Player"=true
+            }
+
+            "stone of the sea settings" {
+                B:"Render Trinket on Player"=true
+            }
+
+            "faelis claw settings" {
+                B:"Render Trinket on Player"=true
+            }
+
+        }
+
+        debug {
+            B:"01. Gui Show Slot ID"=false
+            B:debugArmorMaterials=false
+            B:showOreDictEntries=false
+        }
+
+        "debug settings" {
+            B:"Show Armor Materials"=false
+            B:"Show Item Slot IDs"=false
+            B:"Show OreDict Entries"=false
+        }
+
+        "trinkets container settings" {
+            S:"01. Gui Texture"=xat:textures/gui/gui_inventory.png
+
+            # Texture Size in Pixels. 2, 4, 8, 16, 32, 64, etc. Default: 256
+            I:"02. Gui Size"=256
+
+            # Trinkets API Gui X Potion. Default 0
+            I:"03. Gui Location X"=-14
+
+            # Trinkets API Gui Y Potion. Default 0
+            I:"04. Gui Location Y"=7
+
+            # Show Active Potion Effects while in the Trinkets Gui. Default: True
+            B:"05. Potion Icons"=true
+
+            # Min: 0
+            # Max: 1
+            I:"06. Gui Z Level"=1
+
+            # Hex Color Followed by Alpha float value. Default: #FFFFFF:1
+            S:"07. Texture Color Overlay"=#FFFFFF:1
+
+            ##########################################################################################################
+            # gui button
+            #--------------------------------------------------------------------------------------------------------#
+            # Gui Button Configs
+            ##########################################################################################################
+
+            "gui button" {
+                # The Button ID for the Trinkets API. Default: 67
+                I:"01. Button ID"=67
+
+                # Trinkets API Button X Potion. Default 2
+                I:"02. Button Location X"=-24
+
+                # Trinkets API Button Y Potion. Default 37
+                I:"03. Button Location Y"=-24
+
+                # Button X Offset. Default: -39
+                I:"04. X Offset"=0
+
+                # Button Y Offset. Default: 0
+                I:"05. Y Offset"=0
+
+                # The Clickable Height of the Button. Default: 11
+                I:"06. Button Height"=10
+
+                # The Clickable Width of the Button. Default: 4
+                I:"07. Button Width"=10
+
+                open {
+                    I:"Button Height"=10
+                    I:"Button Width"=10
+                    S:Texture=xat:textures/gui/gui_inventory.png
+                    I:"Texture Color"=16777215
+                    I:"Texture Height"=16
+                    I:"Texture Size Height"=256
+                    I:"Texture Size Width"=256
+                    I:"Texture Width"=16
+                    I:"Texture X"=224
+                    I:"Texture Y"=0
+                }
+
+                close {
+                    I:"Button Height"=10
+                    I:"Button Width"=10
+                    S:Texture=xat:textures/gui/gui_inventory.png
+                    I:"Texture Color"=16777215
+                    I:"Texture Height"=16
+                    I:"Texture Size Height"=256
+                    I:"Texture Size Width"=256
+                    I:"Texture Width"=16
+                    I:"Texture X"=208
+                    I:"Texture Y"=0
+                }
+
+            }
+
+        }
+
+        "item settings" {
+
+            "dragon's eye settings" {
+                # When The Treasure Finder is Enabled, Should There be a Growl the Treasure Finder Pings Treasure
+                B:"Dragon's Growl"=true
+
+                # Determines When the Dragon's Growl Happens\nOptions:\nSNEAK\nSTAND\nBOTH
+                S:"Growl Trigger"=SNEAK
+
+                # Dragon's Growl Volume Control
+                # Min: 0
+                # Max: 300
+                I:"Growl Volume"=100
+
+                # Determines of Often the Treasure Finder Pings for Treasure
+                # Min: 20
+                # Max: 360
+                I:"Refresh Rate"=79
+            }
+
+            "ring of the fairies settings" {
+                B:"Render Trinket effects on the player"=true
+            }
+
+            "shield of honor settings" {
+                # 
+                # Min: 0.0
+                # Max: 1.7976931348623157E308
+                D:"Block Damage Volume"=0.2
+                B:"Render Trinket"=true
+            }
+
+            "ender queen's crown settings" {
+                B:"Render Trinket"=true
+            }
+
+            "stone of the sea settings" {
+                B:"Render Trinket"=true
+            }
+
+            "faelis claw settings" {
+                B:"Render Trinket"=true
+            }
+
+        }
+
+    }
+
+    "server settings" {
+
+        "gui settings" {
+            B:"01. Trinkets Gui Enabled"=false
+            I:"02. Gui Slots"=32
+            I:"02. Gui Slots Rows"=1
+            I:"03. Gui Slots Row Length"=8
+        }
+
+        "magical foods settings" {
+            # Should this mod add Magical Foods?. Set to False to Disable. Default True
+            B:"01. Foods Enabled"=true
+
+            # Set to False to Disable. Default True
+            B:"02. Foods Effects"=true
+
+            # Should the player keep the Food Effects on Death. Set to False to Disable. Default True
+            B:"03. Keep Effects"=true
+        }
+
+        "potion settings" {
+            # Should T&B Register any potions
+            B:"00. Potions Enabled"=true
+
+            # If Tough as Nails is Installed, Should the Potions Give water?
+            B:"01. Potion Give Water"=true
+            S:"02. Restorative Potion Catalyst Item"=minecraft:nether_star
+
+            # Should T&B Transformation Potions work only on players
+            B:"09. Work on players only"=true
+
+            "normie potion" {
+                # Item Catalyst to brew this potion
+                S:"Potion Catalyst"=minecraft:apple
+
+                # How long this potion should last in ticks\n20 ticks per second
+                I:"Potion Effect Duration"=3600
+            }
+
+            "dwarf potion" {
+                # Item Catalyst to brew this potion
+                S:"Potion Catalyst"=quark:diamond_heart
+
+                # How long this potion should last in ticks\n20 ticks per second
+                I:"Potion Effect Duration"=1200
+            }
+
+            "elf potion" {
+                # Item Catalyst to brew this potion
+                S:"Potion Catalyst"=quark:variant_leaves:1
+
+                # How long this potion should last in ticks\n20 ticks per second
+                I:"Potion Effect Duration"=1200
+            }
+
+            "fairy potion" {
+                # Item Catalyst to brew this potion
+                S:"Potion Catalyst"=minecraft:ghast_tear
+
+                # How long this potion should last in ticks\n20 ticks per second
+                I:"Potion Effect Duration"=1200
+            }
+
+            "goblin potion" {
+                # Item Catalyst to brew this potion
+                S:"Potion Catalyst"=aquaculture:food:7
+
+                # How long this potion should last in ticks\n20 ticks per second
+                I:"Potion Effect Duration"=1200
+            }
+
+            "titan potion" {
+                # Item Catalyst to brew this potion
+                S:"Potion Catalyst"=minecraft:golden_apple:1
+
+                # How long this potion should last in ticks\n20 ticks per second
+                I:"Potion Effect Duration"=1200
+            }
+
+            "faelis potion" {
+                # Item Catalyst to brew this potion
+                S:"Potion Catalyst"=xat:faelis_claw
+
+                # How long this potion should last in ticks\n20 ticks per second
+                I:"Potion Effect Duration"=1200
+            }
+
+            "dragon potion" {
+                # Item Catalyst to brew this potion
+                S:"Potion Catalyst"=minecraft:dragon_breath
+
+                # How long this potion should last in ticks\n20 ticks per second
+                I:"Potion Effect Duration"=1200
+            }
+
+        }
+
+        "item settings" {
+
+            "transformation items" {
+
+                "dwarf ring settings" {
+                    # Should this Item Be Registered
+                    B:"98. Item Enabled"=true
+
+                    "compatability settings" {
+
+                        ##########################################################################################################
+                        # baubles compatability
+                        #--------------------------------------------------------------------------------------------------------#
+                        # If the mod Baubles is installed what bauble slot should it use
+                        # Available Types:
+                        # Trinket, Any, All
+                        # Amulet, Necklace, Pendant
+                        # Ring, Rings
+                        # Belt
+                        # Head, Hat
+                        # Body, Chest
+                        # Charm
+                        ##########################################################################################################
+
+                        "baubles compatability" {
+                            # If the mod Baubles is installed what bauble slot should it use
+                            # Available Types:
+                            # Trinket, Any, All
+                            # Amulet, Necklace, Pendant
+                            # Ring, Rings
+                            # Belt
+                            # Head, Hat
+                            # Body, Chest
+                            # Charm
+                            S:"Bauble Type"=Ring
+                            B:"Equip Multiple"=false
+                        }
+
+                    }
+
+                }
+
+                "elf ring settings" {
+                    # Should this Item Be Registered
+                    B:"98. Item Enabled"=true
+
+                    "compatability settings" {
+
+                        ##########################################################################################################
+                        # baubles compatability
+                        #--------------------------------------------------------------------------------------------------------#
+                        # If the mod Baubles is installed what bauble slot should it use
+                        # Available Types:
+                        # Trinket, Any, All
+                        # Amulet, Necklace, Pendant
+                        # Ring, Rings
+                        # Belt
+                        # Head, Hat
+                        # Body, Chest
+                        # Charm
+                        ##########################################################################################################
+
+                        "baubles compatability" {
+                            # If the mod Baubles is installed what bauble slot should it use
+                            # Available Types:
+                            # Trinket, Any, All
+                            # Amulet, Necklace, Pendant
+                            # Ring, Rings
+                            # Belt
+                            # Head, Hat
+                            # Body, Chest
+                            # Charm
+                            S:"Bauble Type"=Ring
+                            B:"Equip Multiple"=false
+                        }
+
+                    }
+
+                }
+
+                "fairy ring settings" {
+                    # Should this Item Be Registered
+                    B:"98. Item Enabled"=true
+
+                    "compatability settings" {
+
+                        ##########################################################################################################
+                        # baubles compatability
+                        #--------------------------------------------------------------------------------------------------------#
+                        # If the mod Baubles is installed what bauble slot should it use
+                        # Available Types:
+                        # Trinket, Any, All
+                        # Amulet, Necklace, Pendant
+                        # Ring, Rings
+                        # Belt
+                        # Head, Hat
+                        # Body, Chest
+                        # Charm
+                        ##########################################################################################################
+
+                        "baubles compatability" {
+                            # If the mod Baubles is installed what bauble slot should it use
+                            # Available Types:
+                            # Trinket, Any, All
+                            # Amulet, Necklace, Pendant
+                            # Ring, Rings
+                            # Belt
+                            # Head, Hat
+                            # Body, Chest
+                            # Charm
+                            S:"Bauble Type"=Ring
+                            B:"Equip Multiple"=false
+                        }
+
+                    }
+
+                }
+
+                "goblin ring settings" {
+                    # Should this Item Be Registered
+                    B:"98. Item Enabled"=true
+
+                    "compatability settings" {
+
+                        ##########################################################################################################
+                        # baubles compatability
+                        #--------------------------------------------------------------------------------------------------------#
+                        # If the mod Baubles is installed what bauble slot should it use
+                        # Available Types:
+                        # Trinket, Any, All
+                        # Amulet, Necklace, Pendant
+                        # Ring, Rings
+                        # Belt
+                        # Head, Hat
+                        # Body, Chest
+                        # Charm
+                        ##########################################################################################################
+
+                        "baubles compatability" {
+                            # If the mod Baubles is installed what bauble slot should it use
+                            # Available Types:
+                            # Trinket, Any, All
+                            # Amulet, Necklace, Pendant
+                            # Ring, Rings
+                            # Belt
+                            # Head, Hat
+                            # Body, Chest
+                            # Charm
+                            S:"Bauble Type"=Ring
+                            B:"Equip Multiple"=false
+                        }
+
+                    }
+
+                }
+
+                "titan ring settings" {
+                    # Should this Item Be Registered
+                    B:"98. Item Enabled"=true
+
+                    "compatability settings" {
+
+                        ##########################################################################################################
+                        # baubles compatability
+                        #--------------------------------------------------------------------------------------------------------#
+                        # If the mod Baubles is installed what bauble slot should it use
+                        # Available Types:
+                        # Trinket, Any, All
+                        # Amulet, Necklace, Pendant
+                        # Ring, Rings
+                        # Belt
+                        # Head, Hat
+                        # Body, Chest
+                        # Charm
+                        ##########################################################################################################
+
+                        "baubles compatability" {
+                            # If the mod Baubles is installed what bauble slot should it use
+                            # Available Types:
+                            # Trinket, Any, All
+                            # Amulet, Necklace, Pendant
+                            # Ring, Rings
+                            # Belt
+                            # Head, Hat
+                            # Body, Chest
+                            # Charm
+                            S:"Bauble Type"=Ring
+                            B:"Equip Multiple"=false
+                        }
+
+                    }
+
+                }
+
+                "faelis ring settings" {
+                    # Should this Item Be Registered
+                    B:"98. Item Enabled"=true
+
+                    "compatability settings" {
+
+                        ##########################################################################################################
+                        # baubles compatability
+                        #--------------------------------------------------------------------------------------------------------#
+                        # If the mod Baubles is installed what bauble slot should it use
+                        # Available Types:
+                        # Trinket, Any, All
+                        # Amulet, Necklace, Pendant
+                        # Ring, Rings
+                        # Belt
+                        # Head, Hat
+                        # Body, Chest
+                        # Charm
+                        ##########################################################################################################
+
+                        "baubles compatability" {
+                            # If the mod Baubles is installed what bauble slot should it use
+                            # Available Types:
+                            # Trinket, Any, All
+                            # Amulet, Necklace, Pendant
+                            # Ring, Rings
+                            # Belt
+                            # Head, Hat
+                            # Body, Chest
+                            # Charm
+                            S:"Bauble Type"=Ring
+                            B:"Equip Multiple"=false
+                        }
+
+                    }
+
+                }
+
+                "dragon ring settings" {
+                    # Should this Item Be Registered
+                    B:"98. Item Enabled"=true
+
+                    "compatability settings" {
+
+                        ##########################################################################################################
+                        # baubles compatability
+                        #--------------------------------------------------------------------------------------------------------#
+                        # If the mod Baubles is installed what bauble slot should it use
+                        # Available Types:
+                        # Trinket, Any, All
+                        # Amulet, Necklace, Pendant
+                        # Ring, Rings
+                        # Belt
+                        # Head, Hat
+                        # Body, Chest
+                        # Charm
+                        ##########################################################################################################
+
+                        "baubles compatability" {
+                            # If the mod Baubles is installed what bauble slot should it use
+                            # Available Types:
+                            # Trinket, Any, All
+                            # Amulet, Necklace, Pendant
+                            # Ring, Rings
+                            # Belt
+                            # Head, Hat
+                            # Body, Chest
+                            # Charm
+                            S:"Bauble Type"=Ring
+                            B:"Equip Multiple"=false
+                        }
+
+                    }
+
+                }
+
+            }
+
+            "dragon's eye settings" {
+                # Dragon's Eye Ore Detection. Set to False to Disable. Default True :Requires Relogin to world
+                B:"01. Dragon's Eye Ore Detection"=true
+
+                # Should this Item Be Registered
+                B:"98. Item Enabled"=true
+
+                # For Mor Information on Attributes
+                # https://minecraft.gamepedia.com/Attribute
+                S:Attributes <
+                    Name:generic.maxHealth, Amount:0, Operation:0
+                    Name:generic.knockbackResistance; Amount:0; Operation:0
+                    Name:generic.movementSpeed, Amount:0, Operation:0
+                    Name:generic.attackDamage, Amount:0, Operation:0
+                    Name:generic.attackSpeed, Amount:0, Operation:0
+                    Name:generic.armor, Amount:0, Operation:0
+                    Name:generic.armorToughness, Amount:0, Operation:0
+                    Name:generic.luck, Amount:0, Operation:0
+                    Name:forge.swimSpeed, Amount:0, Operation:0
+                    Name:xat.entityMagic.regen, Amount:0, Operation:0
+                    Name:xat.entityMagic.regen.cooldown, Amount:0, Operation:0
+                    Name:xat.entityMagic.affinity, Amount:0, Operation:0
+                    Name:xat.jump, Amount:0, Operation:0
+                    Name:xat.stepheight, Amount:0, Operation:0
+                 >
+
+                "block settings" {
+                    # Find the Closest Block to the player. False to Compile a list of all nearby
+                    B:"Find Closest"=false
+
+                    # Accepts:
+                    # oreDictionary Names, example: oreCoal
+                    # Block Ids, example: minecraft:chest
+                    # Block Id and Meta, example: minecraft:stone[1]
+                    S:"Ore Blocks The Dragon's Eye can See" <
+                        oreCoal
+                        oreIron
+                        oreGold
+                        oreLapis
+                        oreRedstone
+                        oreDiamond
+                        oreEmerald
+                        oreQuartz
+                        iceandfire:silver_ore
+                        iceandfire:sapphire_ore
+                        defiledlands:hephaestite_ore
+                        defiledlands:umbrium_ore
+                        defiledlands:scarlite_ore
+                        betternether:cincinnasite_ore
+                        quark:biotite_ore
+                        minecraft:chest
+                     >
+
+                    ##########################################################################################################
+                    # detection range
+                    #--------------------------------------------------------------------------------------------------------#
+                    # WARNING! SETTING THESE VALUES TOO HIGH WILL CAUSE YOU TO LAG. Try to Keep within a range of 4-16
+                    ##########################################################################################################
+
+                    "detection range" {
+                        # How Far Horizontally(N, E, S, W) in Blocks the Dragon's Eye effect triggers. Default 12, MIN 0, MAX 32
+                        # Min: 0
+                        # Max: 32
+                        I:"Horizontal Distance"=10
+
+                        # How Far Vertically(Up, Down) in Blocks the Dragon's Eye effect triggers. Default 6, MIN 0, MAX 32
+                        # Min: 0
+                        # Max: 32
+                        I:"Vertical Distance"=5
+                    }
+
+                }
+
+                "compatability settings" {
+
+                    "tough as nails compatability" {
+                        # If Tough as Nails is Installed, Should the player be immune to Heat
+                        B:"00. Immune to Heat"=true
+
+                        # If Tough as Nails is Installed, Should the player be immune to Cold
+                        B:"01. Immune to Cold"=true
+                    }
+
+                    "ice and fire compatability" {
+                        # If Ice and Fire is Installed, Should the Dragon's Eye Require a Specific Stage of Skull for the recipe. Set to 0 for any stage
+                        I:"00. Skull Stage"=5
+
+                        # Should there be an Ice Variant of the Dragons eye
+                        B:"01. Ice Variant"=true
+                    }
+
+                    ##########################################################################################################
+                    # baubles compatability
+                    #--------------------------------------------------------------------------------------------------------#
+                    # If the mod Baubles is installed what bauble slot should it use
+                    # Available Types:
+                    # Trinket, Any, All
+                    # Amulet, Necklace, Pendant
+                    # Ring, Rings
+                    # Belt
+                    # Head, Hat
+                    # Body, Chest
+                    # Charm
+                    ##########################################################################################################
+
+                    "baubles compatability" {
+                        # If the mod Baubles is installed what bauble slot should it use
+                        # Available Types:
+                        # Trinket, Any, All
+                        # Amulet, Necklace, Pendant
+                        # Ring, Rings
+                        # Belt
+                        # Head, Hat
+                        # Body, Chest
+                        # Charm
+                        S:"Bauble Type"=head
+                        B:"Equip Multiple"=false
+                    }
+
+                }
+
+                attributes {
+                    B:Armor=false
+                    D:"Armor Amount"=0.0
+                    I:"Armor Operation"=0
+                    B:"Armor Toughness"=false
+                    D:"Armor Toughness Amount"=0.0
+                    I:"Armor Toughness Operation"=0
+                    B:"Attack Speed"=false
+                    D:"Attack Speed Amount"=0.0
+                    I:"Attack Speed Operation"=0
+                    B:Damage=false
+                    D:"Damage Amount"=0.0
+                    I:"Damage Operation"=0
+                    B:Health=false
+                    D:"Health Amount"=0.0
+                    I:"Health Operation"=0
+                    B:"Jump Height"=false
+                    D:"Jump Height Amount"=0.0
+                    I:"Jump Height Operation"=0
+                    B:"Knockback Resistance"=false
+                    D:"Knockback Resistance Amount"=0.0
+                    I:"Knockback Resistance Operation"=0
+                    B:Luck=false
+                    D:"Luck Amount"=0.0
+                    I:"Luck Operation"=0
+                    B:"Movement Speed"=false
+                    D:"Movement Speed Amount"=0.0
+                    I:"Movement Speed Operation"=0
+                    B:Reach=false
+                    D:"Reach Amount"=0.0
+                    I:"Reach Operation"=0
+                    B:"Step Height"=false
+                    D:"Step Height Amount"=0.0
+                    I:"Step Height Operation"=0
+                    B:"Swim Speed"=false
+                    D:"Swim Speed Amount"=0.0
+                    I:"Swim Speed Operation"=0
+                }
+
+            }
+
+            "ender queen's crown settings" {
+                # If while wearing this should the player take damage while wet
+                B:"01. Water Hurts"=true
+
+                # If while wearing this you should have a chance of Ignoring Damage
+                B:"02. Chance to Ignore Damage"=true
+
+                # If while wearing this you should have a chance of Summoning an Enderman to protect you
+                B:"03. Chance for Enderman"=true
+
+                # 1 in 'num' chance to ignore damage and summon an Enderman to protect you
+                I:"04. Chance"=20
+
+                # Nearby Endermen Follow you if enabled
+                B:"05. Endermen Follow"=true
+
+                # When Attacking an Enderman should it fight back?
+                B:"06. Enderman Retaliate"=false
+
+                # When Killing an Enderman Should it drop Experience?
+                B:"07. Enderman drop exp"=false
+
+                # When Killing an Enderman Should it drop Items?
+                B:"08. Enderman drop Items"=false
+
+                # Allow Enderman to teleport
+                B:"09. teleport"=false
+
+                # Teleport when damaged by indirect attacks
+                B:"10. teleport on hurt"=true
+
+                # Should this Item Be Registered
+                B:"98. Item Enabled"=true
+
+                # For Mor Information on Attributes
+                # https://minecraft.gamepedia.com/Attribute
+                S:Attributes <
+                    Name:generic.maxHealth, Amount:0, Operation:0
+                    Name:generic.knockbackResistance; Amount:0; Operation:0
+                    Name:generic.movementSpeed, Amount:0, Operation:0
+                    Name:generic.attackDamage, Amount:0, Operation:0
+                    Name:generic.attackSpeed, Amount:0, Operation:0
+                    Name:generic.armor, Amount:0, Operation:0
+                    Name:generic.armorToughness, Amount:0, Operation:0
+                    Name:generic.luck, Amount:0, Operation:0
+                    Name:forge.swimSpeed, Amount:0, Operation:0
+                    Name:xat.entityMagic.regen, Amount:0, Operation:0
+                    Name:xat.entityMagic.regen.cooldown, Amount:0, Operation:0
+                    Name:xat.entityMagic.affinity, Amount:0, Operation:0
+                    Name:xat.jump, Amount:0, Operation:0
+                    Name:xat.stepheight, Amount:0, Operation:0
+                 >
+
+                "compatability settings" {
+
+                    "tough as nails compatability" {
+                        # If Tough as Nails is Installed, Should the player be immune to Cold
+                        B:"00. Immune to Cold"=true
+                    }
+
+                    ##########################################################################################################
+                    # baubles compatability
+                    #--------------------------------------------------------------------------------------------------------#
+                    # If the mod Baubles is installed what bauble slot should it use
+                    # Available Types:
+                    # Trinket, Any, All
+                    # Amulet, Necklace, Pendant
+                    # Ring, Rings
+                    # Belt
+                    # Head, Hat
+                    # Body, Chest
+                    # Charm
+                    ##########################################################################################################
+
+                    "baubles compatability" {
+                        # If the mod Baubles is installed what bauble slot should it use
+                        # Available Types:
+                        # Trinket, Any, All
+                        # Amulet, Necklace, Pendant
+                        # Ring, Rings
+                        # Belt
+                        # Head, Hat
+                        # Body, Chest
+                        # Charm
+                        S:"Bauble Type"=head
+                        B:"Equip Multiple"=false
+                    }
+
+                }
+
+                attributes {
+                    B:Armor=false
+                    D:"Armor Amount"=0.0
+                    I:"Armor Operation"=0
+                    B:"Armor Toughness"=false
+                    D:"Armor Toughness Amount"=0.0
+                    I:"Armor Toughness Operation"=0
+                    B:"Attack Speed"=false
+                    D:"Attack Speed Amount"=0.0
+                    I:"Attack Speed Operation"=0
+                    B:Damage=false
+                    D:"Damage Amount"=0.0
+                    I:"Damage Operation"=0
+                    B:Health=false
+                    D:"Health Amount"=0.0
+                    I:"Health Operation"=0
+                    B:"Jump Height"=false
+                    D:"Jump Height Amount"=0.0
+                    I:"Jump Height Operation"=0
+                    B:"Knockback Resistance"=false
+                    D:"Knockback Resistance Amount"=0.0
+                    I:"Knockback Resistance Operation"=0
+                    B:Luck=false
+                    D:"Luck Amount"=0.0
+                    I:"Luck Operation"=0
+                    B:"Movement Speed"=false
+                    D:"Movement Speed Amount"=0.0
+                    I:"Movement Speed Operation"=0
+                    B:Reach=true
+                    D:"Reach Amount"=1.0
+                    I:"Reach Operation"=0
+                    B:"Step Height"=false
+                    D:"Step Height Amount"=0.0
+                    I:"Step Height Operation"=0
+                    B:"Swim Speed"=false
+                    D:"Swim Speed Amount"=0.0
+                    I:"Swim Speed Operation"=0
+                }
+
+            }
+
+            "damage shield settings" {
+                B:"01. ignore damage System"=true
+
+                # How many hits required before you ignore the next hit. Hits only count if the damage is at least 1 whole heart
+                I:"02. Requred Hits"=5
+
+                # Do you Take less damage from Explosions. IE Creeper Explosions
+                B:"03. Explosion Resistance"=true
+
+                # 1 Means you Take Full Damage, 0.25 Means you take 1/4 damage
+                # Min: 0.0
+                # Max: 1.0
+                D:"04. Explosion Reistance Amount"=0.25
+
+                # The Resistance level given when worn
+                # Min: 0
+                # Max: 2147483647
+                I:"05. Resistance Level"=0
+
+                # Does Resistance stack with Resistance from other sources
+                B:"06. Resistance stacks"=true
+
+                # Max level Resistance can stack
+                # Min: 0
+                # Max: 2147483647
+                I:"07. Max Stackable"=3
+                S:"07. Resistance potion"=minecraft:resistance
+
+                # Option to change what 'Resistance' is
+                S:"08. Resistance potion"=minecraft:resistance
+
+                # Only Disable this if You're the Epic Pro Gamer
+                B:"69. Epic Pro Gamer"=true
+
+                # Should this Item Be Registered
+                B:"98. Item Enabled"=true
+
+                # For Mor Information on Attributes
+                # https://minecraft.gamepedia.com/Attribute
+                S:Attributes <
+                    Name:generic.maxHealth, Amount:0, Operation:0
+                    Name:generic.knockbackResistance; Amount:0; Operation:0
+                    Name:generic.movementSpeed, Amount:0, Operation:0
+                    Name:generic.attackDamage, Amount:0, Operation:0
+                    Name:generic.attackSpeed, Amount:0, Operation:0
+                    Name:generic.armor, Amount:0, Operation:0
+                    Name:generic.armorToughness, Amount:0, Operation:0
+                    Name:generic.luck, Amount:0, Operation:0
+                    Name:forge.swimSpeed, Amount:0, Operation:0
+                    Name:xat.entityMagic.regen, Amount:0, Operation:0
+                    Name:xat.entityMagic.regen.cooldown, Amount:0, Operation:0
+                    Name:xat.entityMagic.affinity, Amount:0, Operation:0
+                    Name:xat.jump, Amount:0, Operation:0
+                    Name:xat.stepheight, Amount:0, Operation:0
+                 >
+
+                "compatability settings" {
+
+                    "first aid compatability" {
+                        # If First Aid is Installed. This ONLY Triggers if the Next headshot was supposed to kill you
+                        B:"01. Chance to Ignore Headshots"=true
+
+                        # If First Aid is Installed. 1 in How many Chance to Trigger Ignore Headshot
+                        I:"02. Headshots Ignore Chance"=10
+                    }
+
+                    ##########################################################################################################
+                    # baubles compatability
+                    #--------------------------------------------------------------------------------------------------------#
+                    # If the mod Baubles is installed what bauble slot should it use
+                    # Available Types:
+                    # Trinket, Any, All
+                    # Amulet, Necklace, Pendant
+                    # Ring, Rings
+                    # Belt
+                    # Head, Hat
+                    # Body, Chest
+                    # Charm
+                    ##########################################################################################################
+
+                    "baubles compatability" {
+                        # If the mod Baubles is installed what bauble slot should it use
+                        # Available Types:
+                        # Trinket, Any, All
+                        # Amulet, Necklace, Pendant
+                        # Ring, Rings
+                        # Belt
+                        # Head, Hat
+                        # Body, Chest
+                        # Charm
+                        S:"Bauble Type"=body
+                        B:"Equip Multiple"=false
+                    }
+
+                }
+
+                attributes {
+                    B:Armor=false
+                    D:"Armor Amount"=0.0
+                    I:"Armor Operation"=0
+                    B:"Armor Toughness"=false
+                    D:"Armor Toughness Amount"=0.0
+                    I:"Armor Toughness Operation"=0
+                    B:"Attack Speed"=false
+                    D:"Attack Speed Amount"=0.0
+                    I:"Attack Speed Operation"=0
+                    B:Damage=false
+                    D:"Damage Amount"=0.0
+                    I:"Damage Operation"=0
+                    B:Health=false
+                    D:"Health Amount"=0.0
+                    I:"Health Operation"=0
+                    B:"Jump Height"=false
+                    D:"Jump Height Amount"=0.0
+                    I:"Jump Height Operation"=0
+                    B:"Knockback Resistance"=false
+                    D:"Knockback Resistance Amount"=0.0
+                    I:"Knockback Resistance Operation"=0
+                    B:Luck=false
+                    D:"Luck Amount"=0.0
+                    I:"Luck Operation"=0
+                    B:"Movement Speed"=false
+                    D:"Movement Speed Amount"=0.0
+                    I:"Movement Speed Operation"=0
+                    B:Reach=false
+                    D:"Reach Amount"=0.0
+                    I:"Reach Operation"=0
+                    B:"Step Height"=false
+                    D:"Step Height Amount"=0.0
+                    I:"Step Height Operation"=0
+                    B:"Swim Speed"=false
+                    D:"Swim Speed Amount"=0.0
+                    I:"Swim Speed Operation"=0
+                }
+
+            }
+
+            "ring of enchanted eyes settings" {
+                # Should this Item Be Registered
+                B:"98. Item Enabled"=true
+
+                # For Mor Information on Attributes
+                # https://minecraft.gamepedia.com/Attribute
+                S:Attributes <
+                    Name:generic.maxHealth, Amount:0, Operation:0
+                    Name:generic.knockbackResistance; Amount:0; Operation:0
+                    Name:generic.movementSpeed, Amount:0, Operation:0
+                    Name:generic.attackDamage, Amount:0, Operation:0
+                    Name:generic.attackSpeed, Amount:0, Operation:0
+                    Name:generic.armor, Amount:0, Operation:0
+                    Name:generic.armorToughness, Amount:0, Operation:0
+                    Name:generic.luck, Amount:0, Operation:0
+                    Name:forge.swimSpeed, Amount:0, Operation:0
+                    Name:xat.entityMagic.regen, Amount:0, Operation:0
+                    Name:xat.entityMagic.regen.cooldown, Amount:0, Operation:0
+                    Name:xat.entityMagic.affinity, Amount:0, Operation:0
+                    Name:xat.jump, Amount:0, Operation:0
+                    Name:xat.stepheight, Amount:0, Operation:0
+                 >
+
+                "compatability settings" {
+
+                    ##########################################################################################################
+                    # baubles compatability
+                    #--------------------------------------------------------------------------------------------------------#
+                    # If the mod Baubles is installed what bauble slot should it use
+                    # Available Types:
+                    # Trinket, Any, All
+                    # Amulet, Necklace, Pendant
+                    # Ring, Rings
+                    # Belt
+                    # Head, Hat
+                    # Body, Chest
+                    # Charm
+                    ##########################################################################################################
+
+                    "baubles compatability" {
+                        # If the mod Baubles is installed what bauble slot should it use
+                        # Available Types:
+                        # Trinket, Any, All
+                        # Amulet, Necklace, Pendant
+                        # Ring, Rings
+                        # Belt
+                        # Head, Hat
+                        # Body, Chest
+                        # Charm
+                        S:"Bauble Type"=ring
+                        B:"Equip Multiple"=false
+                    }
+
+                }
+
+                attributes {
+                    B:Armor=false
+                    D:"Armor Amount"=0.0
+                    I:"Armor Operation"=0
+                    B:"Armor Toughness"=false
+                    D:"Armor Toughness Amount"=0.0
+                    I:"Armor Toughness Operation"=0
+                    B:"Attack Speed"=false
+                    D:"Attack Speed Amount"=0.0
+                    I:"Attack Speed Operation"=0
+                    B:Damage=false
+                    D:"Damage Amount"=0.0
+                    I:"Damage Operation"=0
+                    B:Health=false
+                    D:"Health Amount"=0.0
+                    I:"Health Operation"=0
+                    B:"Jump Height"=false
+                    D:"Jump Height Amount"=0.0
+                    I:"Jump Height Operation"=0
+                    B:"Knockback Resistance"=false
+                    D:"Knockback Resistance Amount"=0.0
+                    I:"Knockback Resistance Operation"=0
+                    B:Luck=true
+                    D:"Luck Amount"=1.0
+                    I:"Luck Operation"=0
+                    B:"Movement Speed"=false
+                    D:"Movement Speed Amount"=0.0
+                    I:"Movement Speed Operation"=0
+                    B:Reach=false
+                    D:"Reach Amount"=0.0
+                    I:"Reach Operation"=0
+                    B:"Step Height"=false
+                    D:"Step Height Amount"=0.0
+                    I:"Step Height Operation"=0
+                    B:"Swim Speed"=false
+                    D:"Swim Speed Amount"=0.0
+                    I:"Swim Speed Operation"=0
+                }
+
+            }
+
+            "poison stone settings" {
+                # If an Enemy is Poisoned, Should you be able to do Extra damage
+                B:"01. Bonus Damage"=true
+
+                # How much damage should you do when the enemy is poisoned. Default Damage x this
+                D:"02. Bonus Damage amount"=1.5
+
+                # Can the Poison Stone Poison Enemies?
+                B:"03. Can Poison"=true
+
+                # 1 in X chance to Poison an Enemy on Attack for 2 seconds, Settings this value to 0 always poisons
+                I:"04. Poison Chance"=5
+
+                # How Long should the poison effect last in ticks
+                I:"05. Poison Duration"=40
+
+                # Which effects to prevent
+                S:"81. Immunities" <
+                    minecraft:poison
+                    minecraft:hunger
+                    lycanitesmobs:plague
+                 >
+
+                # Should this Item Be Registered
+                B:"98. Item Enabled"=true
+
+                # For Mor Information on Attributes
+                # https://minecraft.gamepedia.com/Attribute
+                S:Attributes <
+                    Name:generic.maxHealth, Amount:0, Operation:0
+                    Name:generic.knockbackResistance; Amount:0; Operation:0
+                    Name:generic.movementSpeed, Amount:0, Operation:0
+                    Name:generic.attackDamage, Amount:0, Operation:0
+                    Name:generic.attackSpeed, Amount:0, Operation:0
+                    Name:generic.armor, Amount:0, Operation:0
+                    Name:generic.armorToughness, Amount:0, Operation:0
+                    Name:generic.luck, Amount:0, Operation:0
+                    Name:forge.swimSpeed, Amount:0, Operation:0
+                    Name:xat.entityMagic.regen, Amount:0, Operation:0
+                    Name:xat.entityMagic.regen.cooldown, Amount:0, Operation:0
+                    Name:xat.entityMagic.affinity, Amount:0, Operation:0
+                    Name:xat.jump, Amount:0, Operation:0
+                    Name:xat.stepheight, Amount:0, Operation:0
+                 >
+
+                "compatability settings" {
+
+                    ##########################################################################################################
+                    # baubles compatability
+                    #--------------------------------------------------------------------------------------------------------#
+                    # If the mod Baubles is installed what bauble slot should it use
+                    # Available Types:
+                    # Trinket, Any, All
+                    # Amulet, Necklace, Pendant
+                    # Ring, Rings
+                    # Belt
+                    # Head, Hat
+                    # Body, Chest
+                    # Charm
+                    ##########################################################################################################
+
+                    "baubles compatability" {
+                        # If the mod Baubles is installed what bauble slot should it use
+                        # Available Types:
+                        # Trinket, Any, All
+                        # Amulet, Necklace, Pendant
+                        # Ring, Rings
+                        # Belt
+                        # Head, Hat
+                        # Body, Chest
+                        # Charm
+                        S:"Bauble Type"=trinket
+                        B:"Equip Multiple"=false
+                    }
+
+                }
+
+                attributes {
+                    B:Armor=false
+                    D:"Armor Amount"=0.0
+                    I:"Armor Operation"=0
+                    B:"Armor Toughness"=false
+                    D:"Armor Toughness Amount"=0.0
+                    I:"Armor Toughness Operation"=0
+                    B:"Attack Speed"=false
+                    D:"Attack Speed Amount"=0.0
+                    I:"Attack Speed Operation"=0
+                    B:Damage=false
+                    D:"Damage Amount"=0.0
+                    I:"Damage Operation"=0
+                    B:Health=false
+                    D:"Health Amount"=0.0
+                    I:"Health Operation"=0
+                    B:"Jump Height"=false
+                    D:"Jump Height Amount"=0.0
+                    I:"Jump Height Operation"=0
+                    B:"Knockback Resistance"=false
+                    D:"Knockback Resistance Amount"=0.0
+                    I:"Knockback Resistance Operation"=0
+                    B:Luck=false
+                    D:"Luck Amount"=0.0
+                    I:"Luck Operation"=0
+                    B:"Movement Speed"=false
+                    D:"Movement Speed Amount"=0.0
+                    I:"Movement Speed Operation"=0
+                    B:Reach=false
+                    D:"Reach Amount"=0.0
+                    I:"Reach Operation"=0
+                    B:"Step Height"=false
+                    D:"Step Height Amount"=0.0
+                    I:"Step Height Operation"=0
+                    B:"Swim Speed"=false
+                    D:"Swim Speed Amount"=0.0
+                    I:"Swim Speed Operation"=0
+                }
+
+            }
+
+            "wither ring settings" {
+                # If an Enemy is has Wither, Should you be able to leech health
+                B:"01. Health Leech"=true
+
+                # How much damage should you leech per hit in half hearts
+                D:"02. Health Leech amount"=2.0
+                B:"03. Can Wither"=true
+
+                # 1 in X chance to Wither an Enemy on Attack for 2 seconds
+                I:"04. Wither Chance"=5
+                I:"05. Wither Duration"=40
+
+                # Should this Item Be Registered
+                B:"98. Item Enabled"=true
+
+                # For Mor Information on Attributes
+                # https://minecraft.gamepedia.com/Attribute
+                S:Attributes <
+                    Name:generic.maxHealth, Amount:0, Operation:0
+                    Name:generic.knockbackResistance; Amount:0; Operation:0
+                    Name:generic.movementSpeed, Amount:0, Operation:0
+                    Name:generic.attackDamage, Amount:0, Operation:0
+                    Name:generic.attackSpeed, Amount:0, Operation:0
+                    Name:generic.armor, Amount:0, Operation:0
+                    Name:generic.armorToughness, Amount:0, Operation:0
+                    Name:generic.luck, Amount:0, Operation:0
+                    Name:forge.swimSpeed, Amount:0, Operation:0
+                    Name:xat.entityMagic.regen, Amount:0, Operation:0
+                    Name:xat.entityMagic.regen.cooldown, Amount:0, Operation:0
+                    Name:xat.entityMagic.affinity, Amount:0, Operation:0
+                    Name:xat.jump, Amount:0, Operation:0
+                    Name:xat.stepheight, Amount:0, Operation:0
+                 >
+
+                "compatability settings" {
+
+                    ##########################################################################################################
+                    # baubles compatability
+                    #--------------------------------------------------------------------------------------------------------#
+                    # If the mod Baubles is installed what bauble slot should it use
+                    # Available Types:
+                    # Trinket, Any, All
+                    # Amulet, Necklace, Pendant
+                    # Ring, Rings
+                    # Belt
+                    # Head, Hat
+                    # Body, Chest
+                    # Charm
+                    ##########################################################################################################
+
+                    "baubles compatability" {
+                        # If the mod Baubles is installed what bauble slot should it use
+                        # Available Types:
+                        # Trinket, Any, All
+                        # Amulet, Necklace, Pendant
+                        # Ring, Rings
+                        # Belt
+                        # Head, Hat
+                        # Body, Chest
+                        # Charm
+                        S:"Bauble Type"=ring
+                        B:"Equip Multiple"=false
+                    }
+
+                }
+
+                attributes {
+                    B:Armor=false
+                    D:"Armor Amount"=0.0
+                    I:"Armor Operation"=0
+                    B:"Armor Toughness"=false
+                    D:"Armor Toughness Amount"=0.0
+                    I:"Armor Toughness Operation"=0
+                    B:"Attack Speed"=false
+                    D:"Attack Speed Amount"=0.0
+                    I:"Attack Speed Operation"=0
+                    B:Damage=false
+                    D:"Damage Amount"=0.0
+                    I:"Damage Operation"=0
+                    B:Health=false
+                    D:"Health Amount"=0.0
+                    I:"Health Operation"=0
+                    B:"Jump Height"=false
+                    D:"Jump Height Amount"=0.0
+                    I:"Jump Height Operation"=0
+                    B:"Knockback Resistance"=false
+                    D:"Knockback Resistance Amount"=0.0
+                    I:"Knockback Resistance Operation"=0
+                    B:Luck=false
+                    D:"Luck Amount"=0.0
+                    I:"Luck Operation"=0
+                    B:"Movement Speed"=false
+                    D:"Movement Speed Amount"=0.0
+                    I:"Movement Speed Operation"=0
+                    B:Reach=false
+                    D:"Reach Amount"=0.0
+                    I:"Reach Operation"=0
+                    B:"Step Height"=false
+                    D:"Step Height Amount"=0.0
+                    I:"Step Height Operation"=0
+                    B:"Swim Speed"=false
+                    D:"Swim Speed Amount"=0.0
+                    I:"Swim Speed Operation"=0
+                }
+
+            }
+
+            "polarized stone settings" {
+                # Should the Polarized Stone Instantly pickup Items, or Pull them toward you. Default True
+                B:"01. Instant Pickup"=false
+
+                # Should the Polarized Stone Effect Nearby Exp
+                B:"02. Collect nearby exp"=true
+
+                # Should the Polarized Stone Repel Incoming projectiles. Default True
+                B:"03. Repel Projectiles"=true
+
+                # Should The Polarized Stone Cost Mana to Repel Projectiles. Default True
+                B:"04. Repel costs Mana"=true
+
+                # Mana Cost Per tickrate.
+                # Min: 0.0
+                # Max: 1.7976931348623157E308
+                D:"05. Mana Cost"=1.0
+
+                # How often in Ticks Mana is reduced while Repel is Active
+                # Min: 0
+                # Max: 2147483647
+                I:"06. Mana Cost Rate"=10
+
+                # If Instant Pickup is Disabled, Polarized Stone's Push and pull speed. Default 0.1, 0.1 MIN, 1.0 MAX
+                # Min: 0.1
+                # Max: 1.0
+                D:"07. Polarized Stone Push and Pull Speed"=0.1
+                S:"09. Repelled Entities" <
+                    minecraft:arrow
+                    minecraft:fireball
+                 >
+
+                # The Distance from the player to repel entities
+                # Min: 1.0
+                # Max: 8.0
+                D:"10. Polarized Repel Range"=2.0
+
+                # Should this Item Be Registered
+                B:"98. Item Enabled"=true
+
+                # For Mor Information on Attributes
+                # https://minecraft.gamepedia.com/Attribute
+                S:Attributes <
+                    Name:generic.maxHealth, Amount:0, Operation:0
+                    Name:generic.knockbackResistance; Amount:0; Operation:0
+                    Name:generic.movementSpeed, Amount:0, Operation:0
+                    Name:generic.attackDamage, Amount:0, Operation:0
+                    Name:generic.attackSpeed, Amount:0, Operation:0
+                    Name:generic.armor, Amount:0, Operation:0
+                    Name:generic.armorToughness, Amount:0, Operation:0
+                    Name:generic.luck, Amount:0, Operation:0
+                    Name:forge.swimSpeed, Amount:0, Operation:0
+                    Name:xat.entityMagic.regen, Amount:0, Operation:0
+                    Name:xat.entityMagic.regen.cooldown, Amount:0, Operation:0
+                    Name:xat.entityMagic.affinity, Amount:0, Operation:0
+                    Name:xat.jump, Amount:0, Operation:0
+                    Name:xat.stepheight, Amount:0, Operation:0
+                 >
+
+                "compatability settings" {
+
+                    ##########################################################################################################
+                    # baubles compatability
+                    #--------------------------------------------------------------------------------------------------------#
+                    # If the mod Baubles is installed what bauble slot should it use
+                    # Available Types:
+                    # Trinket, Any, All
+                    # Amulet, Necklace, Pendant
+                    # Ring, Rings
+                    # Belt
+                    # Head, Hat
+                    # Body, Chest
+                    # Charm
+                    ##########################################################################################################
+
+                    "baubles compatability" {
+                        # If the mod Baubles is installed what bauble slot should it use
+                        # Available Types:
+                        # Trinket, Any, All
+                        # Amulet, Necklace, Pendant
+                        # Ring, Rings
+                        # Belt
+                        # Head, Hat
+                        # Body, Chest
+                        # Charm
+                        S:"Bauble Type"=trinket
+                        B:"Equip Multiple"=false
+                    }
+
+                }
+
+                attributes {
+                    B:Armor=false
+                    D:"Armor Amount"=0.0
+                    I:"Armor Operation"=0
+                    B:"Armor Toughness"=false
+                    D:"Armor Toughness Amount"=0.0
+                    I:"Armor Toughness Operation"=0
+                    B:"Attack Speed"=false
+                    D:"Attack Speed Amount"=0.0
+                    I:"Attack Speed Operation"=0
+                    B:Damage=false
+                    D:"Damage Amount"=0.0
+                    I:"Damage Operation"=0
+                    B:Health=false
+                    D:"Health Amount"=0.0
+                    I:"Health Operation"=0
+                    B:"Jump Height"=false
+                    D:"Jump Height Amount"=0.0
+                    I:"Jump Height Operation"=0
+                    B:"Knockback Resistance"=false
+                    D:"Knockback Resistance Amount"=0.0
+                    I:"Knockback Resistance Operation"=0
+                    B:Luck=false
+                    D:"Luck Amount"=0.0
+                    I:"Luck Operation"=0
+                    B:"Movement Speed"=false
+                    D:"Movement Speed Amount"=0.0
+                    I:"Movement Speed Operation"=0
+                    B:Reach=false
+                    D:"Reach Amount"=0.0
+                    I:"Reach Operation"=0
+                    B:"Step Height"=false
+                    D:"Step Height Amount"=0.0
+                    I:"Step Height Operation"=0
+                    B:"Swim Speed"=false
+                    D:"Swim Speed Amount"=0.0
+                    I:"Swim Speed Operation"=0
+                }
+
+                ##########################################################################################################
+                # pickup range
+                #--------------------------------------------------------------------------------------------------------#
+                # WARNING! SETTING THESE VALUES TOO HIGH WILL CAUSE YOU TO LAG. Try to Keep within a range of 4-16
+                ##########################################################################################################
+
+                "pickup range" {
+                    # How Far Horizontally(N, E, S, W) in Blocks the Polarized Stone collects Items and XP. Default 12, MIN 0, MAX 32
+                    # Min: 0
+                    # Max: 32
+                    I:"Horizontal Distance"=10
+
+                    # How Far Vertically(Up, Down) in Blocks the Polarized Stone collects Items and XP. Default 6, MIN 0, MAX 32
+                    # Min: 0
+                    # Max: 32
+                    I:"Vertical Distance"=5
+                }
+
+            }
+
+            "stone of the sea settings" {
+                # Sea Stone's Ability to float in water. Set to False to Disable. Default True
+                B:"01. Sea Stone's Swimming Tweaks"=false
+                B:"02. Infinite Water Breathing"=true
+
+                # Should the player always have full bubbles, or stop at 1
+                B:"03. Full Bubbles"=true
+
+                # Should this Item Be Registered
+                B:"98. Item Enabled"=true
+
+                # For Mor Information on Attributes
+                # https://minecraft.gamepedia.com/Attribute
+                S:Attributes <
+                    Name:generic.maxHealth, Amount:0, Operation:0
+                    Name:generic.knockbackResistance; Amount:0; Operation:0
+                    Name:generic.movementSpeed, Amount:0, Operation:0
+                    Name:generic.attackDamage, Amount:0, Operation:0
+                    Name:generic.attackSpeed, Amount:0, Operation:0
+                    Name:generic.armor, Amount:0, Operation:0
+                    Name:generic.armorToughness, Amount:0, Operation:0
+                    Name:generic.luck, Amount:0, Operation:0
+                    Name:forge.swimSpeed, Amount:4, Operation:2
+                    Name:xat.entityMagic.regen, Amount:0, Operation:0
+                    Name:xat.entityMagic.regen.cooldown, Amount:0, Operation:0
+                    Name:xat.entityMagic.affinity, Amount:0, Operation:0
+                    Name:xat.jump, Amount:0, Operation:0
+                    Name:xat.stepheight, Amount:0, Operation:0
+                 >
+
+                "compatability settings" {
+
+                    "tough as nails compatability" {
+                        # If Tough as Nails is installed should the Stone of the Sea Prevent thirst Poisoning
+                        B:"00. Prevent TAN Thirst Poisoning"=true
+                    }
+
+                    ##########################################################################################################
+                    # baubles compatability
+                    #--------------------------------------------------------------------------------------------------------#
+                    # If the mod Baubles is installed what bauble slot should it use
+                    # Available Types:
+                    # Trinket, Any, All
+                    # Amulet, Necklace, Pendant
+                    # Ring, Rings
+                    # Belt
+                    # Head, Hat
+                    # Body, Chest
+                    # Charm
+                    ##########################################################################################################
+
+                    "baubles compatability" {
+                        # If the mod Baubles is installed what bauble slot should it use
+                        # Available Types:
+                        # Trinket, Any, All
+                        # Amulet, Necklace, Pendant
+                        # Ring, Rings
+                        # Belt
+                        # Head, Hat
+                        # Body, Chest
+                        # Charm
+                        S:"Bauble Type"=amulet
+                        B:"Equip Multiple"=false
+                    }
+
+                }
+
+                attributes {
+                    B:Armor=false
+                    D:"Armor Amount"=0.0
+                    I:"Armor Operation"=0
+                    B:"Armor Toughness"=false
+                    D:"Armor Toughness Amount"=0.0
+                    I:"Armor Toughness Operation"=0
+                    B:"Attack Speed"=false
+                    D:"Attack Speed Amount"=0.0
+                    I:"Attack Speed Operation"=0
+                    B:Damage=false
+                    D:"Damage Amount"=0.0
+                    I:"Damage Operation"=0
+                    B:Health=false
+                    D:"Health Amount"=0.0
+                    I:"Health Operation"=0
+                    B:"Jump Height"=false
+                    D:"Jump Height Amount"=0.0
+                    I:"Jump Height Operation"=0
+                    B:"Knockback Resistance"=false
+                    D:"Knockback Resistance Amount"=0.0
+                    I:"Knockback Resistance Operation"=0
+                    B:Luck=false
+                    D:"Luck Amount"=0.0
+                    I:"Luck Operation"=0
+                    B:"Movement Speed"=false
+                    D:"Movement Speed Amount"=0.0
+                    I:"Movement Speed Operation"=0
+                    B:Reach=false
+                    D:"Reach Amount"=0.0
+                    I:"Reach Operation"=0
+                    B:"Step Height"=false
+                    D:"Step Height Amount"=0.0
+                    I:"Step Height Operation"=0
+                    B:"Swim Speed"=true
+                    D:"Swim Speed Amount"=4.0
+                    I:"Swim Speed Operation"=0
+                }
+
+            }
+
+            "stone of inertia null settings" {
+                # Should you Take Fall Damage?. Set to true to Enable. Default False
+                B:"01. Fall Damage"=true
+
+                # Min: 0.0
+                # Max: 10.0
+                D:"02. Fall Damage Amount"=0.0
+
+                # Should this Item Be Registered
+                B:"98. Item Enabled"=true
+
+                # For Mor Information on Attributes
+                # https://minecraft.gamepedia.com/Attribute
+                S:Attributes <
+                    Name:generic.maxHealth, Amount:0, Operation:0
+                    Name:generic.knockbackResistance; Amount:1; Operation:0
+                    Name:generic.movementSpeed, Amount:0, Operation:0
+                    Name:generic.attackDamage, Amount:0, Operation:0
+                    Name:generic.attackSpeed, Amount:0, Operation:0
+                    Name:generic.armor, Amount:0, Operation:0
+                    Name:generic.armorToughness, Amount:0, Operation:0
+                    Name:generic.luck, Amount:0, Operation:0
+                    Name:forge.swimSpeed, Amount:0, Operation:0
+                    Name:xat.entityMagic.regen, Amount:0, Operation:0
+                    Name:xat.entityMagic.regen.cooldown, Amount:0, Operation:0
+                    Name:xat.entityMagic.affinity, Amount:0, Operation:0
+                    Name:xat.jump, Amount:0, Operation:0
+                    Name:xat.stepheight, Amount:0, Operation:0
+                 >
+
+                "compatability settings" {
+
+                    ##########################################################################################################
+                    # baubles compatability
+                    #--------------------------------------------------------------------------------------------------------#
+                    # If the mod Baubles is installed what bauble slot should it use
+                    # Available Types:
+                    # Trinket, Any, All
+                    # Amulet, Necklace, Pendant
+                    # Ring, Rings
+                    # Belt
+                    # Head, Hat
+                    # Body, Chest
+                    # Charm
+                    ##########################################################################################################
+
+                    "baubles compatability" {
+                        # If the mod Baubles is installed what bauble slot should it use
+                        # Available Types:
+                        # Trinket, Any, All
+                        # Amulet, Necklace, Pendant
+                        # Ring, Rings
+                        # Belt
+                        # Head, Hat
+                        # Body, Chest
+                        # Charm
+                        S:"Bauble Type"=trinket
+                        B:"Equip Multiple"=false
+                    }
+
+                }
+
+                attributes {
+                    B:Armor=false
+                    D:"Armor Amount"=0.0
+                    I:"Armor Operation"=0
+                    B:"Armor Toughness"=false
+                    D:"Armor Toughness Amount"=0.0
+                    I:"Armor Toughness Operation"=0
+                    B:"Attack Speed"=false
+                    D:"Attack Speed Amount"=0.0
+                    I:"Attack Speed Operation"=0
+                    B:Damage=false
+                    D:"Damage Amount"=0.0
+                    I:"Damage Operation"=0
+                    B:Health=false
+                    D:"Health Amount"=0.0
+                    I:"Health Operation"=0
+                    B:"Jump Height"=false
+                    D:"Jump Height Amount"=0.0
+                    I:"Jump Height Operation"=0
+                    B:"Knockback Resistance"=true
+                    D:"Knockback Resistance Amount"=1.0
+                    I:"Knockback Resistance Operation"=0
+                    B:Luck=false
+                    D:"Luck Amount"=0.0
+                    I:"Luck Operation"=0
+                    B:"Movement Speed"=false
+                    D:"Movement Speed Amount"=0.0
+                    I:"Movement Speed Operation"=0
+                    B:Reach=false
+                    D:"Reach Amount"=0.0
+                    I:"Reach Operation"=0
+                    B:"Step Height"=false
+                    D:"Step Height Amount"=0.0
+                    I:"Step Height Operation"=0
+                    B:"Swim Speed"=false
+                    D:"Swim Speed Amount"=0.0
+                    I:"Swim Speed Operation"=0
+                }
+
+            }
+
+            "stone of greater inertia settings" {
+                # Should this Item Be Registered
+                B:"98. Item Enabled"=true
+
+                # For More Information on Attributes
+                # https://minecraft.gamepedia.com/Attribute
+                S:Attributes <
+                    Name:generic.maxHealth, Amount:0, Operation:0
+                    Name:generic.knockbackResistance; Amount:0.4; Operation:0
+                    Name:generic.movementSpeed, Amount:1.5, Operation:2
+                    Name:generic.attackDamage, Amount:0, Operation:0
+                    Name:generic.attackSpeed, Amount:0, Operation:0
+                    Name:generic.armor, Amount:0, Operation:0
+                    Name:generic.armorToughness, Amount:0, Operation:0
+                    Name:generic.luck, Amount:0, Operation:0
+                    Name:forge.swimSpeed, Amount:0, Operation:0
+                    Name:xat.entityMagic.regen, Amount:0, Operation:0
+                    Name:xat.entityMagic.regen.cooldown, Amount:0, Operation:0
+                    Name:xat.entityMagic.affinity, Amount:0, Operation:0
+                    Name:xat.jump, Amount:1, Operation:1
+                    Name:xat.stepheight, Amount:0.6, Operation:0
+                 >
+
+                # Should you Take Fall Damage?. Set to true to Enable. Default False
+                B:"Modified Fall Damage"=true
+
+                # Min: 0.0
+                # Max: 10.0
+                D:"Modified Fall Damage Amount"=0.25
+
+                "compatability settings" {
+
+                    ##########################################################################################################
+                    # baubles compatability
+                    #--------------------------------------------------------------------------------------------------------#
+                    # If the mod Baubles is installed what bauble slot should it use
+                    # Available Types:
+                    # Trinket, Any, All
+                    # Amulet, Necklace, Pendant
+                    # Ring, Rings
+                    # Belt
+                    # Head, Hat
+                    # Body, Chest
+                    # Charm
+                    ##########################################################################################################
+
+                    "baubles compatability" {
+                        # If the mod Baubles is installed what bauble slot should it use
+                        # Available Types:
+                        # Trinket, Any, All
+                        # Amulet, Necklace, Pendant
+                        # Ring, Rings
+                        # Belt
+                        # Head, Hat
+                        # Body, Chest
+                        # Charm
+                        S:"Bauble Type"=trinket
+                        B:"Equip Multiple"=false
+                    }
+
+                }
+
+                attributes {
+                    B:Armor=false
+                    D:"Armor Amount"=0.0
+                    I:"Armor Operation"=0
+                    B:"Armor Toughness"=false
+                    D:"Armor Toughness Amount"=0.0
+                    I:"Armor Toughness Operation"=0
+                    B:"Attack Speed"=false
+                    D:"Attack Speed Amount"=0.0
+                    I:"Attack Speed Operation"=0
+                    B:Damage=false
+                    D:"Damage Amount"=0.0
+                    I:"Damage Operation"=0
+                    B:Health=false
+                    D:"Health Amount"=0.0
+                    I:"Health Operation"=0
+                    B:"Jump Height"=true
+                    D:"Jump Height Amount"=1.0
+                    I:"Jump Height Operation"=2
+                    B:"Knockback Resistance"=true
+                    D:"Knockback Resistance Amount"=0.5
+                    I:"Knockback Resistance Operation"=0
+                    B:Luck=false
+                    D:"Luck Amount"=0.0
+                    I:"Luck Operation"=0
+                    B:"Movement Speed"=true
+                    D:"Movement Speed Amount"=1.0
+                    I:"Movement Speed Operation"=2
+                    B:Reach=false
+                    D:"Reach Amount"=0.0
+                    I:"Reach Operation"=0
+                    B:"Step Height"=false
+                    D:"Step Height Amount"=0.0
+                    I:"Step Height Operation"=0
+                    B:"Swim Speed"=false
+                    D:"Swim Speed Amount"=0.0
+                    I:"Swim Speed Operation"=0
+                }
+
+            }
+
+            "weightless stone settings" {
+                # Should this Item Be Registered
+                B:"98. Item Enabled"=true
+
+                # For Mor Information on Attributes
+                # https://minecraft.gamepedia.com/Attribute
+                S:Attributes <
+                    Name:generic.maxHealth, Amount:0, Operation:0
+                    Name:generic.knockbackResistance; Amount:0; Operation:0
+                    Name:generic.movementSpeed, Amount:0, Operation:0
+                    Name:generic.attackDamage, Amount:0, Operation:0
+                    Name:generic.attackSpeed, Amount:0, Operation:0
+                    Name:generic.armor, Amount:0, Operation:0
+                    Name:generic.armorToughness, Amount:0, Operation:0
+                    Name:generic.luck, Amount:0, Operation:0
+                    Name:forge.swimSpeed, Amount:0, Operation:0
+                    Name:xat.entityMagic.regen, Amount:0, Operation:0
+                    Name:xat.entityMagic.regen.cooldown, Amount:0, Operation:0
+                    Name:xat.entityMagic.affinity, Amount:0, Operation:0
+                    Name:xat.jump, Amount:0, Operation:0
+                    Name:xat.stepheight, Amount:0, Operation:0
+                 >
+
+                "compatability settings" {
+
+                    ##########################################################################################################
+                    # baubles compatability
+                    #--------------------------------------------------------------------------------------------------------#
+                    # If the mod Baubles is installed what bauble slot should it use
+                    # Available Types:
+                    # Trinket, Any, All
+                    # Amulet, Necklace, Pendant
+                    # Ring, Rings
+                    # Belt
+                    # Head, Hat
+                    # Body, Chest
+                    # Charm
+                    ##########################################################################################################
+
+                    "baubles compatability" {
+                        # If the mod Baubles is installed what bauble slot should it use
+                        # Available Types:
+                        # Trinket, Any, All
+                        # Amulet, Necklace, Pendant
+                        # Ring, Rings
+                        # Belt
+                        # Head, Hat
+                        # Body, Chest
+                        # Charm
+                        S:"Bauble Type"=trinket
+                        B:"Equip Multiple"=false
+                    }
+
+                }
+
+                attributes {
+                    B:Armor=false
+                    D:"Armor Amount"=0.0
+                    I:"Armor Operation"=0
+                    B:"Armor Toughness"=false
+                    D:"Armor Toughness Amount"=0.0
+                    I:"Armor Toughness Operation"=0
+                    B:"Attack Speed"=false
+                    D:"Attack Speed Amount"=0.0
+                    I:"Attack Speed Operation"=0
+                    B:Damage=false
+                    D:"Damage Amount"=0.0
+                    I:"Damage Operation"=0
+                    B:Health=false
+                    D:"Health Amount"=0.0
+                    I:"Health Operation"=0
+                    B:"Jump Height"=false
+                    D:"Jump Height Amount"=0.0
+                    I:"Jump Height Operation"=0
+                    B:"Knockback Resistance"=false
+                    D:"Knockback Resistance Amount"=0.0
+                    I:"Knockback Resistance Operation"=0
+                    B:Luck=false
+                    D:"Luck Amount"=0.0
+                    I:"Luck Operation"=0
+                    B:"Movement Speed"=false
+                    D:"Movement Speed Amount"=0.0
+                    I:"Movement Speed Operation"=0
+                    B:Reach=false
+                    D:"Reach Amount"=0.0
+                    I:"Reach Operation"=0
+                    B:"Step Height"=false
+                    D:"Step Height Amount"=0.0
+                    I:"Step Height Operation"=0
+                    B:"Swim Speed"=false
+                    D:"Swim Speed Amount"=0.0
+                    I:"Swim Speed Operation"=0
+                }
+
+            }
+
+            "arcing orb settings" {
+                # Should this Item Be Registered
+                B:"98. Item Enabled"=true
+
+                # For More Information on Attributes
+                # https://minecraft.gamepedia.com/Attribute
+                S:Attributes <
+                    Name:generic.maxHealth, Amount:0, Operation:0
+                    Name:generic.knockbackResistance; Amount:0; Operation:0
+                    Name:generic.movementSpeed, Amount:0.25, Operation:1
+                    Name:generic.attackDamage, Amount:0, Operation:0
+                    Name:generic.attackSpeed, Amount:0, Operation:0
+                    Name:generic.armor, Amount:0, Operation:0
+                    Name:generic.armorToughness, Amount:0, Operation:0
+                    Name:generic.luck, Amount:0, Operation:0
+                    Name:forge.swimSpeed, Amount:0, Operation:0
+                    Name:xat.entityMagic.regen, Amount:0, Operation:0
+                    Name:xat.entityMagic.regen.cooldown, Amount:0, Operation:0
+                    Name:xat.entityMagic.affinity, Amount:0, Operation:0
+                    Name:xat.jump, Amount:0, Operation:0
+                    Name:xat.stepheight, Amount:0, Operation:0
+                 >
+                B:"Bolt Attack"=true
+                D:"Bolt Attack Cost"=300.0
+                D:"Bolt Attack Damage"=40.0
+                B:Dodge=true
+                D:"Dodge Cost"=30.0
+                B:"Dodge Stuns"=true
+                D:"Stun Radius"=3.0
+
+                "compatability settings" {
+
+                    ##########################################################################################################
+                    # baubles compatability
+                    #--------------------------------------------------------------------------------------------------------#
+                    # If the mod Baubles is installed what bauble slot should it use
+                    # Available Types:
+                    # Trinket, Any, All
+                    # Amulet, Necklace, Pendant
+                    # Ring, Rings
+                    # Belt
+                    # Head, Hat
+                    # Body, Chest
+                    # Charm
+                    ##########################################################################################################
+
+                    "baubles compatability" {
+                        # If the mod Baubles is installed what bauble slot should it use
+                        # Available Types:
+                        # Trinket, Any, All
+                        # Amulet, Necklace, Pendant
+                        # Ring, Rings
+                        # Belt
+                        # Head, Hat
+                        # Body, Chest
+                        # Charm
+                        S:"Bauble Type"=belt
+                        B:"Equip Multiple"=false
+                    }
+
+                }
+
+                attributes {
+                    B:Armor=false
+                    D:"Armor Amount"=0.0
+                    I:"Armor Operation"=0
+                    B:"Armor Toughness"=false
+                    D:"Armor Toughness Amount"=0.0
+                    I:"Armor Toughness Operation"=0
+                    B:"Attack Speed"=false
+                    D:"Attack Speed Amount"=0.0
+                    I:"Attack Speed Operation"=0
+                    B:Damage=false
+                    D:"Damage Amount"=0.0
+                    I:"Damage Operation"=0
+                    B:Health=false
+                    D:"Health Amount"=0.0
+                    I:"Health Operation"=0
+                    B:"Jump Height"=false
+                    D:"Jump Height Amount"=0.0
+                    I:"Jump Height Operation"=0
+                    B:"Knockback Resistance"=false
+                    D:"Knockback Resistance Amount"=0.0
+                    I:"Knockback Resistance Operation"=0
+                    B:Luck=false
+                    D:"Luck Amount"=0.0
+                    I:"Luck Operation"=0
+                    B:"Movement Speed"=true
+                    D:"Movement Speed Amount"=0.25
+                    I:"Movement Speed Operation"=2
+                    B:Reach=false
+                    D:"Reach Amount"=0.0
+                    I:"Reach Operation"=0
+                    B:"Step Height"=false
+                    D:"Step Height Amount"=0.0
+                    I:"Step Height Operation"=0
+                    B:"Swim Speed"=false
+                    D:"Swim Speed Amount"=0.0
+                    I:"Swim Speed Operation"=0
+                }
+
+            }
+
+            "teddy bear settings" {
+                # give buffs when sleeping
+                B:"01. Sleep Bonus"=true
+
+                # Which Buffs to give
+                S:"02. Buffs" <
+                    minecraft:regeneration:300:0
+                    minecraft:luck:600:0
+                    minecraft:health_boost:3600:1
+                 >
+
+                # If this value is greater then 0, instead of giving every buff in the list, it gives x random buffs
+                I:"03. Random Buffs"=0
+
+                # Which effects to prevent
+                S:"10. Immunities" <
+                    lycanitesmobs:fear
+                    lycanitesmobs:insomnia
+                 >
+
+                # Should this Item Be Registered
+                B:"98. Item Enabled"=true
+
+                # For Mor Information on Attributes
+                # https://minecraft.gamepedia.com/Attribute
+                S:Attributes <
+                    Name:generic.maxHealth, Amount:0, Operation:0
+                    Name:generic.knockbackResistance; Amount:0; Operation:0
+                    Name:generic.movementSpeed, Amount:0, Operation:0
+                    Name:generic.attackDamage, Amount:0, Operation:0
+                    Name:generic.attackSpeed, Amount:0, Operation:0
+                    Name:generic.armor, Amount:0, Operation:0
+                    Name:generic.armorToughness, Amount:0, Operation:0
+                    Name:generic.luck, Amount:0, Operation:0
+                    Name:forge.swimSpeed, Amount:0, Operation:0
+                    Name:xat.entityMagic.regen, Amount:0, Operation:0
+                    Name:xat.entityMagic.regen.cooldown, Amount:0, Operation:0
+                    Name:xat.entityMagic.affinity, Amount:0, Operation:0
+                    Name:xat.jump, Amount:0, Operation:0
+                    Name:xat.stepheight, Amount:0, Operation:0
+                 >
+
+                "compatability settings" {
+
+                    ##########################################################################################################
+                    # baubles compatability
+                    #--------------------------------------------------------------------------------------------------------#
+                    # If the mod Baubles is installed what bauble slot should it use
+                    # Available Types:
+                    # Trinket, Any, All
+                    # Amulet, Necklace, Pendant
+                    # Ring, Rings
+                    # Belt
+                    # Head, Hat
+                    # Body, Chest
+                    # Charm
+                    ##########################################################################################################
+
+                    "baubles compatability" {
+                        # If the mod Baubles is installed what bauble slot should it use
+                        # Available Types:
+                        # Trinket, Any, All
+                        # Amulet, Necklace, Pendant
+                        # Ring, Rings
+                        # Belt
+                        # Head, Hat
+                        # Body, Chest
+                        # Charm
+                        S:"Bauble Type"=trinket
+                        B:"Equip Multiple"=false
+                    }
+
+                    lycanites {
+                        B:preventFear=true
+                    }
+
+                    parasites {
+                        B:preventFear=true
+                    }
+
+                }
+
+                attributes {
+                    B:Armor=false
+                    D:"Armor Amount"=0.0
+                    I:"Armor Operation"=0
+                    B:"Armor Toughness"=false
+                    D:"Armor Toughness Amount"=0.0
+                    I:"Armor Toughness Operation"=0
+                    B:"Attack Speed"=false
+                    D:"Attack Speed Amount"=0.0
+                    I:"Attack Speed Operation"=0
+                    B:Damage=false
+                    D:"Damage Amount"=0.0
+                    I:"Damage Operation"=0
+                    B:Health=false
+                    D:"Health Amount"=0.0
+                    I:"Health Operation"=0
+                    B:"Jump Height"=false
+                    D:"Jump Height Amount"=0.0
+                    I:"Jump Height Operation"=0
+                    B:"Knockback Resistance"=false
+                    D:"Knockback Resistance Amount"=0.0
+                    I:"Knockback Resistance Operation"=0
+                    B:Luck=false
+                    D:"Luck Amount"=0.0
+                    I:"Luck Operation"=0
+                    B:"Movement Speed"=false
+                    D:"Movement Speed Amount"=0.0
+                    I:"Movement Speed Operation"=0
+                    B:Reach=false
+                    D:"Reach Amount"=0.0
+                    I:"Reach Operation"=0
+                    B:"Step Height"=false
+                    D:"Step Height Amount"=0.0
+                    I:"Step Height Operation"=0
+                    B:"Swim Speed"=false
+                    D:"Swim Speed Amount"=0.0
+                    I:"Swim Speed Operation"=0
+                }
+
+            }
+
+            "faelis claw settings" {
+                B:"01. Bleeding"=true
+                I:"02. Bleed Duration"=300
+                I:"03. Bleed chance"=4
+
+                # Should this Item Be Registered
+                B:"98. Item Enabled"=true
+
+                # For Mor Information on Attributes
+                # https://minecraft.gamepedia.com/Attribute
+                S:Attributes <
+                    Name:generic.maxHealth, Amount:0, Operation:0
+                    Name:generic.knockbackResistance; Amount:0; Operation:0
+                    Name:generic.movementSpeed, Amount:0, Operation:0
+                    Name:generic.attackDamage, Amount:0.25, Operation:1
+                    Name:generic.attackSpeed, Amount:0, Operation:0
+                    Name:generic.armor, Amount:0, Operation:0
+                    Name:generic.armorToughness, Amount:0, Operation:0
+                    Name:generic.luck, Amount:0, Operation:0
+                    Name:forge.swimSpeed, Amount:0, Operation:0
+                    Name:xat.entityMagic.regen, Amount:0, Operation:0
+                    Name:xat.entityMagic.regen.cooldown, Amount:0, Operation:0
+                    Name:xat.entityMagic.affinity, Amount:0, Operation:0
+                    Name:xat.jump, Amount:0, Operation:0
+                    Name:xat.stepheight, Amount:0, Operation:0
+                 >
+
+                "compatability settings" {
+
+                    ##########################################################################################################
+                    # baubles compatability
+                    #--------------------------------------------------------------------------------------------------------#
+                    # If the mod Baubles is installed what bauble slot should it use
+                    # Available Types:
+                    # Trinket, Any, All
+                    # Amulet, Necklace, Pendant
+                    # Ring, Rings
+                    # Belt
+                    # Head, Hat
+                    # Body, Chest
+                    # Charm
+                    ##########################################################################################################
+
+                    "baubles compatability" {
+                        # If the mod Baubles is installed what bauble slot should it use
+                        # Available Types:
+                        # Trinket, Any, All
+                        # Amulet, Necklace, Pendant
+                        # Ring, Rings
+                        # Belt
+                        # Head, Hat
+                        # Body, Chest
+                        # Charm
+                        S:"Bauble Type"=ring
+                        B:"Equip Multiple"=false
+                    }
+
+                    lycanites {
+                        B:useLycaniteBleed=true
+                    }
+
+                    defiledlands {
+                        B:useDefiledLandsBleed=true
+                    }
+
+                }
+
+                attributes {
+                    B:Armor=false
+                    D:"Armor Amount"=0.0
+                    I:"Armor Operation"=0
+                    B:"Armor Toughness"=false
+                    D:"Armor Toughness Amount"=0.0
+                    I:"Armor Toughness Operation"=0
+                    B:"Attack Speed"=false
+                    D:"Attack Speed Amount"=0.0
+                    I:"Attack Speed Operation"=0
+                    B:Damage=true
+                    D:"Damage Amount"=0.25
+                    I:"Damage Operation"=2
+                    B:Health=false
+                    D:"Health Amount"=0.0
+                    I:"Health Operation"=0
+                    B:"Jump Height"=false
+                    D:"Jump Height Amount"=0.0
+                    I:"Jump Height Operation"=0
+                    B:"Knockback Resistance"=false
+                    D:"Knockback Resistance Amount"=0.0
+                    I:"Knockback Resistance Operation"=0
+                    B:Luck=false
+                    D:"Luck Amount"=0.0
+                    I:"Luck Operation"=0
+                    B:"Movement Speed"=false
+                    D:"Movement Speed Amount"=0.0
+                    I:"Movement Speed Operation"=0
+                    B:Reach=false
+                    D:"Reach Amount"=0.0
+                    I:"Reach Operation"=0
+                    B:"Step Height"=false
+                    D:"Step Height Amount"=0.0
+                    I:"Step Height Operation"=0
+                    B:"Swim Speed"=false
+                    D:"Swim Speed Amount"=0.0
+                    I:"Swim Speed Operation"=0
+                }
+
+            }
+
+        }
+
+        "magic settings" {
+            # should certain Trinkets and Race abilities require Mana?
+            B:"01. Mana Enabled"=true
+
+            # how often in ticks mana regens
+            I:"02. Mana Regen Rate"=20
+
+            # after using an ability, how long before starting to regen mana again?
+            I:"03. Mana Regen Timeout"=60
+
+            # Should Max Mana Be Capped
+            B:"04. Mana Cap"=true
+
+            # Total Max Mana before affinity bonus
+            D:"05. Max Mana"=200.0
+
+            # How much Essence does the Moon Rose have
+            I:"06. Moon Rose Essence"=10
+
+            # How long in ticks before the next essence can be absorbed
+            I:"07. Moon Rose Essence Cooldown"=300
+
+            # Allow Max Mana cap to effect Magic Affinity
+            B:"08. Cap Affinity"=false
+
+            # Mana Crystals explode when smashed against stone producing a Mana Reagent
+            B:"09. Mana Crystals Explode"=false
+
+            # Do Mana Reagents Hurt when you consume them
+            B:"10. Mana Reagent Harmful"=true
+
+            # modid:item_name;meta;amount
+            S:"97. MP Recovery Items" <
+                xat:dwarf_stout;0;100%
+                xat:elf_sap;0;100%
+                xat:faelis_food;0;100%
+                xat:fairy_dew;0;100%
+                xat:goblin_soup;0;100%
+                xat:titan_spirit;0;100%
+                xat:dragon_gem;0;100%
+                xat:mana_crystal;0;100%
+                xat:mana_reagent;0;100%
+                xat:mana_candy;0;50
+                minecraft:golden_apple;0;20
+                minecraft:golden_apple;1;50
+                simpledifficulty:juice;0;10%
+                simpledifficulty:juice;5;50%
+             >
+        }
+
+        "race settings" {
+            B:"Selection Menu"=false
+            S:"Selection Menu Blacklist" <
+                Dragon
+             >
+            S:selectionBlacklist <
+                Dragon
+             >
+            B:selectionMenu=false
+
+            "fairy settings" {
+                # Creative Flight. Set to False to Disable. Default True
+                B:"01. Creative Flight"=true
+
+                # Change the flight speed from the Vanilla Default of 0.05
+                B:"02. Change Flight Speed"=true
+
+                # How Fast the player moves when in Creative Flight. Vanilla Default 0.05. Default 0.02
+                # Min: 0.01
+                # Max: 1.0
+                D:"03. Creative Flight Speed"=0.03
+                B:"04. Jump Height"=true
+
+                # Fairy's Climbing Ability. Set to False to Disable. Default True
+                B:"05. Climbing"=true
+                S:"06. Climable Blocks" <
+                    minecraft:dirt
+                    minecraft:grass
+                    minecraft:sand
+                    minecraft:cobblestone
+                    minecraft:mossy_cobblestone
+                    minecraft:oak_stairs
+                    minecraft:stone_stairs
+                    minecraft:brick_stairs
+                    minecraft:stone_brick_stairs
+                    minecraft:nether_brick_stairs
+                    minecraft:sandstone_stairs
+                    minecraft:spruce_stairs
+                    minecraft:birch_stairs
+                    minecraft:jungle_stairs
+                    minecraft:arcacia_stairs
+                    minecraft:quartz_stairs
+                    minecraft:dark_oak_stairs
+                    minecraft:red_sandstone_stairs
+                    minecraft:purpur_stairs
+                    minecraft:stone_slab
+                    minecraft:wooden_slab
+                    minecraft:stone_slab2
+                    minecraft:purpur_slab
+                    minecraft:stone
+                    minecraft:planks
+                    minecraft:gravel
+                    minecraft:gold_ore
+                    minecraft:iron_ore
+                    minecraft:coal_ore
+                    minecraft:log
+                    minecraft:sponge
+                    minecraft:glass
+                    minecraft:lapis_ore
+                    minecraft:lapis_block
+                    minecraft:sandstone
+                    minecraft:wool
+                    minecraft:gold_block
+                    minecraft:iron_block
+                    minecraft:brick_block
+                    minecraft:bookshelf
+                    minecraft:obsidian
+                    minecraft:diamond_ore
+                    minecraft:diamond_block
+                    minecraft:redstone_ore
+                    minecraft:ice
+                    minecraft:snow
+                    minecraft:clay
+                    minecraft:pumpkin
+                    minecraft:netherrack
+                    minecraft:soul_sand
+                    minecraft:glowstone
+                    minecraft:lit_pumpkin
+                    minecraft:stained_glass
+                    minecraft:stonebrick
+                    minecraft:melon_block
+                    minecraft:mycelium
+                    minecraft:nether_brick
+                    minecraft:end_stone
+                    minecraft:emerald_ore
+                    minecraft:emerald_block
+                    minecraft:quartz_ore
+                    minecraft:quartz_block
+                    minecraft:stained_hardened_clay
+                    minecraft:log2
+                    minecraft:prismarine
+                    minecraft:sea_lantern
+                    minecraft:hay_block
+                    minecraft:hardened_clay
+                    minecraft:coal_block
+                    minecraft:packed_ice
+                    minecraft:red_sandstone
+                    minecraft:purpur_block
+                    minecraft:purpur_pillar
+                    minecraft:end_bricks
+                    minecraft:magma
+                    minecraft:nether_wart_block
+                    minecraft:red_nether_brick
+                    minecraft:bone_block
+                    minecraft:concrete
+                    minecraft:concrete_powder
+                    minecraft:leaves
+                    minecraft:dispenser
+                    minecraft:noteblock
+                    minecraft:sticky_piston
+                    minecraft:piston
+                    minecraft:tnt
+                    minecraft:chest
+                    minecraft:crafting_table
+                    minecraft:furnace
+                    minecraft:cactus
+                    minecraft:jukebox
+                    minecraft:trapdoor
+                    minecraft:iron_bars
+                    minecraft:glass_pane
+                    minecraft:enchanting_table
+                    minecraft:end_portal_frame
+                    minecraft:redstone_lamp
+                    minecraft:ender_chest
+                    minecraft:beacon
+                    minecraft:anvil
+                    minecraft:trapped_chest
+                    minecraft:daylight_detector
+                    minecraft:redstone_block
+                    minecraft:hopper
+                    minecraft:dropper
+                    minecraft:stained_glass_pane
+                    minecraft:leaves2
+                    minecraft:iron_trapdoor
+                    minecraft:slime
+                    minecraft:end_rod
+                    minecraft:chorus_plant
+                    minecraft:chorus_flower
+                    minecraft:observer
+                    minecraft:white_shulker_box
+                    minecraft:orange_shulker_box
+                    minecraft:magenta_shulker_box
+                    minecraft:light_blue_shulker_box
+                    minecraft:yellow_shulker_box
+                    minecraft:lime_shulker_box
+                    minecraft:pink_shulker_box
+                    minecraft:gray_shulker_box
+                    minecraft:silver_shulker_box
+                    minecraft:cyan_shulker_box
+                    minecraft:purple_shulker_box
+                    minecraft:blue_shulker_box
+                    minecraft:brown_shulker_box
+                    minecraft:green_shulker_box
+                    minecraft:red_shulker_box
+                    minecraft:black_shulker_box
+                    minecraft:white_glazed_terracotta
+                    minecraft:orange_glazed_terracotta
+                    minecraft:magenta_glazed_terracotta
+                    minecraft:light_blue_glazed_terracotta
+                    minecraft:yellow_glazed_terracotta
+                    minecraft:lime_glazed_terracotta
+                    minecraft:pink_glazed_terracotta
+                    minecraft:gray_glazed_terracotta
+                    minecraft:silver_glazed_terracotta
+                    minecraft:cyan_glazed_terracotta
+                    minecraft:purple_glazed_terracotta
+                    minecraft:blue_glazed_terracotta
+                    minecraft:brown_glazed_terracotta
+                    minecraft:green_glazed_terracotta
+                    minecraft:red_glazed_terracotta
+                    minecraft:black_glazed_terracotta
+                    minecraft:sign
+                    minecraft:wooden_door
+                    minecraft:iron_door
+                    minecraft:bed
+                    minecraft:flower_pot
+                    minecraft:skull
+                    minecraft:armor_stand
+                    minecraft:spruce_door
+                    minecraft:birch_door
+                    minecraft:jungle_door
+                    minecraft:dark_oak_door
+                    minecraft:acacia_door
+                    minecraft:fence
+                    lycanitesmobs:demonstone
+                    lycanitesmobs:demonstone_stairs
+                    lycanitesmobs:demonstone_slab
+                    lycanitesmobs:demonstonechiseled
+                    lycanitesmobs:demonstonepolished
+                    lycanitesmobs:demonstonepillar
+                    lycanitesmobs:demonstonebrick
+                    lycanitesmobs:demonstonebrick_stairs
+                    lycanitesmobs:demonstonebrick_wall
+                    lycanitesmobs:demonstonebrick_fence
+                    lycanitesmobs:demonstonebrickslab
+                    lycanitesmobs:demonstonetile
+                    lycanitesmobs:demonstonetile_slab
+                    lycanitesmobs:demonstonetile_stairs
+                    lycanitesmobs:demonstone_slab_double
+                    lycanitesmobs:aberrantstone
+                    lycanitesmobs:aberrantstone_stairs
+                    lycanitesmobs:aberrantstone_slab
+                    lycanitesmobs:aberrantstonechiseled
+                    lycanitesmobs:aberrantstonepolished
+                    lycanitesmobs:aberrantstonepillar
+                    lycanitesmobs:aberrantstonebrick
+                    lycanitesmobs:aberrantstonebrick_stairs
+                    lycanitesmobs:aberrantstonebrick_wall
+                    lycanitesmobs:aberrantstonebrick_fence
+                    lycanitesmobs:aberrantstonebrickslab
+                    lycanitesmobs:aberrantstonetile
+                    lycanitesmobs:aberrantstonetile_slab
+                    lycanitesmobs:aberrantstonetile_stairs
+                    lycanitesmobs:aberrantstone_slab_double
+                    lycanitesmobs:shadowstone
+                    lycanitesmobs:shadowstone_stairs
+                    lycanitesmobs:shadowstone_slab
+                    lycanitesmobs:shadowstonechiseled
+                    lycanitesmobs:shadowstonepolished
+                    lycanitesmobs:shadowstonepillar
+                    lycanitesmobs:shadowstonebrick
+                    lycanitesmobs:shadowstonebrick_stairs
+                    lycanitesmobs:shadowstonebrick_wall
+                    lycanitesmobs:shadowstonebrick_fence
+                    lycanitesmobs:shadowstonebrickslab
+                    lycanitesmobs:shadowstonetile
+                    lycanitesmobs:shadowstonetile_slab
+                    lycanitesmobs:shadowstonetile_stairs
+                    lycanitesmobs:shadowstone_slab_double
+                    lycanitesmobs:desertstone
+                    lycanitesmobs:desertstone_stairs
+                    lycanitesmobs:desertstone_slab
+                    lycanitesmobs:desertstonechiseled
+                    lycanitesmobs:desertstonepolished
+                    lycanitesmobs:desertstonepillar
+                    lycanitesmobs:desertstonebrick
+                    lycanitesmobs:desertstonebrick_stairs
+                    lycanitesmobs:desertstonebrick_wall
+                    lycanitesmobs:desertstonebrick_fence
+                    lycanitesmobs:desertstonebrickslab
+                    lycanitesmobs:desertstonetile
+                    lycanitesmobs:desertstonetile_slab
+                    lycanitesmobs:desertstonetile_stairs
+                    lycanitesmobs:desertstone_slab_double
+                    lycanitesmobs:ashenstone
+                    lycanitesmobs:ashenstone_stairs
+                    lycanitesmobs:ashenstone_slab
+                    lycanitesmobs:ashenstonechiseled
+                    lycanitesmobs:ashenstonepolished
+                    lycanitesmobs:ashenstonepillar
+                    lycanitesmobs:ashenstonebrick
+                    lycanitesmobs:ashenstonebrick_stairs
+                    lycanitesmobs:ashenstonebrick_wall
+                    lycanitesmobs:ashenstonebrick_fence
+                    lycanitesmobs:ashenstonebrickslab
+                    lycanitesmobs:ashenstonetile
+                    lycanitesmobs:ashenstonetile_slab
+                    lycanitesmobs:ashenstonetile_stairs
+                    lycanitesmobs:ashenstone_slab_double
+                    lycanitesmobs:demoncrystal
+                    lycanitesmobs:aberrantcrystal
+                    lycanitesmobs:shadowcrystal
+                    lycanitesmobs:desertcrystal
+                    lycanitesmobs:ashencrystal
+                    lycanitesmobs:lushcrystal
+                    lycanitesmobs:equipment_station
+                    lycanitesmobs:equipmentforge_lesser
+                    lycanitesmobs:equipmentforge_great
+                    lycanitesmobs:equipmentforge_master
+                    lycanitesmobs:summoningpedestal
+                    lycanitesmobs:equipment_infuser
+                    lycanitesmobs:soulcubeaberrant
+                    lycanitesmobs:soulcubedemonic
+                    lycanitesmobs:soulcubeundead
+                    quark:stone_wall
+                    quark:stone_granite_wall
+                    quark:stone_diorite_wall
+                    quark:stone_andesite_wall
+                    quark:sandstone_wall
+                    quark:red_sandstone_wall
+                    quark:stonebrick_wall
+                    quark:brick_wall
+                    quark:quartz_wall
+                    quark:prismarine_rough_wall
+                    quark:prismarine_bricks_wall
+                    quark:dark_prismarine_wall
+                    quark:purpur_block_wall
+                    quark:end_bricks_wall
+                    quark:stonebrick_mossy_wall
+                    uark:bark_oak_wall
+                    quark:bark_spruce_wall
+                    quark:bark_birch_wall
+                    quark:bark_jungle_wall
+                    quark:bark_acacia_wall
+                    quark:bark_dark_oak_wall
+                    quark:sandy_bricks_wall
+                    quark:stone_granite_bricks_wall
+                    quark:stone_diorite_bricks_wall
+                    quark:stone_andesite_bricks_wall
+                    quark:stone_basalt_bricks_wall
+                    quark:stone_marble_bricks_wall
+                    quark:stone_limestone_bricks_wall
+                    quark:stone_jasper_bricks_wall
+                    quark:stone_slate_bricks_wall
+                    quark:midori_block_wall
+                    quark:duskbound_block_wall
+                    quark:reed_block_wall
+                    quark:snow_bricks_wall
+                    quark:soul_sandstone_wall
+                    quark:polished_netherrack_bricks_wall
+                    quark:biotite_wall
+                    quark:basalt_wall
+                    quark:marble_wall
+                    quark:limestone_wall
+                    quark:jasper_wall
+                    quark:slate_wall
+                    quark:fire_stone_wall
+                    quark:icy_stone_wall
+                    quark:cobbed_stone_wall
+                    quark:fire_stone_brick_wall
+                    quark:icy_stone_brick_wall
+                    quark:elder_prismarine_wall
+                    quark:elder_prismarine_bricks_wall
+                    quark:elder_prismarine_dark_wall
+                    quark:sandstone_smooth_slab
+                    quark:sandstone_bricks_slab
+                    quark:red_sandstone_smooth_slab
+                    quark:red_sandstone_bricks_slab
+                    quark:soul_sandstone_smooth_slab
+                    quark:soul_sandstone_bricks_slab
+                    quark:stained_planks_white_slab
+                    quark:stained_planks_orange_slab
+                    quark:stained_planks_magenta_slab
+                    quark:stained_planks_light_blue_slab
+                    quark:stained_planks_yellow_slab
+                    quark:stained_planks_lime_slab
+                    quark:stained_planks_pink_slab
+                    quark:stained_planks_gray_slab
+                    quark:stained_planks_silver_slab
+                    quark:stained_planks_cyan_slab
+                    quark:stained_planks_purple_slab
+                    quark:stained_planks_blue_slab
+                    quark:stained_planks_brown_slab
+                    quark:stained_planks_green_slab
+                    quark:stained_planks_red_slab
+                    quark:stained_planks_black_slab
+                    quark:hardened_clay_tiles_slab
+                    quark:stained_clay_tiles_white_slab
+                    quark:stained_clay_tiles_orange_slab
+                    quark:stained_clay_tiles_magenta_slab
+                    quark:stained_clay_tiles_light_blue_slab
+                    quark:stained_clay_tiles_yellow_slab
+                    quark:stained_clay_tiles_lime_slab
+                    quark:stained_clay_tiles_pink_slab
+                    quark:stained_clay_tiles_gray_slab
+                    quark:stained_clay_tiles_silver_slab
+                    quark:stained_clay_tiles_cyan_slab
+                    quark:stained_clay_tiles_purple_slab
+                    quark:stained_clay_tiles_blue_slab
+                    quark:stained_clay_tiles_brown_slab
+                    quark:stained_clay_tiles_green_slab
+                    quark:stained_clay_tiles_red_slab
+                    quark:stained_clay_tiles_black_slab
+                    quark:bark_oak_slab
+                    quark:bark_spruce_slab
+                    quark:bark_birch_slab
+                    quark:bark_jungle_slab
+                    quark:bark_acacia_slab
+                    quark:bark_dark_oak_slab
+                    quark:iron_plate_slab
+                    quark:sandy_bricks_slab
+                    quark:stone_granite_slab
+                    quark:stone_diorite_slab
+                    quark:stone_andesite_slab
+                    quark:end_bricks_slab
+                    quark:prismarine_slab
+                    quark:prismarine_bricks_slab
+                    quark:prismarine_dark_slab
+                    quark:red_nether_brick_slab
+                    quark:cobblestone_mossy_slab
+                    quark:stonebrick_mossy_slab
+                    quark:thatch_slab
+                    quark:charred_nether_brick_slab
+                    quark:stone_granite_bricks_slab
+                    quark:stone_diorite_bricks_slab
+                    quark:stone_andesite_bricks_slab
+                    quark:stone_basalt_bricks_slab
+                    quark:stone_marble_bricks_slab
+                    quark:stone_limestone_bricks_slab
+                    quark:stone_jasper_bricks_slab
+                    quark:stone_slate_bricks_slab
+                    quark:midori_block_slab
+                    quark:magma_bricks_slab
+                    quark:duskstone_block_slab
+                    quark:reed_block_slab
+                    quark:snow_bricks_slab
+                    quark:soul_sandstone_slab
+                    quark:turf_slab
+                    quark:polished_netherrack_bricks_slab
+                    quark:biotite_slab
+                    quark:stone_basalt_slab
+                    quark:stone_marble_slab
+                    quark:stone_limestone_slab
+                    quark:stone_jasper_slab
+                    quark:stone_slate_slab
+                    quark:fire_stone_slab
+                    quark:fire_stone_brick_slab
+                    quark:icy_stone_slab
+                    quark:icy_stone_brick_slab
+                    quark:cobbed_stone_slab
+                    quark:elder_prismarine_slab
+                    quark:elder_prismarine_bricks_slab
+                    quark:elder_prismarine_dark_slab
+                    quark:sandstone_bricks_stairs
+                    quark:red_sandstone_bricks_stairs
+                    quark:soul_sandstone_bricks_stairs
+                    quark:stained_planks_white_stairs
+                    quark:stained_planks_orange_stairs
+                    quark:stained_planks_magenta_stairs
+                    quark:stained_planks_light_blue_stairs
+                    quark:stained_planks_yellow_stairs
+                    quark:stained_planks_lime_stairs
+                    quark:stained_planks_pink_stairs
+                    quark:stained_planks_gray_stairs
+                    quark:stained_planks_silver_stairs
+                    quark:stained_planks_cyan_stairs
+                    quark:stained_planks_purple_stairs
+                    quark:stained_planks_blue_stairs
+                    quark:stained_planks_brown_stairs
+                    quark:stained_planks_green_stairs
+                    quark:stained_planks_red_stairs
+                    quark:stained_planks_black_stairs
+                    quark:hardened_clay_tiles_stairs
+                    quark:stained_clay_tiles_white_stairs
+                    quark:stained_clay_tiles_orange_stairs
+                    quark:stained_clay_tiles_magenta_stairs
+                    quark:stained_clay_tiles_light_blue_stairs
+                    quark:stained_clay_tiles_yellow_stairs
+                    quark:stained_clay_tiles_lime_stairs
+                    quark:stained_clay_tiles_pink_stairs
+                    quark:stained_clay_tiles_gray_stairs
+                    quark:stained_clay_tiles_silver_stairs
+                    quark:stained_clay_tiles_cyan_stairs
+                    quark:stained_clay_tiles_purple_stairs
+                    quark:stained_clay_tiles_blue_stairs
+                    quark:stained_clay_tiles_brown_stairs
+                    quark:stained_clay_tiles_green_stairs
+                    quark:stained_clay_tiles_red_stairs
+                    quark:stained_clay_tiles_black_stairs
+                    quark:bark_oak_stairs
+                    quark:bark_spruce_stairs
+                    quark:bark_birch_stairs
+                    quark:bark_jungle_stairs
+                    quark:bark_acacia_stairs
+                    quark:bark_dark_oak_stairs
+                    quark:iron_plate_stairs
+                    quark:sandy_bricks_stairs
+                    quark:stone_stairs
+                    quark:stone_granite_stairs
+                    quark:stone_diorite_stairs
+                    quark:stone_andesite_stairs
+                    quark:end_bricks_stairs
+                    quark:prismarine_stairs
+                    quark:prismarine_bricks_stairs
+                    quark:prismarine_dark_stairs
+                    quark:red_nether_brick_stairs
+                    quark:cobblestone_mossy_stairs
+                    quark:stonebrick_mossy_stairs
+                    quark:thatch_stairs
+                    quark:charred_nether_brick_stairs
+                    quark:stone_granite_bricks_stairs
+                    quark:stone_diorite_bricks_stairs
+                    quark:stone_andesite_bricks_stairs
+                    quark:stone_basalt_bricks_stairs
+                    quark:stone_marble_bricks_stairs
+                    quark:stone_limestone_bricks_stairs
+                    quark:stone_jasper_bricks_stairs
+                    quark:stone_slate_bricks_stairs
+                    quark:midori_block_stairs
+                    quark:magma_bricks_stairs
+                    quark:duskstone_block_stairs
+                    quark:reed_block_stairs
+                    quark:snow_bricks_stairs
+                    quark:soul_sandstone_stairs
+                    quark:turf_stairs
+                    quark:polished_netherrack_bricks_stairs
+                    quark:biotite_stairs
+                    quark:stone_basalt_stairs
+                    quark:stone_marble_stairs
+                    quark:stone_limestone_stairs
+                    quark:stone_jasper_stairs
+                    quark:stone_slate_stairs
+                    quark:fire_stone_stairs
+                    quark:fire_stone_brick_stairs
+                    quark:icy_stone_stairs
+                    quark:icy_stone_brick_stairs
+                    quark:cobbed_stone_stairs
+                    quark:elder_prismarine_stairs
+                    quark:elder_prismarine_bricks_stairs
+                    quark:elder_prismarine_dark_stairs
+                    quark:sandstone_new
+                    quark:polished_stone
+                    quark:stained_planks
+                    quark:hardened_clay_tiles
+                    quark:stained_clay_tiles
+                    quark:bark
+                    quark:sturdy_stone
+                    quark:iron_plate
+                    quark:sandy_bricks
+                    quark:thatch
+                    quark:charred_nether_bricks
+                    quark:world_stone_bricks
+                    quark:world_stone_carved
+                    quark:midori_block
+                    quark:midori_pillar
+                    quark:magma_bricks
+                    quark:duskbound_block
+                    quark:duskbound_lantern
+                    quark:world_stone_pavement
+                    quark:reed_block
+                    quark:snow_bricks
+                    quark:carved_wood
+                    quark:soul_sandstone
+                    quark:turf
+                    quark:polished_netherrack
+                    quark:quilted_wool
+                    quark:biotite_ore
+                    quark:biotite_block
+                    quark:basalt
+                    quark:marble
+                    quark:limestone
+                    quark:jasper
+                    quark:slate
+                    quark:biome_cobblestone
+                    quark:biome_brick
+                    quark:elder_prismarine
+                    quark:elder_sea_lantern
+                    quark:glowcelium
+                    quark:custom_bookshelf
+                    quark:blaze_lantern
+                    quark:charcoal_block
+                    quark:sugar_block
+                    quark:smoker
+                    quark:custom_chest
+                    quark:ender_watcher
+                    quark:nether_brick_fence_gate
+                    quark:spruce_trapdoor
+                    quark:brich_trapdoor
+                    quark:jungle_trapdoor
+                    quark:acacia_trapdoor
+                    quark:dark_oak_trapdoor
+                    quark:lit_lamp
+                    charm:gunpowder_block
+                    charm:ender_pearl_block
+                    charm:rotten_flesh_block
+                    charm:smooth_glowstone
+                    charm:nether_gold_deposit
+                    charm:barrel
+                    charm:composter
+                    charm:crate
+                    charm:crate_sealed
+                    charm:redstone_sand
+                    charm:variable_redstone_lamp
+                    inspirations:mulch
+                    inspirations:bookshelf
+                    inspirations:bricks_button
+                    inspirations:redstone_barrel
+                    inspirations:carpeted_trapdoor_white
+                    inspirations:carpeted_trapdoor_orange
+                    inspirations:carpeted_trapdoor_magenta
+                    inspirations:carpeted_trapdoor_light_blue
+                    inspirations:carpeted_trapdoor_yellow
+                    inspirations:carpeted_trapdoor_lime
+                    inspirations:carpeted_trapdoor_pink
+                    inspirations:carpeted_trapdoor_gray
+                    inspirations:carpeted_trapdoor_silver
+                    inspirations:carpeted_trapdoor_cyan
+                    inspirations:carpeted_trapdoor_purple
+                    inspirations:carpeted_trapdoor_blue
+                    inspirations:carpeted_trapdoor_brown
+                    inspirations:carpeted_trapdoor_green
+                    inspirations:carpeted_trapdoor_red
+                    inspirations:carpeted_trapdoor_black
+                 >
+                B:"07. Climbing Whitelist"=true
+                B:"07. Whitelist"=true
+
+                # If the player can Mount Entities at all
+                B:"08. Able to Mount Entities"=true
+
+                # If the player can Control Boats
+                B:"09. Can Control Boats"=false
+
+                # Should the Mount Blacklist to a Whitelist
+                B:"10. Toggle Whitelist"=false
+
+                # Entities that can not be mounted, or can only be mounted
+                S:"11. Mount Blacklist" <
+                    quark:seat
+                    sit:entity_sit
+                 >
+
+                # Mana Cost per second while flying
+                D:"12. Flight Cost"=0.0
+
+                # For Mor Information on Attributes
+                # https://minecraft.gamepedia.com/Attribute
+                S:Attributes <
+                    Name:generic.maxHealth, Amount:-0.6, Operation:2
+                    Name:generic.knockbackResistance; Amount:0; Operation:0
+                    Name:generic.movementSpeed, Amount:-0.25, Operation:2
+                    Name:generic.attackDamage, Amount:-0.75, Operation:2
+                    Name:generic.attackSpeed, Amount:0, Operation:0
+                    Name:generic.armor, Amount:-0.5, Operation:2
+                    Name:generic.armorToughness, Amount:-0.25, Operation:2
+                    Name:generic.luck, Amount:0, Operation:0
+                    Name:generic.reachDistance, Amount:-0.35, Operation:2
+                    Name:forge.swimSpeed, Amount:-0.25, Operation:2
+                    Name:xat.entityMagic.regen, Amount:0, Operation:0
+                    Name:xat.entityMagic.regen.cooldown, Amount:0, Operation:0
+                    Name:xat.entityMagic.affinity, Amount:0, Operation:0
+                    Name:xat.jump, Amount:-0.25, Operation:2
+                    Name:xat.stepheight, Amount:-0.35, Operation:0
+                 >
+                B:canControlBoats=false
+                B:canMount=true
+                D:flight_cost=0.0
+                S:mountBlacklist <
+                    quark:seat
+                    sit:entity_sit
+                 >
+                B:whitelist=false
+
+                attributes {
+                    B:Armor=true
+                    D:"Armor Amount"=-0.5
+                    I:"Armor Operation"=2
+                    B:"Armor Toughness"=true
+                    D:"Armor Toughness Amount"=-0.25
+                    I:"Armor Toughness Operation"=2
+                    B:"Attack Speed"=false
+                    D:"Attack Speed Amount"=0.0
+                    I:"Attack Speed Operation"=0
+                    B:Damage=true
+                    D:"Damage Amount"=-0.75
+                    I:"Damage Operation"=2
+                    B:Health=true
+                    D:"Health Amount"=-0.75
+                    I:"Health Operation"=2
+                    B:"Jump Height"=true
+                    D:"Jump Height Amount"=-0.25
+                    I:"Jump Height Operation"=2
+                    B:"Knockback Resistance"=false
+                    D:"Knockback Resistance Amount"=0.0
+                    I:"Knockback Resistance Operation"=0
+                    B:Luck=true
+                    D:"Luck Amount"=2.0
+                    I:"Luck Operation"=0
+                    B:"Movement Speed"=true
+                    D:"Movement Speed Amount"=-0.25
+                    I:"Movement Speed Operation"=1
+                    B:Reach=true
+                    D:"Reach Amount"=-0.5
+                    I:"Reach Operation"=2
+                    B:"Step Height"=true
+                    D:"Step Height Amount"=-0.35
+                    I:"Step Height Operation"=0
+                    B:"Swim Speed"=true
+                    D:"Swim Speed Amount"=-0.25
+                    I:"Swim Speed Operation"=2
+                }
+
+            }
+
+            "dwarf settings" {
+                # Dwarves Special Fortune Like Effect. Set to False to Disable. Default True
+                B:"01. Fortune Effect"=true
+
+                # Should the Dwarves Fortune Effect stack with the Fortune Enchantment?. Set to False to Disable. Default True
+                B:"02. Fortune Stacking"=false
+
+                # Should the Dwarves lower the mining level requirement for pickaxes. IE. an Iron Pickaxe will be able to break Obsidian. Set to False to Disable. Default True
+                B:"03. Skilled Mining Ability"=true
+
+                # Mining Speed is static at (Block Hardness * 4), Not Including other Modifiers.  Set to False to Disable. Default True
+                B:"04. Static Mining"=true
+
+                # For More Information on Attributes
+                # https://minecraft.gamepedia.com/Attribute
+                S:Attributes <
+                    Name:generic.maxHealth, Amount:-0.3, Operation:1
+                    Name:generic.knockbackResistance; Amount:0.2; Operation:1
+                    Name:generic.movementSpeed, Amount:-0.25, Operation:1
+                    Name:generic.attackDamage, Amount:0.25, Operation:1
+                    Name:generic.attackSpeed, Amount:-0.25, Operation:2
+                    Name:generic.armor, Amount:0, Operation:0
+                    Name:generic.armorToughness, Amount:0.25, Operation:2
+                    Name:generic.luck, Amount:0, Operation:0
+                    Name:generic.reachDistance, Amount:0, Operation:0
+                    Name:forge.swimSpeed, Amount:0, Operation:0
+                    Name:xat.entityMagic.regen, Amount:0, Operation:0
+                    Name:xat.entityMagic.regen.cooldown, Amount:0, Operation:0
+                    Name:xat.entityMagic.affinity, Amount:0, Operation:0
+                    Name:xat.jump, Amount:0, Operation:0
+                    Name:xat.stepheight, Amount:0, Operation:0
+                 >
+
+                "block settings" {
+                    S:"01. Ore Blocks that Fortune Effect works on" <
+                        minecraft:coal_ore
+                        minecraft:lapis_ore
+                        minecraft:diamond_ore
+                        minecraft:redstone_ore
+                        minecraft:lit_redstone_ore
+                        minecraft:emerald_ore
+                        minecraft:quartz_ore
+                        iceandfire:sapphire_ore
+                        defiledlands:hephaestite_ore
+                        defiledlands:scarlite_ore
+                        scalinghealth:crystalore
+                        betternether:cincinnasite_ore
+                        quark:biotite_ore
+                     >
+
+                    # Should Blocks give Bonus XP
+                    B:"02. Bonus XP"=true
+                    I:"03. Bonus XP Max"=3
+                    I:"04. Bonus XP Min"=0
+
+                    # Blocks in this List will give Bonus XP Randomly between Bonus_XP_Min and Bonus_XP_Max
+                    S:"05. Blocks that give Bonus XP" <
+                        minecraft:coal_ore
+                        minecraft:iron_ore
+                        minecraft:gold_ore
+                        minecraft:lapis_ore
+                        minecraft:redstone_ore
+                        minecraft:diamond_ore
+                        minecraft:emerald_ore
+                        minecraft:quartz_ore
+                     >
+
+                    # Should Blocks give at least 1 XP
+                    B:"06. Minimum XP Blocks"=false
+
+                    # Blocks in this List will always give 1 xp when broken
+                    S:"07. Blocks that give a Minimum XP" <
+                        minecraft:stone
+                        minecraft:end_stone
+                     >
+                }
+
+                attributes {
+                    B:Armor=false
+                    D:"Armor Amount"=0.0
+                    I:"Armor Operation"=0
+                    B:"Armor Toughness"=true
+                    D:"Armor Toughness Amount"=0.25
+                    I:"Armor Toughness Operation"=2
+                    B:"Attack Speed"=true
+                    D:"Attack Speed Amount"=-0.25
+                    I:"Attack Speed Operation"=2
+                    B:Damage=true
+                    D:"Damage Amount"=0.1
+                    I:"Damage Operation"=1
+                    B:Health=true
+                    D:"Health Amount"=-0.25
+                    I:"Health Operation"=2
+                    B:"Jump Height"=false
+                    D:"Jump Height Amount"=0.0
+                    I:"Jump Height Operation"=2
+                    B:"Knockback Resistance"=true
+                    D:"Knockback Resistance Amount"=0.25
+                    I:"Knockback Resistance Operation"=0
+                    B:Luck=false
+                    D:"Luck Amount"=0.0
+                    I:"Luck Operation"=0
+                    B:"Movement Speed"=true
+                    D:"Movement Speed Amount"=-0.1
+                    I:"Movement Speed Operation"=1
+                    B:Reach=true
+                    D:"Reach Amount"=-0.25
+                    I:"Reach Operation"=2
+                    B:"Step Height"=false
+                    D:"Step Height Amount"=0.0
+                    I:"Step Height Operation"=2
+                    B:"Swim Speed"=false
+                    D:"Swim Speed Amount"=0.0
+                    I:"Swim Speed Operation"=0
+                }
+
+            }
+
+            "titan settings" {
+                # Jump Height Adjustment when wearing Race Rings. Set to False to Disable. Default True
+                B:"01. Jump Height"=true
+
+                # If the player should be too heavy to stay afloat
+                B:"02. Heavy Player"=true
+
+                # If Enabled the player will trample farmland
+                B:"03. Trample Farmland"=true
+
+                # If Enabled the player will be able to mine a 3x3 area
+                B:"04. AoE Mining"=true
+
+                # If Enabled the player will be required to sneak to AoE Mine
+                B:"05. Invert AoE Mining"=false
+
+                # what blocks can not be AoE Mined
+                S:"06. AoE Mining Blacklist" <
+                    dynamictrees:*
+                 >
+
+                # If the player can Mount Entities at all
+                B:"07. Able to Mount Entities"=true
+
+                # Should the Mount Blacklist to a Whitelist
+                B:"08. Toggle Whitelist"=false
+
+                # Entities that can not be mounted, or can only be mounted
+                S:"09. Mount Blacklist" <
+                    quark:seat
+                    sit:entity_sit
+                    minecraft:minecart
+                 >
+
+                # For More Information on Attributes
+                # https://minecraft.gamepedia.com/Attribute
+                S:Attributes <
+                    Name:generic.maxHealth, Amount:1, Operation:1
+                    Name:generic.knockbackResistance; Amount:1; Operation:0
+                    Name:generic.movementSpeed, Amount:0, Operation:0
+                    Name:generic.attackDamage, Amount:0.5, Operation:2
+                    Name:generic.attackSpeed, Amount:-0.5, Operation:2
+                    Name:generic.armor, Amount:0, Operation:0
+                    Name:generic.armorToughness, Amount:0, Operation:0
+                    Name:generic.luck, Amount:0, Operation:0
+                    Name:generic.reachDistance, Amount:1, Operation:1
+                    Name:forge.swimSpeed, Amount:0, Operation:0
+                    Name:xat.entityMagic.regen, Amount:0, Operation:0
+                    Name:xat.entityMagic.regen.cooldown, Amount:0, Operation:0
+                    Name:xat.entityMagic.affinity, Amount:0, Operation:0
+                    Name:xat.jump, Amount:0.75, Operation:1
+                    Name:xat.stepheight, Amount:1.4, Operation:0
+                 >
+                B:canMount=false
+                S:mountBlacklist <
+                    quark:seat
+                    sit:entity_sit
+                 >
+                B:whitelist=false
+
+                attributes {
+                    B:Armor=false
+                    D:"Armor Amount"=0.0
+                    I:"Armor Operation"=2
+                    B:"Armor Toughness"=false
+                    D:"Armor Toughness Amount"=0.0
+                    I:"Armor Toughness Operation"=2
+                    B:"Attack Speed"=true
+                    D:"Attack Speed Amount"=-0.5
+                    I:"Attack Speed Operation"=2
+                    B:Damage=true
+                    D:"Damage Amount"=1.0
+                    I:"Damage Operation"=2
+                    B:Health=true
+                    D:"Health Amount"=1.0
+                    I:"Health Operation"=2
+                    B:"Jump Height"=true
+                    D:"Jump Height Amount"=0.75
+                    I:"Jump Height Operation"=2
+                    B:"Knockback Resistance"=true
+                    D:"Knockback Resistance Amount"=0.75
+                    I:"Knockback Resistance Operation"=2
+                    B:Luck=false
+                    D:"Luck Amount"=-1.0
+                    I:"Luck Operation"=0
+                    B:"Movement Speed"=true
+                    D:"Movement Speed Amount"=0.25
+                    I:"Movement Speed Operation"=1
+                    B:Reach=true
+                    D:"Reach Amount"=0.5
+                    I:"Reach Operation"=2
+                    B:"Step Height"=true
+                    D:"Step Height Amount"=1.4
+                    I:"Step Height Operation"=0
+                    B:"Swim Speed"=false
+                    D:"Swim Speed Amount"=0.0
+                    I:"Swim Speed Operation"=0
+                }
+
+            }
+
+            "goblin settings" {
+                B:"01. Resistances"=true
+                B:"02. Goblin Rider"=true
+
+                # For More Information on Attributes
+                # https://minecraft.gamepedia.com/Attribute
+                S:Attributes <
+                    Name:generic.maxHealth, Amount:-0.4, Operation:2
+                    Name:generic.knockbackResistance; Amount:0; Operation:0
+                    Name:generic.movementSpeed, Amount:0.2, Operation:1
+                    Name:generic.attackDamage, Amount:0.5, Operation:1
+                    Name:generic.attackSpeed, Amount:0, Operation:0
+                    Name:generic.armor, Amount:0, Operation:0
+                    Name:generic.armorToughness, Amount:0, Operation:0
+                    Name:generic.luck, Amount:1, Operation:0
+                    Name:generic.reachDistance, Amount:0, Operation:0
+                    Name:forge.swimSpeed, Amount:0.1, Operation:1
+                    Name:xat.entityMagic.regen, Amount:0, Operation:0
+                    Name:xat.entityMagic.regen.cooldown, Amount:0, Operation:0
+                    Name:xat.entityMagic.affinity, Amount:0, Operation:0
+                    Name:xat.jump, Amount:0, Operation:0
+                    Name:xat.stepheight, Amount:0, Operation:0
+                 >
+
+                attributes {
+                    B:Armor=false
+                    D:"Armor Amount"=0.0
+                    I:"Armor Operation"=0
+                    B:"Armor Toughness"=false
+                    D:"Armor Toughness Amount"=0.0
+                    I:"Armor Toughness Operation"=0
+                    B:"Attack Speed"=false
+                    D:"Attack Speed Amount"=0.0
+                    I:"Attack Speed Operation"=0
+                    B:Damage=true
+                    D:"Damage Amount"=-0.25
+                    I:"Damage Operation"=1
+                    B:Health=true
+                    D:"Health Amount"=-0.5
+                    I:"Health Operation"=1
+                    B:"Jump Height"=true
+                    D:"Jump Height Amount"=0.2
+                    I:"Jump Height Operation"=1
+                    B:"Knockback Resistance"=false
+                    D:"Knockback Resistance Amount"=0.0
+                    I:"Knockback Resistance Operation"=0
+                    B:Luck=true
+                    D:"Luck Amount"=1.0
+                    I:"Luck Operation"=0
+                    B:"Movement Speed"=true
+                    D:"Movement Speed Amount"=0.2
+                    I:"Movement Speed Operation"=1
+                    B:Reach=true
+                    D:"Reach Amount"=-0.25
+                    I:"Reach Operation"=2
+                    B:"Step Height"=false
+                    D:"Step Height Amount"=0.0
+                    I:"Step Height Operation"=2
+                    B:"Swim Speed"=true
+                    D:"Swim Speed Amount"=0.1
+                    I:"Swim Speed Operation"=1
+                }
+
+            }
+
+            "elf settings" {
+                B:"01. Charge Shot"=true
+
+                # how much Mana should this ability initially cost
+                D:"02. Charge Shot Cost"=5.0
+
+                # If a fully charged shot should explode on impact causing splash damage
+                B:"03. Full Charge Explodes"=true
+
+                # 
+                # Min: 12
+                # Max: 72000
+                I:"04. Max Charge Time"=40
+                D:"05. Damage Base Multiplier"=2.0
+                D:"06. Minimum damage Multiplier"=5.0
+
+                # Used for when a mod bow is not working properly with Charged Shot
+                S:"7. Bow Blacklist" <
+                    *:*crossbow*
+                 >
+
+                # For More Information on Attributes
+                # https://minecraft.gamepedia.com/Attribute
+                S:Attributes <
+                    Name:generic.maxHealth, Amount:0, Operation:0
+                    Name:generic.knockbackResistance; Amount:0; Operation:0
+                    Name:generic.movementSpeed, Amount:0.1, Operation:1
+                    Name:generic.attackDamage, Amount:0, Operation:0
+                    Name:generic.attackSpeed, Amount:0.3, Operation:1
+                    Name:generic.armor, Amount:0, Operation:0
+                    Name:generic.armorToughness, Amount:0, Operation:0
+                    Name:generic.luck, Amount:0, Operation:0
+                    Name:generic.reachDistance, Amount:0, Operation:0
+                    Name:forge.swimSpeed, Amount:0, Operation:0
+                    Name:xat.entityMagic.regen, Amount:0, Operation:0
+                    Name:xat.entityMagic.regen.cooldown, Amount:0, Operation:0
+                    Name:xat.entityMagic.affinity, Amount:0, Operation:0
+                    Name:xat.jump, Amount:0, Operation:0
+                    Name:xat.stepheight, Amount:0, Operation:0
+                 >
+
+                attributes {
+                    B:Armor=false
+                    D:"Armor Amount"=0.0
+                    I:"Armor Operation"=0
+                    B:"Armor Toughness"=false
+                    D:"Armor Toughness Amount"=0.0
+                    I:"Armor Toughness Operation"=0
+                    B:"Attack Speed"=false
+                    D:"Attack Speed Amount"=0.25
+                    I:"Attack Speed Operation"=2
+                    B:Damage=true
+                    D:"Damage Amount"=-0.25
+                    I:"Damage Operation"=1
+                    B:Health=false
+                    D:"Health Amount"=0.0
+                    I:"Health Operation"=0
+                    B:"Jump Height"=false
+                    D:"Jump Height Amount"=0.0
+                    I:"Jump Height Operation"=2
+                    B:"Knockback Resistance"=false
+                    D:"Knockback Resistance Amount"=0.0
+                    I:"Knockback Resistance Operation"=0
+                    B:Luck=false
+                    D:"Luck Amount"=0.0
+                    I:"Luck Operation"=0
+                    B:"Movement Speed"=false
+                    D:"Movement Speed Amount"=0.25
+                    I:"Movement Speed Operation"=2
+                    B:Reach=false
+                    D:"Reach Amount"=0.0
+                    I:"Reach Operation"=0
+                    B:"Step Height"=false
+                    D:"Step Height Amount"=0.0
+                    I:"Step Height Operation"=2
+                    B:"Swim Speed"=false
+                    D:"Swim Speed Amount"=0.0
+                    I:"Swim Speed Operation"=0
+                }
+
+            }
+
+            "faelis config" {
+                B:"01. Claw Bonus"=true
+                D:"02. Bonus amount"=4.0
+                B:"03. Armor Penalties"=true
+
+                # The Amount of Weight per armor piece equipped
+                D:"04. Penaltiy amount"=0.1
+
+                # Should Faelis get a buff when drinking milk
+                B:"05. Milk Buff"=true
+
+                # How long the buff should last
+                I:"06. Buff Duration"=1200
+
+                # Should the Faelis be Immune to the armor weight penalty while the Buff is Active
+                B:"07. Buff Immunity"=true
+
+                # List of Items that count as Milk
+                S:"08. Milk" <
+                    minecraft:milk_bucket
+                 >
+
+                # List of Items that count as Heavy Armor
+                S:"09. Heavy Armor" <
+                    minecraft:chainmail_helmet;*;0.01
+                    minecraft:chainmail_chestplate;*;0.09
+                    minecraft:chainmail_leggings;*;0.075
+                    minecraft:chainmail_boots;*;0.025
+                    materialIron;head;0.025
+                    materialIron;chest;0.15
+                    materialIron;legs;0.075
+                    materialIron;feet;0.05
+                    minecraft:golden_helmet;*;0.04
+                    minecraft:golden_chestplate;*;0.2
+                    minecraft:golden_leggings;*;0.1
+                    minecraft:golden_boots;*;0.06
+                    materialDiamond;0.075
+                    Yellow Deathworm;0.04
+                    White Deathworm;0.04
+                    Red Deathworm;0.04
+                    Silver;0.03
+                    MyrmexDesert;0.04
+                    MyrmexJungle;0.04
+                    umbrium;0.035
+                    DragonScales1;0.085
+                    DragonScales2;0.085
+                    DragonScales3;0.085
+                    DragonScales4;0.085
+                    DragonScales5;0.085
+                    DragonScales6;0.085
+                    DragonScales7;0.085
+                    DragonScales8;0.085
+                    SeaSerpentScalesblue;0.08
+                    SeaSerpentScalesbronze;0.08
+                    SeaSerpentScalesgreen;0.08
+                    SeaSerpentScalespurple;0.08
+                    SeaSerpentScalesred;0.08
+                    SeaSerpentScalesteal;0.08
+                    SeaSerpentScalesdeepblue;0.08
+                    Neptunium;0.07
+                    bookWyrmScales;0.02
+                    bookWyrmScalesGolden;0.02
+                    Golem Armor;0.1
+                 >
+
+                # Buffs when drinking milk
+                S:"10. Milk Buffs" <
+                    minecraft:speed:1200:0
+                    minecraft:strength:1200:0
+                    minecraft:jump_boost:1200:3
+                 >
+
+                # For More Information on Attributes
+                # https://minecraft.gamepedia.com/Attribute
+                S:Attributes <
+                    Name:generic.maxHealth, Amount:-0.25, Operation:1
+                    Name:generic.knockbackResistance; Amount:0; Operation:0
+                    Name:generic.movementSpeed, Amount:0.15, Operation:1
+                    Name:generic.attackDamage, Amount:-0.25, Operation:1
+                    Name:generic.attackSpeed, Amount:0.15, Operation:2
+                    Name:generic.armor, Amount:0, Operation:0
+                    Name:generic.armorToughness, Amount:-0.15, Operation:2
+                    Name:generic.luck, Amount:1, Operation:0
+                    Name:generic.reachDistance, Amount:-0.1, Operation:1
+                    Name:forge.swimSpeed, Amount:0.3, Operation:1
+                    Name:xat.entityMagic.regen, Amount:0, Operation:0
+                    Name:xat.entityMagic.regen.cooldown, Amount:0, Operation:0
+                    Name:xat.entityMagic.affinity, Amount:0, Operation:0
+                    Name:xat.jump, Amount:0.6, Operation:1
+                    Name:xat.stepheight, Amount:0.6, Operation:0
+                 >
+
+                attributes {
+                    B:Armor=false
+                    D:"Armor Amount"=0.0
+                    I:"Armor Operation"=0
+                    B:"Armor Toughness"=false
+                    D:"Armor Toughness Amount"=-0.15
+                    I:"Armor Toughness Operation"=2
+                    B:"Attack Speed"=true
+                    D:"Attack Speed Amount"=0.5
+                    I:"Attack Speed Operation"=2
+                    B:Damage=false
+                    D:"Damage Amount"=-0.25
+                    I:"Damage Operation"=0
+                    B:Health=false
+                    D:"Health Amount"=-0.25
+                    I:"Health Operation"=2
+                    B:"Jump Height"=true
+                    D:"Jump Height Amount"=0.6
+                    I:"Jump Height Operation"=1
+                    B:"Knockback Resistance"=false
+                    D:"Knockback Resistance Amount"=0.0
+                    I:"Knockback Resistance Operation"=0
+                    B:Luck=false
+                    D:"Luck Amount"=2.0
+                    I:"Luck Operation"=0
+                    B:"Movement Speed"=true
+                    D:"Movement Speed Amount"=0.25
+                    I:"Movement Speed Operation"=1
+                    B:Reach=false
+                    D:"Reach Amount"=-0.1
+                    I:"Reach Operation"=2
+                    B:"Step Height"=false
+                    D:"Step Height Amount"=0.0
+                    I:"Step Height Operation"=2
+                    B:"Swim Speed"=true
+                    D:"Swim Speed Amount"=0.5
+                    I:"Swim Speed Operation"=1
+                }
+
+            }
+
+            "dragon config" {
+                # Creative Flight. Set to False to Disable. Default True
+                B:"00. Creative Flight"=true
+
+                # How much damage per second the dragon breath does
+                D:"01. Dragon Breath Damage"=5.0
+
+                # The Mana Cost per tick when using dragons breath
+                D:"02. Dragon Breath Cost"=5.0
+
+                # Change the flight speed from the Vanilla Default of 0.05
+                B:"03. Change Flight Speed"=true
+
+                # How Fast the player moves when in Creative Flight. Vanilla Default 0.05. Default 0.02
+                # Min: 0.01
+                # Max: 1.0
+                D:"04. Creative Flight Speed"=0.08
+
+                # Mana Cost per second while flying
+                D:"05. Flight Cost"=5.0
+
+                # For More Information on Attributes
+                # https://minecraft.gamepedia.com/Attribute
+                S:Attributes <
+                    Name:generic.maxHealth, Amount:0.25, Operation:1
+                    Name:generic.knockbackResistance; Amount:0; Operation:0
+                    Name:generic.movementSpeed, Amount:0, Operation:0
+                    Name:generic.attackDamage, Amount:0.5, Operation:1
+                    Name:generic.attackSpeed, Amount:0, Operation:0
+                    Name:generic.armor, Amount:0, Operation:0
+                    Name:generic.armorToughness, Amount:0.5, Operation:1
+                    Name:generic.luck, Amount:0, Operation:0
+                    Name:generic.reachDistance, Amount:0, Operation:0
+                    Name:forge.swimSpeed, Amount:0, Operation:0
+                    Name:xat.entityMagic.regen, Amount:0, Operation:0
+                    Name:xat.entityMagic.regen.cooldown, Amount:0, Operation:0
+                    Name:xat.entityMagic.affinity, Amount:0, Operation:0
+                    Name:xat.jump, Amount:0, Operation:0
+                    Name:xat.stepheight, Amount:0, Operation:0
+                 >
+                D:flight_cost=5.0
+
+                "compatability settings" {
+
+                    "tough as nails compatability" {
+                        # If Tough as Nails is Installed, Should the player be immune to Heat
+                        B:"00. Immune to Heat"=true
+                    }
+
+                }
+
+                attributes {
+                    B:Armor=false
+                    D:"Armor Amount"=0.0
+                    I:"Armor Operation"=2
+                    B:"Armor Toughness"=true
+                    D:"Armor Toughness Amount"=0.5
+                    I:"Armor Toughness Operation"=2
+                    B:"Attack Speed"=false
+                    D:"Attack Speed Amount"=0.0
+                    I:"Attack Speed Operation"=2
+                    B:Damage=true
+                    D:"Damage Amount"=0.25
+                    I:"Damage Operation"=1
+                    B:Health=true
+                    D:"Health Amount"=0.25
+                    I:"Health Operation"=1
+                    B:"Jump Height"=false
+                    D:"Jump Height Amount"=0.0
+                    I:"Jump Height Operation"=2
+                    B:"Knockback Resistance"=false
+                    D:"Knockback Resistance Amount"=0.0
+                    I:"Knockback Resistance Operation"=2
+                    B:Luck=false
+                    D:"Luck Amount"=0.0
+                    I:"Luck Operation"=2
+                    B:"Movement Speed"=false
+                    D:"Movement Speed Amount"=0.0
+                    I:"Movement Speed Operation"=2
+                    B:Reach=false
+                    D:"Reach Amount"=0.0
+                    I:"Reach Operation"=2
+                    B:"Step Height"=false
+                    D:"Step Height Amount"=0.0
+                    I:"Step Height Operation"=2
+                    B:"Swim Speed"=true
+                    D:"Swim Speed Amount"=-0.25
+                    I:"Swim Speed Operation"=2
+                }
+
+            }
+
+        }
+
+        "misc settings" {
+            # Does Depth Strider Stack with Swim Speed Attributes?
+            B:"Depth Strider Stacks"=false
+            B:"Movement while transforming"=true
+
+            # If enabled, the player will be unable to move when transforming from one race to another
+            B:"Prevent Movement while transforming"=true
+
+            # Vanilla MC doesn't handle interaction with increased reach properly, this fixes it
+            B:"Reach Interaction Fix"=false
+
+            # The VIP list may be unaccessible under some circumstance, use this to shorten game launching time.
+            B:VIP=true
+        }
+
+        ##########################################################################################################
+        # trinket container settings
+        #--------------------------------------------------------------------------------------------------------#
+        # Settings regarding the Trinkets Container on the server
+        ##########################################################################################################
+
+        "trinket container settings" {
+            # How many slots should the Trinkets container have
+            B:"01. Container Enabled"=true
+
+            # How many slots should the Trinkets container have
+            # Min: 1
+            # Max: 32
+            I:"02. Container Slots"=8
+        }
+
+    }
+
+    "compatability settings" {
+        # Should Trinkets & Baubles Items only work in the T&B Container
+        B:"Accessories Use T&B Container Only"=false
+
+        # Should Trinkets and Baubles use ArtemisLib to handle Height Adjustments to the player
+        B:ArtemisLib=false
+
+        # Should Items that implement IBauble be allowed in the Trinkets Gui
+        # WARNING.
+        # This is Very Experimental, Baubles equipped might only partially work, not at all, or Potentially cause a crash.
+        B:Baubles=false
+
+        # Should Trinkets and Baubles Stone of the Sea work Infinite Oxygen work with Better Diving
+        B:"Better Diving"=false
+
+        # Should Trinkets and Baubles Interact with Defiled Lands
+        B:"Defiled Lands"=true
+        B:ElenaiDodge=false
+
+        # Should Trinkets and Baubles prevent some of the Visuals in Enhanced Visuals
+        B:"Enhanced Visuals"=true
+
+        # Should Trinkets and Baubles Interact with Lycanites Mobs
+        B:"Lycanites Mobs"=true
+
+        # Should Trinkets and Baubles Interact with Simple Difficulty
+        B:"Simple Difficulty"=true
+
+        # Should Trinkets and Baubles Interact with Tough as Nails
+        B:"Tough as Nails"=false
+        B:xatItemsInTrinketGuiOnly=false
+    }
+
+}
+
+
