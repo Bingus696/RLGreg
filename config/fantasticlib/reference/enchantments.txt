@@ -146,8 +146,6 @@ defiledlands:economical
 defiledlands:destructive
 defiledlands:safeguard
 defiledlands:blazing
-gregtech:disjunction
-gregtech:hard_hammer
 locks:shocking
 locks:sturdy
 locks:complexity

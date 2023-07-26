@@ -60,7 +60,6 @@ minecraft:mutated_savanna_rock
 minecraft:mutated_mesa
 minecraft:mutated_mesa_rock
 minecraft:mutated_mesa_clear_rock
-appliedenergistics2:storage_biome
 iceandfire:glacier
 defiledlands:desert_defiled
 defiledlands:plains_defiled
