@@ -1,0 +1,26 @@
+val iron = <minecraft:iron_ingot>;
+val icechunk = <simpledifficulty:ice_chunk>;
+
+recipes.addShaped("IceIronChestplate", <minecraft:iron_helmet>.withTag({SDArmorTemp: -2.0f}),
+ [[iron,iron,iron],
+
+  [iron,icechunk,iron]]);
+
+recipes.addShaped("IceIronChestplate", <minecraft:iron_chestplate>.withTag({SDArmorTemp: -2.0f}),
+ [[iron,icechunk,iron],
+
+  [iron,iron,iron],
+
+  [iron,iron,iron]]);
+
+recipes.addShaped("IceIronLeggings", <minecraft:iron_leggings>.withTag({SDArmorTemp: -2.0f}),
+ [[iron,iron,iron],
+
+  [iron,icechunk,iron],
+
+  [iron,null,iron]]);
+  
+recipes.addShaped("IceIronBoots", <minecraft:iron_boots>.withTag({SDArmorTemp: -2.0f}),
+  [[iron,icechunk,iron],
+
+  [iron,null,iron]]);

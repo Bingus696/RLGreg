@@ -1,0 +1,18 @@
+import loottweaker.LootTweaker;
+import loottweaker.vanilla.loot.LootTable;
+import loottweaker.vanilla.loot.LootPool;
+
+val skelly = LootTweaker.getTable("minecraft:entities/skeleton");
+val wut = skelly.addPool("wut", 0, 1, 0, 0);
+wut.addItemEntry(<minecraft:skull>, 1);
+wut.addItemEntry(<minecraft:bone>, 24);
+
+val zomboy = LootTweaker.getTable("minecraft:entities/zombie");
+val lul = zomboy.addPool("lul", 0, 1, 0, 0);
+lul.addItemEntry(<minecraft:skull:2>, 1);
+lul.addItemEntry(<minecraft:rotten_flesh>, 24);
+
+val creepy = LootTweaker.getTable("minecraft:entities/creeper");
+val yep = creepy.addPool("yep", 0, 1, 0, 0);
+yep.addItemEntry(<minecraft:skull:4>, 1);
+yep.addItemEntry(<minecraft:gunpowder>, 24);
