@@ -9,5 +9,5 @@ recipes.remove(<mujmajnkraftsbettersurvival:itemwoodhammer>);
 recipes.remove(<mujmajnkraftsbettersurvival:itembronzehammer>);
 recipes.remove(<mujmajnkraftsbettersurvival:itemironhammer>);
 recipes.remove(<mujmajnkraftsbettersurvival:itemdiamondhammer>);
-
+recipes.remove(<mujmajnkraftsbettersurvival:itemsteelhammer>);
 print("Script ending!");
