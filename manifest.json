@@ -10,9 +10,9 @@
   },
   "manifestType": "minecraftModpack",
   "manifestVersion": 1,
-  "name": "RLCraft",
-  "version": "2.9.3",
-  "author": "Shivaxi",
+  "name": "RLGreg",
+  "version": "0.0.1",
+  "author": "Bingus",
   "files": [
     {
       "projectID": 284754,
